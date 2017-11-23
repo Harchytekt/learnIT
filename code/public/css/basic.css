@@ -1,0 +1,20 @@
+body {
+    background-color   : #2E5041;
+    background-image   : url('../img/bg.png');
+    color              : #7DB9F0;
+}
+
+button {
+    cursor             : pointer;
+}
+
+/* MAIN */
+
+main {
+    margin-top         : 110px;
+    max-width          : 1140px
+}
+
+h1 {
+    color              : #FFF;
+}
