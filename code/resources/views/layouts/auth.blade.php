@@ -7,10 +7,10 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <!-- CSS -->
-        <link href="css/Bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
         <script src="https://use.fontawesome.com/462f499dd8.js"></script>
-        <link href="css/navbar.css" rel="stylesheet">
-        <link href="css/basic.css" rel="stylesheet">
+        <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
 
         <style media="screen">
 
@@ -36,13 +36,13 @@
 
     </body>
     <!-- jQuery -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <!-- Popper -->
-    <script src="js/Popper/popper.min.js"></script>
+    <script src="{{ asset('js/Popper/popper.min.js') }}"></script>
     <!-- Bootstrap -->
-    <script src="js/Bootstrap/bootstrap.min.js"></script>
+    <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
     <!-- Other -->
-    <script src="js/navbar.js"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
     <script type="text/javascript">
         $('[data-toggle="tooltip"]').tooltip();
     </script>
