@@ -1,0 +1,73 @@
+nav, div.dropdown-menu.show {
+    position           : fixed;
+    background-color   : #8C4119;
+    /*background-color   : rgba(171, 59, 3, 0.75);*/
+    border-bottom      : 2px solid #000;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color              : #FFF;
+}
+
+a,
+li {
+    outline            : none;
+}
+
+.navbar .navbar-toggler,
+.navbar form,
+.navbar .btn.btn-outline-danger {
+    margin-right       : 50px;
+}
+
+.navbar-light .navbar-nav .nav-link,
+div.dropdown-menu.show .dropdown-item {
+    color              : #00AAFF;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+div.dropdown-menu.show .dropdown-item:focus,
+div.dropdown-menu.show .dropdown-item:hover {
+    color              : #FFF;
+    background-color   : unset;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+div.dropdown-menu.show .dropdown-item.active {
+    color              : #FCDB69;
+    background-color   : unset;
+}
+
+.navbar .btn-outline-danger,
+.navbar .btn-outline-danger:hover,
+.navbar .btn-outline-danger:focus {
+    color              : #FFF;
+}
+
+form .btn-outline-primary {
+    background-color   : #FFF;
+}
+
+.dropdown-menu {
+    border-color       : #000;
+}
+
+.dropdown-divider {
+    border-top-color   : #000;
+}
+
+@media only screen and (max-width: 767px) {
+
+    form .input-group {
+        margin-bottom      : 0.5rem !important
+    }
+
+    .input-group-btn .btn.btn-outline-primary.my-2.my-sm-0 {
+        margin-top         : 0 !important;
+        margin-bottom      : 0 !important;
+    }
+
+}

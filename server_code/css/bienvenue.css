@@ -1,0 +1,257 @@
+body {
+    background-color   : #2E5041;
+    background-image   : url('../img/bg.png');
+    color              : #7DB9F0;
+}
+
+@font-face {
+    font-family        : 'Parisienne';
+    src                : url('../font/parisienne-regular.ttf');
+    font-weight        : 400;
+}
+
+/* NAVBAR */
+
+nav, .dropdown-menu.show {
+    position           : fixed;
+    background-color   : #8C4119;
+    border-bottom      : 2px solid black;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color              : #FFF;
+}
+
+.navbar .navbar-toggler {
+    margin-right       : 50px;
+}
+
+.navbar-right {
+    position           : absolute;
+        right          : 78px;
+}
+
+.navbar-right li.nav-item a.nav-link {
+    text-decoration    : none;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.dropdown-menu.show .dropdown-item {
+    color              : #00AAFF;
+}
+
+.navbar-right li.nav-item a.nav-link.home {
+    color              : #28a745;
+}
+
+.navbar-right li.nav-item a.nav-link.register {
+    color              : #28A745;
+    margin-right       : 16px;
+}
+
+.navbar-right li.nav-item a.nav-link.login {
+    color              : #FFC107;
+}
+
+.navbar-right li.nav-item a.nav-link:hover,
+.navbar-right li.nav-item a.nav-link:focus,
+.dropdown-menu.show .dropdown-item:focus,
+.dropdown-menu.show .dropdown-item:hover {
+    color              : #FFF;
+    text-decoration    : underline;
+    background-color   : unset;
+}
+
+a,
+li {
+    outline            : none;
+}
+
+.dropdown-menu {
+    border-color       : #000;
+}
+
+/* MAIN */
+
+main {
+    margin-top         : 110px;
+    max-width          : 1140px
+}
+
+.alert {
+    position           : fixed;
+        top            : 90px;
+        right          : 0;
+    z-index            : 10
+}
+
+.alert p {
+    margin-bottom      : 0;
+    margin-right       : 25px;
+}
+
+.close:hover:before,
+.close:focus:before {
+    color              : #FFF;
+}
+
+.close, .close:focus,
+.close:hover {
+    cursor             : pointer;
+}
+
+.alert .close,
+.alert .close:hover,
+.alert .close:focus,
+.alert .close:active {
+    position           : absolute !important;
+}
+
+.alert .close:focus:before,
+.alert .close:hover:before {
+    color              : #FFF;
+}
+
+.jumbotron {
+    text-align         : center;
+    border-color       : #FFF;
+}
+
+.center {
+    position           : relative;
+        top            : 50%;
+    -webkit-transform  : translateY(-50%);
+            transform  : translateY(-50%);
+    margin-bottom      : 20px;
+}
+
+.center .card-blockquote {
+    font-family        : 'Parisienne', cursive;
+    margin             : 0;
+    font-size          : 1.2rem;
+    color              : #FFF;
+}
+
+.card {
+    color              : #2E2E2F;
+    margin             : 0 auto;
+    max-width          : 500px;
+    width: auto;
+}
+
+.card.register {
+    background-color   : #2AB77E;
+}
+
+.card.login {
+    background-color   : #F8C530;
+}
+
+.card.reset {
+    background-color   : #FD8002;
+}
+
+.card .card-body {
+    background-color   : #FFF;
+    padding            : 40px 50px;
+    border-top         : 2px solid black;
+    text-align         : left;
+    width              : 100%
+}
+
+.card .card-body #cardForm {
+    margin             : 0 auto;
+}
+
+h1 {
+    color              : #FFF;
+}
+
+.card h1 {
+    color              : #FFF;
+    text-align         : center;
+    margin-top         : 0.5rem;
+}
+
+.form-control:focus {
+    -webkit-box-shadow : none;
+            box-shadow : none;
+}
+
+.form-group.end {
+    margin-bottom      : 0;
+}
+
+.form-group .checkbox {
+    padding-left       : 20px;
+}
+
+.form-group [type="checkbox"]:checked:after {
+    left               : -16px;
+    top                : -23px;
+    color              : #2AB77E;
+}
+
+.form-group button, html [type="button"] {
+    cursor             : pointer;
+}
+
+.form-group p.link {
+    text-align         : right;
+    margin-top         : 10px;
+    margin-bottom      : 0;
+}
+
+.form-group a {
+    color              : #337AB7;
+    text-decoration    : none;
+}
+
+.form-group a:hover,
+.form-group a:focus {
+    color              : #23527C;
+    text-decoration    : underline;
+}
+
+span.help-block {
+    color              : #D33C43;
+}
+
+#chalks {
+    position           : fixed;
+        bottom         : 0;
+        right          : 1vw;
+    z-index            : -10;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    div.container {
+        padding            : 10px;
+    }
+
+    /* NAVBAR */
+
+    .navbar-right {
+        position           : static;
+            right          : auto;
+        margin-left        : 10px;
+    }
+
+    h1 {
+        font-size          : 1.8rem;
+    }
+
+    /* MAIN */
+
+    .alert {
+        position           : fixed;
+            top            : 100px;
+            right          : 0
+    }
+}});
+}});
+}
