@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.auth')
 
 @section('title')
     <title>En cours | learnIT</title>

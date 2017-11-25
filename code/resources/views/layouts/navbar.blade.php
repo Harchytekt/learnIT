@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <span class="navbar-brand">
+    <a class="navbar-brand" href="{{ url('/home') }}">
         <img src="img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        learnIT</span>
+        learnIT
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
