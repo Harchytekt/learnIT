@@ -199,13 +199,13 @@ span.help-block {
 }
 
 #chalks {
-    position           : absolute;
+    /*position           : absolute;
+        bottom         : 0;
+        right          : 1vw;*/
+    position           : fixed;
         bottom         : 0;
         right          : 1vw;
-}
-
-@media only screen and (max-width: 1024px) {
-
+    z-index            : -10;
 }
 
 
