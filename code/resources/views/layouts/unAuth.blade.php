@@ -65,6 +65,10 @@
 
                 @yield('content')
 
+                <div id="chalks">
+                    <img src="{{ asset('img/Chalks.svg') }}" alt="" width="181" height="181">
+                </div>
+
             </main>
         </div>
 

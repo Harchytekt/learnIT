@@ -43,8 +43,4 @@
             <p><a class="btn btn-primary" href="#" role="button">En savoir plus »</a></p>
         </div>
     </div>
-
-    <div id="chalks">
-        <img src="{{ asset('img/Chalks.svg') }}" alt="" width="181" height="181">
-    </div>
 @endsection
