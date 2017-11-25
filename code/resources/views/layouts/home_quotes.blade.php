@@ -42,8 +42,8 @@
     $i = mt_rand(0, count($quoteList)-1)
 
 ?>
-<div class="center" style="position: relative; top: 50%; transform: translateY(-50%); margin-bottom: 20px;">
-    <blockquote class="card-blockquote" style="font-family: 'Parisienne', cursive; margin: 0; font-size: 1.2rem; color: #FFF;">
+<div class="center">
+    <blockquote class="card-blockquote">
         <p><i class="fa fa-angle-double-left" aria-hidden="true"></i>
             <?php echo $quoteList[$i]; ?>
             <i class="fa fa-angle-double-right" aria-hidden="true"></i></p>

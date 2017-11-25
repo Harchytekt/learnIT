@@ -4,6 +4,12 @@ body {
     color              : #7DB9F0;
 }
 
+@font-face {
+    font-family        : 'Parisienne';
+    src                : url('../font/parisienne-regular.ttf');
+    font-weight        : 400;
+}
+
 /* NAVBAR */
 
 nav, .dropdown-menu.show {
@@ -113,6 +119,21 @@ main {
     border-color       : #FFF;
 }
 
+.center {
+    position           : relative;
+        top            : 50%;
+    -webkit-transform  : translateY(-50%);
+            transform  : translateY(-50%);
+    margin-bottom      : 20px;
+}
+
+.center .card-blockquote {
+    font-family        : 'Parisienne', cursive;
+    margin             : 0;
+    font-size          : 1.2rem;
+    color              : #FFF;
+}
+
 .card {
     color              : #2E2E2F;
     margin             : 0 auto;
@@ -199,9 +220,6 @@ span.help-block {
 }
 
 #chalks {
-    /*position           : absolute;
-        bottom         : 0;
-        right          : 1vw;*/
     position           : fixed;
         bottom         : 0;
         right          : 1vw;
@@ -234,4 +252,6 @@ span.help-block {
             top            : 100px;
             right          : 0
     }
+}});
+}});
 }

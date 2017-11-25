@@ -10,7 +10,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
         <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
         <script src="https://use.fontawesome.com/462f499dd8.js"></script>
         <link href="{{ asset('css/bienvenue.css') }}" rel="stylesheet">
