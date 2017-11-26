@@ -31,7 +31,7 @@
             <p><a class="btn btn-primary" href="#" role="button">View details »</a></p>
         </div>
         <div class="col-lg-4">
-            @include('layouts.home_quotes')
+            @include('layouts.citations_bienvenue')
         </div>
         <div class="col-lg-4">
             <h2>learnIT mobile</h2>

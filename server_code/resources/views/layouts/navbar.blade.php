@@ -13,7 +13,6 @@
                 <a class="nav-link" href="/cours"><i class="fa fa-university" aria-hidden="true"></i> Cours</a>
             </li>
             <li class="nav-item dropdown active">
-                <!--<a class="nav-link" href="/mescours"><i class="fa fa-leanpub" aria-hidden="true"></i> Mes cours</a>-->
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"     aria-expanded="true" href="/mescours"><i class="fa fa-leanpub" aria-hidden="true"></i>
                 Mes cours</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 44px, 0px); top: 0px; left: 0px; will-change: transform;">
@@ -27,7 +26,6 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <!--<a class="nav-link" href="/chiffres"><i class="fa fa-bar-chart" aria-hidden="true"></i> Mes chiffres</a>-->
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"     aria-expanded="true" href="/chiffres"><i class="fa fa-line-chart" aria-hidden="true"></i> Mes chiffres</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 44px, 0px); top: 0px; left: 0px; will-change: transform;">
                     <a class="dropdown-item" href="/chiffresinscrits"><i class="fa fa-bar-chart" aria-hidden="true"></i>
@@ -41,8 +39,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/compte"><i class="fa fa-sliders" aria-hidden="true"></i> {{ Auth::user()->username }}</a>
-                <!-- <i class="fa fa-cog" aria-hidden="true"></i>
-                <i class="fa fa-wrench" aria-hidden="true"></i> -->
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
