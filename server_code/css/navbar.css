@@ -1,7 +1,6 @@
 nav, div.dropdown-menu.show {
     position           : fixed;
     background-color   : #8C4119;
-    /*background-color   : rgba(171, 59, 3, 0.75);*/
     border-bottom      : 2px solid #000;
 }
 
@@ -19,7 +18,7 @@ li {
 .navbar .navbar-toggler,
 .navbar form,
 .navbar .btn.btn-outline-danger {
-    margin-right       : 50px;
+    margin-right       : 45px;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -57,6 +56,35 @@ form .btn-outline-primary {
 
 .dropdown-divider {
     border-top-color   : #000;
+}
+
+
+/* Special for navbar icons… */
+@media only screen and (max-width: 1155px) {
+    /* NAVBAR */
+
+    .nav-item a i.fa {
+        display            : none;
+    }
+
+    .nav-item a {
+        font-size          : 0.9rem
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
+
+    /* NAVBAR */
+
+    .nav-item a i.fa {
+        display            : inline-block;
+    }
+
+    .nav-item a {
+        font-size          : 1rem
+    }
 }
 
 @media only screen and (max-width: 767px) {
