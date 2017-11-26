@@ -227,11 +227,8 @@ span.help-block {
 }
 
 
-@media only screen and (max-width: 767px) {
-
-    div.container {
-        padding            : 10px;
-    }
+/* Large devices (desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
 
     /* NAVBAR */
 
@@ -244,6 +241,15 @@ span.help-block {
     h1 {
         font-size          : 1.8rem;
     }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+
+    div.container {
+        padding            : 10px;
+    }
 
     /* MAIN */
 
@@ -252,6 +258,4 @@ span.help-block {
             top            : 100px;
             right          : 0
     }
-}});
-}});
 }

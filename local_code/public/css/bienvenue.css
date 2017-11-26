@@ -229,6 +229,7 @@ span.help-block {
 
 /* Large devices (desktops, 992px and up) */
 @media only screen and (max-width: 991px) {
+
     /* NAVBAR */
 
     .navbar-right {
