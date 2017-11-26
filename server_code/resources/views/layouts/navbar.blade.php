@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="navbar-brand" href="{{ url('/home') }}">
+    <a class="navbar-brand" href="{{ route('accueil') }}">
         <img src="img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         learnIT
     </a>
@@ -53,13 +53,13 @@
                 </div>
             </div>
         </form>
-            <a class="btn btn-outline-danger" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();"><i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
-            </a>
+        <a class="btn btn-outline-danger" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();"><i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
+        </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
     </div>
 </nav>

@@ -1,7 +1,7 @@
 @extends('layouts.unAuth')
 
 @section('title')
-    <title>Reset Password | learnIT</title>
+    <title>Réinitialisation | learnIT</title>
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
                     </div>
                 @endif
 
-                <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('email') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

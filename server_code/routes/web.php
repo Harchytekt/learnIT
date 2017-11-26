@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bienvenue');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/accueil', 'HomeController@index')->name('accueil');
 
 /* Logged in */
 
@@ -60,7 +61,3 @@ Route::get('/chiffresinscrits', function() {
 Route::get('/chiffresecrits', function() {
     return view('mesChiffres.ecrits');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
