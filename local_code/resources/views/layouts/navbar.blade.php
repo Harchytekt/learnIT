@@ -40,7 +40,7 @@
                 <a class="nav-link" href="/ecrire"><i class="fa fa-pencil" aria-hidden="true"></i> Écrire un cours</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/compte"><i class="fa fa-sliders" aria-hidden="true"></i> Compte</a>
+                <a class="nav-link" href="/compte"><i class="fa fa-sliders" aria-hidden="true"></i> {{ Auth::user()->username }}</a>
                 <!-- <i class="fa fa-cog" aria-hidden="true"></i>
                 <i class="fa fa-wrench" aria-hidden="true"></i> -->
             </li>
