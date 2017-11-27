@@ -11,7 +11,7 @@
         <div class="card-body">
             <div id="cardForm">
 
-                <form class="form-horizontal" method="POST" action="{{ route('requete') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('motdepasse.requete') }}">
                     {{ csrf_field() }}
 
                     <input type="hidden" name="token" value="{{ $token }}">

@@ -51,7 +51,7 @@
                         </button>
 
                         <p class="link">
-                            <a href="{{ route('requete') }}">
+                            <a href="{{ route('motdepasse.requete') }}">
                                 Mot de passe oublié ?
                         </p>
                     </div>
