@@ -1,8 +1,6 @@
 @extends('layouts.unAuth')
 
-@section('title')
-    <title>Réinitialisation | learnIT</title>
-@endsection
+@section('title', 'Réinitialisation')
 
 @section('content')
     <div class="card reset">

@@ -1,8 +1,6 @@
 @extends('layouts.unAuth')
 
-@section('title')
-    <title>Bienvenue | learnIT</title>
-@endsection
+@section('title', 'Bienvenue')
 
 @section('content')
 

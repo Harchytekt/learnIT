@@ -1,8 +1,6 @@
 @extends('layouts.auth')
 
-@section('title')
-    <title>En cours | learnIT</title>
-@endsection
+@section('title', 'En cours')
 
 @section('content')
     <h1>Vous n'avez aucun cours de commencé.</h1>

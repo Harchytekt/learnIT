@@ -1,8 +1,6 @@
 @extends('layouts.auth')
 
-@section('title')
-    <title>Favoris | learnIT</title>
-@endsection
+@section('title', 'Favoris')
 
 @section('content')
     <h1>Vous n'avez ajouté aucun cours à vos favoris.</h1>

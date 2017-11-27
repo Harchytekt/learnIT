@@ -1,8 +1,6 @@
 @extends('layouts.unAuth')
 
-@section('title')
-    <title>Inscription | learnIT</title>
-@endsection
+@section('title', 'Inscription')
 
 @section('content')
     <div class="card register">

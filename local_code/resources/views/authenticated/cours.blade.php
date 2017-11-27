@@ -1,8 +1,6 @@
 @extends('layouts.auth')
 
-@section('title')
-    <title>Cours | learnIT</title>
-@endsection
+@section('title', 'Cours')
 
 @section('content')
     <h1>Cours</h1>
