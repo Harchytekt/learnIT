@@ -1,0 +1,56 @@
+body {
+    background-color   : #2F5342;
+    background-image   : url('../img/bg.png');
+    color              : #F8C530;
+}
+
+/* MAIN */
+
+main {
+    margin-top         : 110px;
+    max-width          : 1140px
+}
+
+.jumbotron {
+    text-align         : center;
+    border-color       : #F8C530;
+}
+
+.center {
+    position           : relative;
+        top            : 50%;
+    -webkit-transform  : translateY(-50%);
+            transform  : translateY(-50%);
+    margin-bottom      : 20px;
+}
+
+h1 {
+    color              : #FF5652;
+}
+
+#chalks {
+    position           : fixed;
+        bottom         : 0;
+        right          : 1vw;
+    z-index            : -10;
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
+
+    /* MAIN */
+
+    h1 {
+        font-size          : 1.8rem;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+
+    div.container {
+        padding            : 10px;
+    }
+}
