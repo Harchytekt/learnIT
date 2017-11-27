@@ -17,47 +17,46 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('/accueil', 'HomeController@index')->name('accueil');
 
 /* Logged in */
 
 Route::get('/cours', function() {
-    return view('cours');
+    return view('authenticated.cours');
 })->middleware('auth');
 
 Route::get('/ecrire', function() {
-    return view('ecrire');
+    return view('authenticated.ecrire');
 })->middleware('auth');
 
 Route::get('/compte', function() {
-    return view('compte');
+    return view('authenticated.compte');
 })->middleware('auth');
 
 /* Mes cours */
 
 Route::get('/coursinscrits', function() {
-    return view('mesCours.inscrits');
+    return view('authenticated.mesCours.inscrits');
 })->middleware('auth');
 
 Route::get('/favoris', function() {
-    return view('mesCours.favoris');
+    return view('authenticated.mesCours.favoris');
 })->middleware('auth');
 
 Route::get('/encours', function() {
-    return view('mesCours.encours');
+    return view('authenticated.mesCours.encours');
 })->middleware('auth');
 
 Route::get('/coursecrits', function() {
-    return view('mesCours.ecrits');
+    return view('authenticated.mesCours.ecrits');
 })->middleware('auth');
 
 /* Mes chiffres */
 
 Route::get('/chiffresinscrits', function() {
-    return view('mesChiffres.inscrits');
+    return view('authenticated.mesChiffres.inscrits');
 })->middleware('auth');
 
 Route::get('/chiffresecrits', function() {
-    return view('mesChiffres.ecrits');
+    return view('authenticated.mesChiffres.ecrits');
 })->middleware('auth');
