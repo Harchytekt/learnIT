@@ -10,22 +10,17 @@
         <!-- CSS -->
         <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
         <script src="https://use.fontawesome.com/462f499dd8.js"></script>
-        <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/authNavbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
-
-        <style media="screen">
-
-        </style>
-
-        </head>
-
-        @yield('title')
 
     </head>
 
+        <title>@yield('title')</title>
+
+    </head>
     <body>
 
-        @include('layouts.navbar')
+        @include('layouts.authNavbar')
 
         <div class="container">
             <main role="main">
@@ -36,6 +31,7 @@
         </div>
 
     </body>
+
     <!-- jQuery -->
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <!-- Popper -->
@@ -44,8 +40,5 @@
     <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
     <!-- Other -->
     <script src="{{ asset('js/navbar.js') }}"></script>
-    <script type="text/javascript">
-        $('[data-toggle="tooltip"]').tooltip();
-    </script>
 
 </html>
