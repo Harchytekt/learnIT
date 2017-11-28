@@ -126,8 +126,8 @@ h1 {
 }
 
 .form-group [type="checkbox"]:checked:after {
-    left               : -16px;
-    top                : -23px;
+    /*left               : -16px;
+    top                : -23px;*/
     color              : #2AB77E;
 }
 
