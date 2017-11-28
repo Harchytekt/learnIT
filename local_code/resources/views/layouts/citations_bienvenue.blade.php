@@ -11,7 +11,7 @@
         "Une personne qui n’a jamais fait une erreur n'a jamais essayé quelque chose de nouveau.",
         "La joie dans la recherche et la compréhension est le plus beau cadeau de la nature.",
         "Un homme sage peut apprendre plus d’une question stupide qu’un fou peut apprendre d'une réponse sage.",
-        "On n’apprend pas à marcher en suivant les règles.<br>On l’ apprend par la pratique et à travers les chutes.",
+        "On n’apprend pas à marcher en suivant les règles.<br>On l’apprend par la pratique et à travers les chutes.",
         "Vis comme si tu devais mourir demain.<br>Apprends comme si tu devais vivre éternellement.",
         "À l'instant même où tu cesses d'apprendre, je crois que tu es mort.",
         "L'homme qui a accompli tout ce qu'il pense digne, a commencé à mourir.",
