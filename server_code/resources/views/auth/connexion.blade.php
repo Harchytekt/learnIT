@@ -51,6 +51,7 @@
                         <p class="link">
                             <a href="{{ route('motdepasse.requete') }}">
                                 Mot de passe oublié ?
+                            </a>
                         </p>
                     </div>
                 </form>
