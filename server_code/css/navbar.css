@@ -1,0 +1,101 @@
+nav, div.dropdown-menu.show {
+    position           : fixed;
+    background-color   : #8C4119;
+    border-bottom      : 2px solid #000;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color              : #FFF;
+}
+
+a,
+li {
+    outline            : none;
+}
+
+.navbar .navbar-toggler,
+.navbar form,
+.navbar .btn.btn-outline-danger {
+    margin-right       : 45px;
+}
+
+.navbar-light .navbar-nav .nav-link,
+div.dropdown-menu.show .dropdown-item {
+    color              : #00AAFF;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+div.dropdown-menu.show .dropdown-item:focus,
+div.dropdown-menu.show .dropdown-item:hover {
+    color              : #FFF;
+    background-color   : unset;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+div.dropdown-menu.show .dropdown-item.active {
+    color              : #FCDB69;
+    background-color   : unset;
+}
+
+.navbar .btn-outline-danger,
+.navbar .btn-outline-danger:hover,
+.navbar .btn-outline-danger:focus {
+    color              : #FFF;
+}
+
+form .btn-outline-primary {
+    background-color   : #FFF;
+}
+
+.dropdown-menu {
+    border-color       : #000;
+}
+
+.dropdown-divider {
+    border-top-color   : #000;
+}
+
+
+/* Special for navbar icons… */
+@media only screen and (max-width: 1155px) {
+    /* NAVBAR */
+
+    .nav-item a i.fa {
+        display            : none;
+    }
+
+    .nav-item a {
+        font-size          : 0.9rem
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
+
+    /* NAVBAR */
+
+    .nav-item a i.fa {
+        display            : inline-block;
+    }
+
+    .nav-item a {
+        font-size          : 1rem
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    form .input-group {
+        margin-bottom      : 0.5rem !important
+    }
+
+    .input-group-btn .btn.btn-outline-primary.my-2.my-sm-0 {
+        margin-top         : 0 !important;
+        margin-bottom      : 0 !important;
+    }
+
+}
