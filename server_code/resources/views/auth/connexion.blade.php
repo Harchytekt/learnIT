@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="card login">
-        <h1><i class="fa fa-id-badge" aria-hidden="true"></i> Identification</h1>
+        <h1><i class="far fa-id-badge"></i> Identification</h1>
 
         <div class="card-body">
             <div id="cardForm">
@@ -13,7 +13,7 @@
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="control-label"><i class="fa fa-paper-plane" aria-hidden="true"></i> Adresse email</label></label>
+                        <label for="email" class="control-label"><i class="fas fa-paper-plane"></i> Adresse email</label></label>
 
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="control-label"><i class="fa fa-key" aria-hidden="true"></i> Mot de passe</label>
+                        <label for="password" class="control-label"><i class="fas fa-key"></i> Mot de passe</label>
 
                         <input id="password" type="password" class="form-control" name="password" required>
 
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="form-group end">
-                        <button type="submit" class="btn btn-success btn-block"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
+                        <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Connexion
                         </button>
 
                         <p class="link">
