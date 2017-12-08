@@ -12,7 +12,7 @@
 
         <!-- CSS -->
         <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-        <script src="https://use.fontawesome.com/462f499dd8.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
         <link href="{{ asset('css/unAuthNavbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/bienvenue.css') }}" rel="stylesheet">
 
