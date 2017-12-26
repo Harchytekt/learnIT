@@ -35,6 +35,14 @@ h1 {
     z-index            : -10;
 }
 
+.errorBtn {
+    margin-top         : 10px;
+}
+
+.errorBtn#welcome {
+    margin-right       : 10px;
+}
+
 
 /* Large devices (desktops, 992px and up) */
 @media only screen and (max-width: 991px) {
