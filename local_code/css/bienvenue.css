@@ -121,12 +121,12 @@ h1 {
     margin-bottom      : 0;
 }
 
-.form-group .checkbox {
-    padding-left       : 20px;
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    background-image   : url('../img/checkboxes/checked.svg');
 }
 
-.form-group [type="checkbox"]:checked:after {
-    color              : #2AB77E;
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
+    background-image   : url('../img/checkboxes/indeterminated.svg');
 }
 
 .form-group button, html [type="button"] {
