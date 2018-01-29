@@ -11,7 +11,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- CSS -->
-        <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/Bootstrap/bootstrap.css') }}" rel="stylesheet">
         <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
         <link href="{{ asset('css/unAuthNavbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/bienvenue.css') }}" rel="stylesheet">
