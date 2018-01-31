@@ -41,5 +41,11 @@
         <script src="{{ asset('js/Popper/popper.min.js') }}"></script>
         <!-- Bootstrap -->
         <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
+        <!-- Tooltip -->
+        <script type="text/javascript">
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
     </body>
 </html>
