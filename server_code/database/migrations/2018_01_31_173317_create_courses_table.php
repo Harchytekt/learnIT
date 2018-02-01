@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->integer('creator_id')->unsigned();
             $table->string('name');
             $table->text('description');
+            $table->integer('published')->default(0);
             $table->timestamps();
         });
 
