@@ -38,7 +38,7 @@
                 <a class="nav-link fa-spin-hover" href="/ecrire"><i class="fas fa-pencil-alt"></i> Écrire un cours</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fa-spin-hover" href="/compte"><i class="fas fa-sliders-h"></i> {{ Auth::user()->username }}</a>
+                <a class="nav-link account fa-spin-hover" href="/compte"><i class="fas fa-sliders-h"></i> {{ Auth::user()->username }}</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

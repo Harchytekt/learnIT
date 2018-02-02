@@ -41,6 +41,16 @@ div.dropdown-menu.show .dropdown-item:hover {
     background-color   : unset;
 }
 
+.navbar-light .navbar-nav .nav-link.account {
+    color              : #04B5DD;
+}
+
+.navbar-light .navbar-nav .nav-link.account:focus,
+.navbar-light .navbar-nav .nav-link.account:hover {
+    color              : #ABE6F3;
+    background-color   : unset;
+}
+
 .navbar-light .navbar-nav .active>.nav-link,
 div.dropdown-menu.show .dropdown-item.active {
     color              : #FCDB69;
