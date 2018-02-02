@@ -15,6 +15,13 @@ li {
     outline            : none;
 }
 
+a.btn.fa-spin-hover:hover svg,
+a.nav-link.fa-spin-hover:hover svg,
+a.dropdown-item.fa-spin-hover:hover svg {
+    -webkit-animation  : fa-spin 2s infinite linear;
+    animation          : fa-spin 2s infinite linear;
+}
+
 .navbar .navbar-toggler,
 .navbar form,
 .navbar .btn.btn-outline-danger {
