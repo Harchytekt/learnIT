@@ -36,6 +36,10 @@ h4#rmAccount {
     vertical-align     : middle;
 }
 
+#centerBtnName {
+    display            : inline-block;
+}
+
 .label {
     color              : #2E2E2F;
 }
@@ -56,4 +60,41 @@ h4#rmAccount {
 #inner {
     display            : table;
     margin             : 0 auto;
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    h3,
+    h6 {
+        display            : block;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .centerModify {
+        display            : table;
+        margin             : 0 auto;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    #centerBtnName {
+        display: block;
+        text-align         : center;
+    }
+
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .label {
+        margin-top         : 10px;
+    }
+
+    .label.mdp {
+        margin-bottom      : -5px;
+    }
 }
