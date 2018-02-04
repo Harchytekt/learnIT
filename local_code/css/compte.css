@@ -1,0 +1,59 @@
+.jumbotron {
+    background-color   : rgba(255, 255, 255, 0.61);
+}
+
+h3,
+h6 {
+    display            : inline;
+}
+
+h3 {
+    color              : #2E2E2F;
+}
+
+h4 {
+    color              : #FFDC0A;
+}
+
+h4#createdAt,
+h6 {
+    color              : #656565;
+}
+
+h4#rmAccount {
+    color              : #DC3545;
+}
+
+.vars {
+    color              : #2B91CD;
+}
+
+.name {
+    vertical-align     : bottom;
+}
+
+#modifyName {
+    vertical-align     : middle;
+}
+
+.label {
+    color              : #2E2E2F;
+}
+
+.label.mdp {
+    float              : left;
+    width              : 250px;
+}
+
+.centerBtn {
+    text-align         : center;
+}
+
+#rm {
+    width              : 100%;
+}
+
+#inner {
+    display            : table;
+    margin             : 0 auto;
+}

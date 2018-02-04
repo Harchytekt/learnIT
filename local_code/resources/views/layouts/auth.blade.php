@@ -12,6 +12,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
         <link href="{{ asset('css/authNavbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
+        @stack('styles') <!-- Add style from pages using the layout -->
 
         <title>@yield('title')</title>
 
