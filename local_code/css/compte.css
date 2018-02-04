@@ -45,7 +45,6 @@ h4#rmAccount {
 }
 
 .label.mdp {
-    float              : left;
     width              : 250px;
 }
 
@@ -81,11 +80,19 @@ h4#rmAccount {
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+    h4#createdAt {
+        font-size          : 19px;
+    }
+
     #centerBtnName {
         display: block;
         text-align         : center;
     }
 
+    img#usersIcon {
+        height             : 90px;
+        width              : 90px;
+    }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
