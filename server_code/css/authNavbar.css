@@ -101,7 +101,7 @@ form .btn-outline-primary {
 
     /* NAVBAR */
 
-    .nav-item a i.fa {
+    .nav-item a svg {
         display            : inline-block;
     }
 
