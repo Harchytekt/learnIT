@@ -29,9 +29,8 @@ Route::get('/ecrire', function() {
     return view('authenticated.ecrire');
 })->middleware('auth');
 
-Route::get('/compte', function() {
-    return view('authenticated.compte');
-})->middleware('auth');
+Route::get('/compte', 'UserController@index');
+Route::post('/majemail', 'UserController@updateEmail');
 
 /* Mes cours */
 

@@ -9,6 +9,20 @@
 @section('content')
     <h1>Votre compte</h1>
 
+    @if (session('message'))
+        @if (strpos(session('message'), 'succès' ) !== false)
+            @php ($alertType = "alert-success")
+            @php ($icon = "fas fa-check")
+        @else
+            @php ($alertType = "alert-danger")
+            @php ($icon = "fas fa-times")
+        @endif
+        <div class="alert alert-dismissible {{ $alertType }}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <p><i class="{{ $icon }}"></i> {{ session('message') }}</p>
+        </div>
+    @endif
+
     @if (Auth::user()->isATutor())
         <!-- 100x100 on smartphones -->
         @php ($status = "professeur(e)")
@@ -38,7 +52,7 @@
 
             <span class="vars" id="name">{{ Auth::user()->getName() }}, {{ $status }}</span>
             <div id="centerBtnName">
-                <button type="button" class="btn btn-link" id="modifyName">Modifier</button>
+                <button type="button" class="btn btn-link" id="modifyName">Modifier le nom</button>
             </div>
         </div>
 
@@ -47,11 +61,23 @@
         <div class="clearfix">
             <div class="centerModify">
                 <div class="float-left">
-                    <h4>Changer votre adresse mail</h4>
-                    <span class="label">Adresse mail actuelle :</span> <span class="vars">{{ Auth::user()->email }}</span> <br>
-                    <label class="label" for="newEmail">Nouvelle adresse mail : </label>
-                    <input type="email" name="newEmail" value=""> <br>
-                    <div class="centerBtn"><button type="button" class="btn btn-link">Modifier</button></div>
+                    <h4>Changer votre adresse email</h4>
+                    <form class="form-horizontal" method="POST" action="/majemail">
+                        {{ csrf_field() }}
+                        <span class="label">Adresse email actuelle :</span> <span class="vars">{{ Auth::user()->email }}</span> <br>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Nouvelle adresse email" required>
+
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <div class="centerBtn"><button type="submit" class="btn btn-link">Enregistrer la nouvelle adresse email</button></div>
+                    </form>
                 </div>
             </div>
 
@@ -66,7 +92,7 @@
                         <label class="label mdp" for="newPwd2">Réécrire le nouveau mot de passe : </label>
                         <input type="password" name="newPwd2" value="">
                     </div>
-                    <div class="centerBtn"><button type="button" class="btn btn-link">Modifier</button></div>
+                    <div class="centerBtn"><button type="button" class="btn btn-link">Enregistrer le nouveau mot de passe</button></div>
                 </div>
             </div>
         </div>

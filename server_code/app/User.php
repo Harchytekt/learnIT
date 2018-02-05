@@ -21,9 +21,12 @@ class User extends Authenticatable
     ];
 
     protected $names = ['Monsieur X', 'Monsieur Dupont', 'Monsieur Durand', 'Monsieur Tout-le-monde', 'Monsieur Tartempion', 'Monsieur Michu',
-    'Madame X', 'Madame Dupont', 'Madame Durand', 'Madame Tout-le-monde', 'Madame Michu',
-    'Joe Bleau', 'Joe Bloggs', 'Tommy Atkins', 'John Smith', 'John Doe',
-    'Ann Yone', 'Jane Smith', 'Jane Doe'];
+        'Madame X', 'Madame Dupont', 'Madame Durand', 'Madame Tout-le-monde', 'Madame Michu',
+        'Joe Bleau', 'Joe Bloggs', 'Tommy Atkins', 'John Smith', 'John Doe',
+        'Ann Yone', 'Jane Smith', 'Jane Doe'
+    ];
+
+    public static $rules = ['email' => 'required|email|unique:users,email'];
 
     /**
      * The attributes that are mass assignable.
