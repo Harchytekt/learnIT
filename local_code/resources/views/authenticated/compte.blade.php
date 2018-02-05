@@ -11,11 +11,11 @@
 
     @if (Auth::user()->isATutor())
         <!-- 100x100 on smartphones -->
-        @php ($status = "professeur")
+        @php ($status = "professeur(e)")
         @php ($img = "tutor")
         @php ($rm = "Désactiver")
     @else
-        @php ($status = "étudiant")
+        @php ($status = "étudiant(e)")
         @php ($img = "student")
         @php ($rm = "Supprimer")
     @endif
@@ -34,10 +34,9 @@
         </div>
 
         <div>
-            <img src="{{ asset('img/users/'.$img.'.svg') }}" alt="" height="128" width="128">
+            <img id="usersIcon" src="{{ asset('img/users/'.$img.'.svg') }}" alt="" height="128" width="128">
 
-            <span class="vars name">Monsieur</span> <span class="vars name">X, {{ $status }}</span>
-            <!--<button type="button" class="btn btn-link" id="modifyName">Modifier</button>-->
+            <span class="vars" id="name">{{ Auth::user()->getName() }}, {{ $status }}</span>
             <div id="centerBtnName">
                 <button type="button" class="btn btn-link" id="modifyName">Modifier</button>
             </div>

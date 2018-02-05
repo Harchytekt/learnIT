@@ -20,6 +20,11 @@ class User extends Authenticatable
         'lastLogin_at'
     ];
 
+    protected $names = ['Monsieur X', 'Monsieur Dupont', 'Monsieur Durand', 'Monsieur Tout-le-monde', 'Monsieur Tartempion', 'Monsieur Michu',
+    'Madame X', 'Madame Dupont', 'Madame Durand', 'Madame Tout-le-monde', 'Madame Michu',
+    'Joe Bleau', 'Joe Bloggs', 'Tommy Atkins', 'John Smith', 'John Doe',
+    'Ann Yone', 'Jane Smith', 'Jane Doe'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -37,6 +42,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getName() {
+        if ($this->lastname != '' || $this->firstname != '') {
+            return  $this->lastname.' '.$this->firstname;
+        } else {
+            return $this->names[array_rand($this->names)];
+        }
+    }
 
     public function isATutor() {
         return $this->tutor == 1;
