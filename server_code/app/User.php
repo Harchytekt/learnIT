@@ -26,7 +26,10 @@ class User extends Authenticatable
         'Ann Yone', 'Jane Smith', 'Jane Doe'
     ];
 
-    public static $rules = ['email' => 'required|email|unique:users,email'];
+    public static $rules = [
+        'password' => 'required|string|min:6|max:20|regex:/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).)/|confirmed',
+        'email' => 'required|email|unique:users,email',
+    ];
 
     /**
      * The attributes that are mass assignable.

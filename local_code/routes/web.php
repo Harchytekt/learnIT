@@ -31,6 +31,7 @@ Route::get('/ecrire', function() {
 
 Route::get('/compte', 'UserController@index');
 Route::post('/majemail', 'UserController@updateEmail');
+Route::post('/majmdp', 'UserController@updatePassword');
 
 /* Mes cours */
 

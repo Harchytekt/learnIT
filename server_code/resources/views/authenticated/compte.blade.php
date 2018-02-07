@@ -66,14 +66,8 @@
                         {{ csrf_field() }}
                         <span class="label">Adresse email actuelle :</span> <span class="vars">{{ Auth::user()->email }}</span> <br>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Nouvelle adresse email" required>
-
-                            @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
                         </div>
 
                         <div class="centerBtn"><button type="submit" class="btn btn-link">Enregistrer la nouvelle adresse email</button></div>
@@ -85,14 +79,23 @@
                 <div class="float-left float-lg-right">
                     <div class="clearfix">
                         <h4>Changer votre mot de passe</h4>
-                        <label class="label mdp" for="oldPwd">Ancien mot de passe : </label>
-                        <input type="password" name="oldPwd" value=""> <br>
-                        <label class="label mdp" for="newPwd1">Nouveau mot de passe : </label>
-                        <input type="password" name="newPwd1" value=""> <br>
-                        <label class="label mdp" for="newPwd2">Réécrire le nouveau mot de passe : </label>
-                        <input type="password" name="newPwd2" value="">
+                        <form class="form-horizontal" method="POST" action="/majmdp">
+                            {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <input id="password" type="password" class="form-control" name="password_old" placeholder="Ancien mot de passe" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Nouveau mot de passe" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Taille <em>entre</em> <b>6</b> <em>et</em> <b>20</b> caractères. <br>Au moins <b>1</b> <em>majuscule</em>, <b>1</b> <em>minuscule</em>, <b>1</b> <em>chiffre</em> et <b>1</b> <em>caractère spécial</em>." required>
+                            </div>
+
+                            <div class="form-group">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Réécrire le nouveau mot de passe" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Taille <em>entre</em> <b>6</b> <em>et</em> <b>20</b> caractères. <br>Au moins <b>1</b> <em>majuscule</em>, <b>1</b> <em>minuscule</em>, <b>1</b> <em>chiffre</em> et <b>1</b> <em>caractère spécial</em>." required>
+                            </div>
+
+                            <div class="centerBtn"><button type="submit" class="btn btn-link">Enregistrer le nouveau mot de passe</button></div>
+                        </form>
                     </div>
-                    <div class="centerBtn"><button type="button" class="btn btn-link">Enregistrer le nouveau mot de passe</button></div>
                 </div>
             </div>
         </div>
