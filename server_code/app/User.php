@@ -20,6 +20,18 @@ class User extends Authenticatable
         'lastLogin_at'
     ];
 
+    protected $names = ['Monsieur X', 'Monsieur Dupont', 'Monsieur Durand', 'Monsieur Tout-le-monde', 'Monsieur Tartempion', 'Monsieur Michu',
+        'Madame X', 'Madame Dupont', 'Madame Durand', 'Madame Tout-le-monde', 'Madame Michu',
+        'Joe Bleau', 'Joe Bloggs', 'Tommy Atkins', 'John Smith', 'John Doe',
+        'Ann Yone', 'Jane Smith', 'Jane Doe'
+    ];
+
+    public static $rules = [
+        'name' => 'string|min:2|max:32|regex:/([A-Z][a-z]+([ ]?[a-z]?[\'-]?[A-Z][a-z]+)*)/',
+        'password' => 'required|string|min:6|max:20|regex:/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).)/|confirmed',
+        'email' => 'required|email|unique:users,email',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -38,11 +50,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function isATutor() {
-        return $this->tutor == 1;
+    public function getName() {
+        if ($this->lastname != '' || $this->firstname != '') {
+            return  $this->firstname.' '.$this->lastname;
+        } else {
+            return $this->names[array_rand($this->names)];
+        }
     }
 
-    public function isActive() {
-        return $this->active == 1;
+    public function isATutor() {
+        return $this->tutor == 1;
     }
 }

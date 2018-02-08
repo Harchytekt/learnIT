@@ -1,0 +1,146 @@
+.jumbotron {
+    background-color   : rgba(255, 255, 255, 0.61);
+}
+
+h3,
+h6 {
+    display            : inline;
+}
+
+h3 {
+    color              : #2E2E2F;
+}
+
+h4 {
+    color              : #FFDC0A;
+}
+
+h4.modal-title {
+    color              : #B59C07;
+}
+
+h4#createdAt,
+h6 {
+    color              : #656565;
+}
+
+h4#rmAccount {
+    color              : #DC3545;
+}
+
+.vars {
+    color              : #2B91CD;
+}
+
+#name {
+    vertical-align     : bottom;
+}
+
+#modifyName {
+    vertical-align     : middle;
+}
+
+#centerBtnName {
+    display            : inline-block;
+}
+
+.label {
+    color              : #2E2E2F;
+}
+
+.label.mdp {
+    width              : 250px;
+}
+
+.centerBtn {
+    text-align         : center;
+}
+
+#rm {
+    width              : 100%;
+}
+
+#inner {
+    display            : table;
+    margin             : 0 auto;
+}
+
+.alert {
+    position           : fixed;
+        top            : 90px;
+        right          : 0;
+    z-index            : 10
+}
+
+.alert p {
+    margin-bottom      : 0;
+    margin-right       : 25px;
+}
+
+.close:before {
+    color              : #DC3545;
+}
+
+.close:hover:before,
+.close:focus:before,
+.alert .close:focus:before,
+.alert .close:hover:before {
+    color              : #2E2E2F;
+}
+
+.close, .close:focus,
+.close:hover {
+    cursor             : pointer;
+}
+
+.alert .close,
+.alert .close:hover,
+.alert .close:focus,
+.alert .close:active {
+    position           : absolute !important;
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    h3,
+    h6 {
+        display            : block;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .centerModify {
+        display            : table;
+        margin             : 0 auto;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    h4#createdAt {
+        font-size          : 19px;
+    }
+
+    #centerBtnName {
+        display: block;
+        text-align         : center;
+    }
+
+    img#usersIcon {
+        height             : 90px;
+        width              : 90px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .label {
+        margin-top         : 10px;
+    }
+
+    .label.mdp {
+        margin-bottom      : -5px;
+    }
+}
