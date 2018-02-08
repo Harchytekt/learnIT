@@ -24,14 +24,11 @@
     @endif
 
     @if (Auth::user()->isATutor())
-        <!-- 100x100 on smartphones -->
         @php ($status = "professeur(e)")
         @php ($img = "tutor")
-        @php ($rm = "Désactiver")
     @else
         @php ($status = "étudiant(e)")
         @php ($img = "student")
-        @php ($rm = "Supprimer")
     @endif
 
     <div class="jumbotron">
@@ -139,13 +136,15 @@
             </div>
         </div>
 
-        <hr>
+        @if (!Auth::user()->isATutor())
+            <hr>
 
-        <div id="rm">
-            <div id="inner">
-                <h4 id="rmAccount">{{ $rm }} le compte</h4>
-                <div class="centerBtn"><button type="button" class="btn btn-outline-danger">{{ $rm }}</button></div>
+            <div id="rm">
+                <div id="inner">
+                    <h4 id="rmAccount">Supprimer le compte</h4>
+                    <div class="centerBtn"><button type="button" class="btn btn-outline-danger">Supprimer</button></div>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection

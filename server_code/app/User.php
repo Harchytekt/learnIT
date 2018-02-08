@@ -61,8 +61,4 @@ class User extends Authenticatable
     public function isATutor() {
         return $this->tutor == 1;
     }
-
-    public function isActive() {
-        return $this->active == 1;
-    }
 }

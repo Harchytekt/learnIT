@@ -25,7 +25,6 @@ class CreateUsersTable extends Migration
             $table->string('firstname')->nullable();
             $table->timestamp('lastLogin_at')->useCurrent();
             $table->integer('tutor')->default(0);
-            $table->integer('active')->default(1);
         });
     }
 
