@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function getName() {
         if ($this->lastname != '' || $this->firstname != '') {
-            return  $this->lastname.' '.$this->firstname;
+            return  $this->firstname.' '.$this->lastname;
         } else {
             return $this->names[array_rand($this->names)];
         }
