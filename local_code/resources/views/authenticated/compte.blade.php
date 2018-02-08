@@ -142,7 +142,7 @@
             <div id="rm">
                 <div id="inner">
                     <h4 id="rmAccount">Supprimer le compte</h4>
-                    <div class="centerBtn"><button type="button" class="btn btn-outline-danger">Supprimer</button></div>
+                    <div class="centerBtn"><a class="btn btn-outline-danger" href="/supprimercompte">Supprimer</a></div>
                 </div>
             </div>
         @endif

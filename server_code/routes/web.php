@@ -33,6 +33,7 @@ Route::get('/compte', 'UserController@index');
 Route::post('/majnames', 'UserController@updateNames');
 Route::post('/majemail', 'UserController@updateEmail');
 Route::post('/majmdp', 'UserController@updatePassword');
+Route::get('/supprimercompte', 'UserController@destroy');
 
 /* Mes cours */
 

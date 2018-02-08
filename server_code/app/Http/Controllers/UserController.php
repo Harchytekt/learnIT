@@ -96,4 +96,20 @@ class UserController extends Controller
 
         return redirect('/compte')->withMessage($message);
     }
+
+    public function destroy() {
+        $user = User::find(Auth::user()->id);
+
+        Auth::logout();
+
+        if ($user->delete()) {
+            session()->flash('flash_message', 'Le compte a été correctement supprimé.');
+            session()->flash('flash_type', 'alert-dismissible alert-success');
+            return redirect('/');
+        } else {
+            session()->flash('flash_message', 'Le compte n\'a pas pu être supprimé.');
+            session()->flash('flash_type', 'alert-dismissible alert-danger');
+            return redirect('/');
+        }
+    }
 }
