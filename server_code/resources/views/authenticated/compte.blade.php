@@ -52,8 +52,47 @@
 
             <span class="vars" id="name">{{ Auth::user()->getName() }}, {{ $status }}</span>
             <div id="centerBtnName">
-                <button type="button" class="btn btn-link" id="modifyName">Modifier le nom</button>
+                <button type="button" class="btn btn-link" id="modifyName" data-toggle="modal" data-target="#myModal">Modifier le nom</button>
             </div>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modifier le nom</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" method="POST" action="/majnames">
+                                {{ csrf_field() }}
+
+                                <div class="form-group">
+                                    @if (Auth::user()->firstname !== null)
+                                        <input type="text" class="form-control" name="firstname" value="{{ Auth::user()->firstname }}">
+                                    @else
+                                        <input type="text" class="form-control" name="firstname" placeholder="Prénom">
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    @if (Auth::user()->lastname !== null)
+                                        <input type="text" class="form-control" name="lastname" value="{{ Auth::user()->lastname }}">
+                                    @else
+                                        <input type="text" class="form-control" name="lastname" placeholder="Nom de famille">
+                                    @endif
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <hr>
@@ -67,7 +106,7 @@
                         <span class="label">Adresse email actuelle :</span> <span class="vars">{{ Auth::user()->email }}</span> <br>
 
                         <div class="form-group">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Nouvelle adresse email" required>
+                            <input id="email" type="email" class="form-control" name="email"  placeholder="Nouvelle adresse email" required>
                         </div>
 
                         <div class="centerBtn"><button type="submit" class="btn btn-link">Enregistrer la nouvelle adresse email</button></div>
@@ -83,7 +122,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group">
-                                <input id="password" type="password" class="form-control" name="password_old" placeholder="Ancien mot de passe" required>
+                                <input id="password_old" type="password" class="form-control" name="password_old" placeholder="Ancien mot de passe" required>
                             </div>
                             <div class="form-group">
                                 <input id="password" type="password" class="form-control" name="password" placeholder="Nouveau mot de passe" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Taille <em>entre</em> <b>6</b> <em>et</em> <b>20</b> caractères. <br>Au moins <b>1</b> <em>majuscule</em>, <b>1</b> <em>minuscule</em>, <b>1</b> <em>chiffre</em> et <b>1</b> <em>caractère spécial</em>." required>

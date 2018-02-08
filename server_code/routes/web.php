@@ -30,6 +30,7 @@ Route::get('/ecrire', function() {
 })->middleware('auth');
 
 Route::get('/compte', 'UserController@index');
+Route::post('/majnames', 'UserController@updateNames');
 Route::post('/majemail', 'UserController@updateEmail');
 Route::post('/majmdp', 'UserController@updatePassword');
 

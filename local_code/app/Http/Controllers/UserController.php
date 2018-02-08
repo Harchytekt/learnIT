@@ -25,6 +25,31 @@ class UserController extends Controller
         return view('authenticated.compte');
     }
 
+    public function updateNames() {
+        $user = User::find(Auth::user()->id);
+
+        $rules = User::$rules;
+        $validationFirstname = Validator::make(['firstname' => request('firstname'),],
+            ['firstname' => $rules['name']]);
+        $validationLastname = Validator::make(['lastname' => request('lastname')],
+            ['lastname' => $rules['name']]);
+
+        if (!$validationFirstname->passes() && !$validationLastname->passes()) {
+            $message = "Les modifications n'ont pas pu être effectuées.";
+            return redirect('/compte')->withMessage($message);
+        }
+        if ($validationFirstname->passes()) {
+            $user->firstname = request('firstname');
+        }
+        if ($validationLastname->passes()) {
+            $user->lastname = request('lastname');
+        }
+
+        $user->save();
+        $message = "Les modifications ont été effectuées avec succès !";
+        return redirect('/compte')->withMessage($message);
+    }
+
     public function updateEmail() {
         $user = User::find(Auth::user()->id);
 
@@ -56,13 +81,6 @@ class UserController extends Controller
         $validation = Validator::make(['password_old' => request('password_old'),
             'password' => request('password'),
             'password_confirmation' => request('password_confirmation'),], ['password' => $rules['password']]);
-
-        /*dd($validation->passes(),
-            $validation->messages(),
-            Hash::check(request('password_old'), $user->password),
-            ['password_old' => request('password_old')],
-            ['password' => $rules['password']]
-        );*/
 
         if (!Hash::check(request('password_old'), $user->password)) {
             $message = "L'ancien mot de passe est incorrect.";
