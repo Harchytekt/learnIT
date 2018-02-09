@@ -49,10 +49,10 @@
 
             <span class="vars" id="name">{{ Auth::user()->getName() }}, {{ $status }}</span>
             <div id="centerBtnName">
-                <button type="button" class="btn btn-link" id="modifyName" data-toggle="modal" data-target="#myModal">Modifier le nom</button>
+                <button type="button" class="btn btn-link" id="modifyName" data-toggle="modal" data-target="#nameModal">Modifier le nom</button>
             </div>
 
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="nameModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
