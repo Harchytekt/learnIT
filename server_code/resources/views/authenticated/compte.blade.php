@@ -142,8 +142,30 @@
             <div id="rm">
                 <div id="inner">
                     <h4 id="rmAccount">Supprimer le compte</h4>
-                    <div class="centerBtn"><a class="btn btn-outline-danger" href="/supprimercompte">Supprimer</a></div>
+                    <div class="centerBtn"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#removeModal">Supprimer</button></div>
                 </div>
+
+                <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Confirmation de la suppression du compte</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <span class="rmMessage">Êtes-vous sûr de vouloir supprimer votre compte ?</span>
+                            </div>
+
+                            <div class="modal-footer">
+                                <a class="btn btn-success" href="/supprimercompte">OUI, je veux supprimer mon compte</a>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         @endif
     </div>
