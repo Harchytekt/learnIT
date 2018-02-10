@@ -5,7 +5,7 @@
 @section('content')
 
     @if (Session::has('flash_message'))
-        <div class="alert {{ Session::get('flash_type') }}">
+        <div class="alert alert-dismissible {{ Session::get('flash_type') }}">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <p><i class="fa fa-check"></i> {{ Session::get('flash_message') }}</p>
         </div>

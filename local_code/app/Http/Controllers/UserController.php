@@ -104,11 +104,11 @@ class UserController extends Controller
 
         if ($user->delete()) {
             session()->flash('flash_message', 'Le compte a été correctement supprimé.');
-            session()->flash('flash_type', 'alert-dismissible alert-success');
+            session()->flash('flash_type', 'alert-success');
             return redirect('/');
         } else {
             session()->flash('flash_message', 'Le compte n\'a pas pu être supprimé.');
-            session()->flash('flash_type', 'alert-dismissible alert-danger');
+            session()->flash('flash_type', 'alert-danger');
             return redirect('/');
         }
     }
