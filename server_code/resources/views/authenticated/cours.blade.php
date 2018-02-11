@@ -6,7 +6,7 @@
     <h1>Cours</h1>
 
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 45px;">
             <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-3" style="background-color: #FFFFE5; border-radius: 10px; margin-bottom: 45px; transform: rotate(5deg);">
                 <img style="display: block; margin-left: auto; margin-right: auto; position: relative; top: -30px; left: 5px;" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
                 <div style="padding-bottom: 10px;">
@@ -31,7 +31,7 @@
                     <p>Python est un langage de programmation qui nécessite d'écrire moins de lignes de code que le C ou le C++. Il se veut simple, concis et lisible. On l'utilise aussi bien pour créer des scripts que des programmes ou des sites web. Il est très populaire, notamment chez Google.</p>
                 </div>
                 <div style="position: absolute; bottom:0;">
-                    <i class="fas fa-star" style="color: #E3CF7A"></i>
+                    <i class="fas fa-star" style="color: #FCDB69"></i>
                 </div>
             </div>
             <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-3" style="background-color: #FFFFE5; border-radius: 10px; margin-bottom: 45px; transform: rotate(2deg);">
@@ -61,7 +61,7 @@
                     <p>La programmation orientée objet vous permet de structurer un programme de manière efficace. Concrètement, de nouveaux concepts tels que l'héritage, les instances ou les classes vont changer totalement la manière dont vous concevez vos programmes. Découvrez-les maintenant !</p>
                 </div>
                 <div style="position: absolute; bottom:0;">
-                    <i class="fas fa-bookmark" style="color: #DC4535"></i> <i class="fas fa-star" style="color: #E3CF7A"></i>
+                    <i class="fas fa-bookmark" style="color: #DC4535"></i> <i class="fas fa-star" style="color: #FCDB69"></i>
                 </div>
             </div>
             <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-3" style="background-color: #FFFFE5; border-radius: 10px; margin-bottom: 45px; transform: rotate(6deg);">
@@ -83,7 +83,7 @@
                     <p>Laravel est un nouveau framework PHP qui a le vent en poupe, notamment aux États-Unis. Découvrez son fonctionnement pas à pas dans ce cours !</p>
                 </div>
                 <div style="position: absolute; bottom:0;">
-                    <i class="fas fa-bookmark" style="color: #DC4535"></i> <i class="fas fa-star" style="color: #E3CF7A"></i>
+                    <i class="fas fa-bookmark" style="color: #DC4535"></i> <i class="fas fa-star" style="color: #FCDB69"></i>
                 </div>
             </div>
         </div>

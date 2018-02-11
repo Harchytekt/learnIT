@@ -14,8 +14,8 @@
                 avez placé <span class="green" style="color: #2AB77E">3</span> dans vos favoris.
             </div>
         </div>
-        <div class="row">
-            <div class="col-11"><h2 style="padding-bottom: 20px;"><i class="fas fa-star" style="color: #E3CF7A"></i> Favoris</h2></div>
+        <div class="row" style="margin-top: 45px;">
+            <div class="col-11"><h2 style="padding-bottom: 20px;"><i class="fas fa-star" style="color: #FCDB69"></i> Favoris</h2></div>
             <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-3" style="background-color: #FFFFE5; border-radius: 10px; margin-bottom: 45px; transform: rotate(5deg);">
                 <img style="display: block; margin-left: auto; margin-right: auto; position: relative; top: -30px; left: 5px;" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
                 <div style="padding-bottom: 10px;">
