@@ -16,7 +16,7 @@
                 <a class="nav-link dropdown-toggle fa-spin-hover" data-toggle="dropdown" role="button" aria-haspopup="true"     aria-expanded="true" href="/mescours"><i class="fas fa-list-ul"></i>
                 Mes cours</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 44px, 0px); top: 0px; left: 0px; will-change: transform;">
-                    <a class="dropdown-item fa-spin-hover" href="/coursinscrits"><i class="fas fa-list-ul"></i>
+                    <a class="dropdown-item fa-spin-hover" href="/coursinscrits"><i class="fas fa-bookmark"></i>
                     Inscrits</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item fa-spin-hover" href="/favoris"><i class="fas fa-star"></i> Favoris</a>
