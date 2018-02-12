@@ -35,7 +35,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link fa-spin-hover" href="/ecrire"><i class="fas fa-pencil-alt"></i> Écrire un cours</a>
+                <a class="nav-link fa-spin-hover" href="/ecrire"><i class="fas fa-pencil-alt"></i> Rédaction</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link account fa-spin-hover" href="/compte"><i class="fas fa-sliders-h"></i> {{ Auth::user()->username }}</a>
