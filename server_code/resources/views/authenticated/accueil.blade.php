@@ -10,8 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-12 col-sm-10 offset-sm-1" style="color: #FFF;">
-                Pour l'instant, vous êtes inscrit à <span class="green" style="color: #2AB77E">4</span> cours et vous en
-                avez placé <span class="green" style="color: #2AB77E">3</span> dans vos favoris.
+                Pour l'instant, vous êtes inscrit à <span class="green" style="color: #2AB77E">4</span> cours et vous en avez placé <span class="green" style="color: #2AB77E">3</span> dans vos favoris.
             </div>
         </div>
         <div class="row" style="margin-top: 45px;">
