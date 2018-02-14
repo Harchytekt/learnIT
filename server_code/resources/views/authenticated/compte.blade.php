@@ -61,10 +61,9 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal" method="POST" action="/majnames">
-                                {{ csrf_field() }}
-
+                        <form class="form-horizontal" method="POST" action="/majnames">
+                            {{ csrf_field() }}
+                            <div class="modal-body">
                                 <div class="form-group">
                                     @if (Auth::user()->firstname !== null)
                                         <input type="text" class="form-control" name="firstname" value="{{ Auth::user()->firstname }}">
@@ -79,13 +78,12 @@
                                         <input type="text" class="form-control" name="lastname" placeholder="Nom de famille">
                                     @endif
                                 </div>
-
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
