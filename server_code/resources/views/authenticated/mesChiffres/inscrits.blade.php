@@ -1,12 +1,12 @@
 @extends('layouts.auth')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/bootstrap/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Bootstrap/dataTables.bootstrap4.min.css') }}">
 @endpush
 
 @push('js')
-    <script src="{{ asset('js/bootstrap/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/Bootstrap/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/Bootstrap/dataTables.bootstrap4.min.js') }}"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
