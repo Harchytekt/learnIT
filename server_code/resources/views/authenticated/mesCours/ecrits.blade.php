@@ -3,7 +3,7 @@
 @section('title', 'Écrits')
 
 @section('content')
-    <h1>Cours que vous avez écrits.</h1>
+    <h1>Vos cours.</h1>
 
     <div class="container">
         <div class="row">
