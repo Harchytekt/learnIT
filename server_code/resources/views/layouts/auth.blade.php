@@ -40,4 +40,5 @@
     <!-- Other -->
     <script src="{{ asset('js/navbar.js') }}"></script>
 
+    @stack('js') <!-- Add style from pages using the layout -->
 </html>
