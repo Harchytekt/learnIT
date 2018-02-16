@@ -9,7 +9,7 @@
 
         <!-- CSS -->
         <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <link href="{{ asset('css/authNavbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
         @stack('styles') <!-- Add style from pages using the layout -->
