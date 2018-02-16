@@ -2,6 +2,8 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/Bootstrap/dataTables.bootstrap4.min.css') }}">
+    <style media="screen">
+    </style>
 @endpush
 
 @push('js')
@@ -11,7 +13,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#coursesTable').DataTable();
-        } );
+        });
     </script>
 @endpush
 
@@ -59,6 +61,7 @@
                             <th scope="col">Cours</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Résultat</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,21 +69,25 @@
                             <td>Concevez un site avec Flask</td>
                             <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
                             <td style="text-align: right;">-</td>
+                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                         <tr>
                             <td>Découvrez la programmation orientée objet avec Python</td>
                             <td style="text-align: center;">Réussis <i class="fas fa-graduation-cap"></i></td>
                             <td style="text-align: right;">90 %</td>
+                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                         <tr>
                             <td>Découvrez le framework Django</td>
                             <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
                             <td style="text-align: right;">-</td>
+                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                         <tr>
                             <td>Découvrez le framework PHP Laravel</td>
                             <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
                             <td style="text-align: right;">80 %</td>
+                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                     </tbody>
                 </table>
