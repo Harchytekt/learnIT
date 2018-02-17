@@ -26,11 +26,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $favs = '';
+        $enrs = '';
         $favIDs = Favorite::getAllFavorites(); // Array of favorites courses IDs
-        $favs = Course::getCourseFromIDArray($favIDs);
+        if (Favorite::numberOfFavorites() != 0) {
+            $favs = Course::getCourseFromIDArray($favIDs);
+        }
 
-        $enrIDs = Enrollment::getAllEnrollments(); // Array of favorites courses IDs
-        $enrs = Course::getCourseFromIDArray($enrIDs);
+        $enrIDs = Enrollment::getAllEnrollments(); // Array of enrollments courses IDs
+        if (Enrollment::numberOfEnrollments() != 0) {
+            $enrs = Course::getCourseFromIDArray($enrIDs);
+        }
 
         return view('authenticated.accueil', compact('favs', 'enrs'));
     }
