@@ -15,4 +15,10 @@ class Enrollment extends Model
         return static::where('student_id', Auth::user()->id)
             ->pluck('course_id')->toArray();
     }
+
+    public static function getInProgressEnrollments() {
+        return static::where('student_id', Auth::user()->id)
+            ->where('completed', 0)
+            ->pluck('course_id')->toArray();
+    }
 }

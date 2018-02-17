@@ -37,17 +37,11 @@ Route::get('/supprimercompte', 'UserController@destroy');
 
 /* Mes cours */
 
-Route::get('/coursinscrits', function() {
-    return view('authenticated.mesCours.inscrits');
-})->middleware('auth');
+Route::get('/coursinscrits', 'CourseController@showEnrollments');
 
-Route::get('/favoris', function() {
-    return view('authenticated.mesCours.favoris');
-})->middleware('auth');
+Route::get('/favoris', 'CourseController@showFavorites');
 
-Route::get('/encours', function() {
-    return view('authenticated.mesCours.encours');
-})->middleware('auth');
+Route::get('/encours', 'CourseController@showInProgress');
 
 Route::get('/coursecrits', function() {
     return view('authenticated.mesCours.ecrits');
