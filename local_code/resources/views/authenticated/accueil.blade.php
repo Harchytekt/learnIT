@@ -7,7 +7,7 @@
 
     @php($id = 0)
     @php($view = 'light')
-    @php($angles = array(5, 1, -2, -6, 4, -1, -5, 2, -4, 6))
+    @php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <h3 style="color: #FFF;">Bienvenue {{ Auth::user()->username }} !</h3>
 
