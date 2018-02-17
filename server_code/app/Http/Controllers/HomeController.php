@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Course;
+use App\Enrollment;
+use App\Favorite;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('authenticated.accueil');
+        $favIDs = Favorite::getAllFavorites(); // Array of favorites courses IDs
+        $favs = Course::getCourseFromIDArray($favIDs);
+
+        $enrIDs = Enrollment::getAllEnrollments(); // Array of favorites courses IDs
+        $enrs = Course::getCourseFromIDArray($enrIDs);
+
+        return view('authenticated.accueil', compact('favs', 'enrs'));
     }
 }
