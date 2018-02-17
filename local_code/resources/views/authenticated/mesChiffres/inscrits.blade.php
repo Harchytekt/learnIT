@@ -54,40 +54,35 @@
                 <h2>Détails</h2>
             </div>
 
-            <div class="table-responsive jumbotron" style="background-color: rgba(255, 255, 255, 0.80);">
+            <div class="table-responsive jumbotron" style="background-color: rgba(255, 255, 255, 0.80); padding: 2rem 0;">
                 <table id="coursesTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead style="text-align: center;">
                         <tr>
                             <th scope="col">Cours</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Résultat</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Concevez un site avec Flask</td>
+                            <td>Concevez un site avec Flask <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
                             <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
                             <td style="text-align: right;">-</td>
-                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                         <tr>
-                            <td>Découvrez la programmation orientée objet avec Python</td>
+                            <td>Découvrez la programmation orientée objet avec Python <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
                             <td style="text-align: center;">Réussis <i class="fas fa-graduation-cap"></i></td>
                             <td style="text-align: right;">90 %</td>
-                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                         <tr>
-                            <td>Découvrez le framework Django</td>
+                            <td>Découvrez le framework Django <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
                             <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
                             <td style="text-align: right;">-</td>
-                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                         <tr>
-                            <td>Découvrez le framework PHP Laravel</td>
+                            <td>Découvrez le framework PHP Laravel <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
                             <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
                             <td style="text-align: right;">80 %</td>
-                            <td style="text-align: center;"><a href="/chiffreschapters"><i class="fas fa-eye"></i></a></td>
                         </tr>
                     </tbody>
                 </table>
