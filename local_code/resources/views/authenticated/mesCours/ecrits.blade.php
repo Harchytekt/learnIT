@@ -7,10 +7,11 @@
 
     <div class="container">
         <div class="row">
-            <div style="color: #FFF; text-align: center; width: 100%; margin-top: 25%;">
-                <h3>C'est vide ici ! <i class="far fa-comment"></i></h3>
-                <a class="btn btn-info" href="/ecrire">Écrivez votre cours !</a>
-            </div>
+            @if (!Auth::user()->isATutor())
+                @include('authenticated.layouts.vide')
+            @else
+                <h4>TODO</h4>
+            @endif
         </div>
     </div>
 @endsection
