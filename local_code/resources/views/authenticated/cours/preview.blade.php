@@ -10,6 +10,20 @@
         @if ($view != 'light')
             <hr>
             <p>{{ $course->description }}</p>
+            @if ($view == 'all')
+                <div style="position: absolute; bottom:0;">
+                    @if ($course->isEnrollment())
+                        <i class="fas fa-bookmark" style="color: #DC4535"></i>
+                    @else
+                        <i class="fas fa-bookmark" style="color: #E8E7CF"></i>
+                    @endif
+                    @if ($course->isFavorite())
+                        <i class="fas fa-star" style="color: #FCDB69"></i>
+                    @else
+                        <i class="fas fa-star" style="color: #E8E7CF"></i>
+                    @endif
+                </div>
+            @endif
         @endif
     </div>
 </div>

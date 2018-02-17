@@ -17,4 +17,12 @@ class Course extends Model
         }
         return $collection->sortBy('name');
     }
+
+    public function isEnrollment() {
+        return in_array($this->id, Enrollment::getAllEnrollments());
+    }
+
+    public function isFavorite() {
+        return in_array($this->id, Favorite::getAllFavorites());
+    }
 }

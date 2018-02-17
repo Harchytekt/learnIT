@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+/* Accueil */
+
 Route::get('/accueil', 'HomeController@index')->name('accueil');
 
 /* Logged in */
 
-Route::get('/cours', function() {
-    return view('authenticated.cours');
-})->middleware('auth');
+Route::get('/cours', 'CourseController@index');
 
 Route::get('/ecrire', function() {
     return view('authenticated.ecrire');
