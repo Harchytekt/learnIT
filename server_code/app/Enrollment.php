@@ -11,6 +11,11 @@ class Enrollment extends Model
         return static::where('student_id', Auth::user()->id)->count();
     }
 
+    public static function numberOfInProgressEnrollments() {
+        return static::where('student_id', Auth::user()->id)
+            ->where('completed', 0)->count();
+    }
+
     public static function getAllEnrollments() {
         return static::where('student_id', Auth::user()->id)
             ->pluck('course_id')->toArray();

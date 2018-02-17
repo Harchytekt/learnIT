@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row" style="margin-top: 45px;">
             @foreach ($courses as $course)
-                @include('authenticated.layouts.preview')
+                @include('authenticated.layouts.apercuCours')
                 @php($id += 1)
             @endforeach
         </div>
