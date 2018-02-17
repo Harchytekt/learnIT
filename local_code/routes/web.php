@@ -59,6 +59,10 @@ Route::get('/chiffresinscrits', function() {
     return view('authenticated.mesChiffres.inscrits');
 })->middleware('auth');
 
+Route::get('/chiffreschapters', function() {
+    return view('authenticated.mesChiffres.chapters');
+})->middleware('auth');
+
 Route::get('/chiffresecrits', function() {
     return view('authenticated.mesChiffres.ecrits');
 })->middleware('auth');

@@ -17,10 +17,10 @@
     </script>
 @endpush
 
-@section('title', 'Inscrits')
+@section('title', 'Inscrits-Chapitres')
 
 @section('content')
-    <h1>Chiffres pour vos inscriptions.</h1>
+    <h1>Chiffres pour vos inscriptions par chapitres.</h1>
 
     <div class="container">
         <div class="row" style="margin-top: 45px;">
@@ -52,37 +52,43 @@
         <div class="row">
             <div style="color: #FFF; width: 100%; text-align: center;">
                 <h2>Détails</h2>
+                <a href="/chiffresinscrits" style="color: #FFF;"><i class="fas fa-undo"></i> Retour vers le cours</a>
             </div>
 
-            <div class="table-responsive jumbotron" style="background-color: rgba(255, 255, 255, 0.80); padding: 2rem 0;">
+            <div class="table-responsive jumbotron" style="background-color: rgba(255, 255, 255, 0.80);">
                 <table id="coursesTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead style="text-align: center;">
                         <tr>
-                            <th scope="col">Cours</th>
+                            <th scope="col">Chapitre</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Résultat</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Concevez un site avec Flask <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
-                            <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
-                            <td style="text-align: right;">-</td>
+                            <td>Chapitre 1</td>
+                            <td style="text-align: center;">Réussis <i class="fas fa-graduation-cap" style="color: #2AB77E;"></i></td>
+                            <td style="text-align: right;">80 %</td>
                         </tr>
                         <tr>
-                            <td>Découvrez la programmation orientée objet avec Python <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
-                            <td style="text-align: center;">Réussis <i class="fas fa-graduation-cap"></i></td>
+                            <td>Chapitre 2</td>
+                            <td style="text-align: center;">Réussis <i class="fas fa-graduation-cap" style="color: #2AB77E;"></i></td>
                             <td style="text-align: right;">90 %</td>
                         </tr>
                         <tr>
-                            <td>Découvrez le framework Django <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
-                            <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
+                            <td>Chapitre 3</td>
+                            <td style="text-align: center;">En cours <i class="fas fa-hourglass-half" style="color: #00AAFF;"></i></td>
                             <td style="text-align: right;">-</td>
                         </tr>
                         <tr>
-                            <td>Découvrez le framework PHP Laravel <a href="/chiffreschapters" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
-                            <td style="text-align: center;">En cours <i class="fas fa-hourglass-half"></i></td>
-                            <td style="text-align: right;">80 %</td>
+                            <td>Chapitre 4</td>
+                            <td style="text-align: center;">Raté <i class="fas fa-times" style="color: #DC3545;"></i></td>
+                            <td style="text-align: right;">45 %</td>
+                        </tr>
+                        <tr>
+                            <td>Chapitre 5</td>
+                            <td style="text-align: center;">En attente <i class="fas fa-spinner" style="color: #FCDB69;"></i></td>
+                            <td style="text-align: right;">-</td>
                         </tr>
                     </tbody>
                 </table>
