@@ -24,7 +24,7 @@
                 <h4 style="color: #FFF;">Vous n'avez pas encore de favoris. <i class="far fa-frown"></i></h4>
             @else
                 @foreach ($favs as $course)
-                    @include('authenticated.cours.preview')
+                    @include('authenticated.layouts.preview')
                     @php($id += 1)
                 @endforeach
             @endif
@@ -37,7 +37,7 @@
                     <h4 style="color: #FFF;">Vous n'êtes pas encore inscrit à un cours. <i class="far fa-frown"></i></h4>
                 @else
                     @foreach ($enrs as $course)
-                        @include('authenticated.cours.preview')
+                        @include('authenticated.layouts.preview')
                         @php($id += 1)
                     @endforeach
                 @endif
