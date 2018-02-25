@@ -1,0 +1,23 @@
+h2 {
+    padding-bottom     : 20px;
+}
+
+h2#star,
+h2 .fa-star {
+    color              : #FCDB69;
+}
+
+h2#bookm,
+h2 .fa-bookmark {
+    color              : #DC4535;
+}
+
+h3,
+h4.void,
+.white {
+    color              : #FFF;
+}
+
+.green {
+    color              : #2AB77E;
+}
