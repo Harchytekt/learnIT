@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 
+@push('styles')
+    <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
+@endpush
+
 @section('title', 'Accueil')
 
 @section('content')
@@ -17,7 +21,7 @@
                 Pour l'instant, vous êtes inscrit à <span class="green" style="color: #2AB77E">{{ App\Enrollment::numberOfEnrollments() }}</span> cours et vous en avez placé <span class="green" style="color: #2AB77E">{{ App\Favorite::numberOfFavorites() }}</span> dans vos favoris.
             </div>
         </div>
-        <div class="row" style="margin-top: 45px;">
+        <div class="row previewParent">
             <div class="col-11"><h2 style="padding-bottom: 20px;"><i class="fas fa-star" style="color: #FCDB69"></i> Favoris</h2></div>
 
             @if (App\Favorite::numberOfFavorites() == 0)

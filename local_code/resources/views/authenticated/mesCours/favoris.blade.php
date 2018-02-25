@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 
+@push('styles')
+    <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
+@endpush
+
 @section('title', 'Favoris')
 
 @section('content')
@@ -15,7 +19,7 @@
                 @include('authenticated.layouts.vide')
             </div>
         @else
-            <div class="row" style="margin-top: 45px;">
+            <div class="row previewParent">
                 @foreach ($courses as $course)
                     @include('authenticated.layouts.apercuCours')
                     @php($id += 1)

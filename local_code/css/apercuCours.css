@@ -1,0 +1,56 @@
+.previewParent {
+    margin-top         : 45px;
+}
+
+.preview,
+.addCourse {
+    background-color   : #FFFFE5;
+    border-radius      : 10px;
+    margin-bottom      : 45px;
+}
+
+img.pushpin,
+img.tape {
+    display            : block;
+    margin-left        : auto;
+    margin-right       : auto;
+    position           : relative;
+        top            : -30px;
+        left           : 5px;
+}
+
+.previewCase {
+    padding-bottom     : 10px;
+}
+
+.previewBody {
+    position           : absolute;
+        bottom         : 0;
+}
+
+.previewBody .fa-bookmark,
+.previewBody .fa-star {
+    color              : #E8E7CF;
+}
+
+.previewBody .fa-bookmark.active {
+    color              : #DC4535;
+}
+
+.previewBody .fa-star.active {
+    color              : #FCDB69;
+}
+
+.addCourse {
+    -webkit-transform          : rotate(-2deg);
+            transform          : rotate(-2deg);
+}
+
+.addCourseBody {
+    padding-bottom     : 42px;
+    text-align         : center;
+}
+
+.addCourseBody .fa-plus {
+    color              : rgba(0, 0, 0, 0.1);
+}

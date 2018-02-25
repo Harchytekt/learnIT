@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 
+@push('styles')
+    <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
+@endpush
+
 @section('title', 'Inscrits')
 
 @section('content')

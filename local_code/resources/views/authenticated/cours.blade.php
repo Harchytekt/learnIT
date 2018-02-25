@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 
+@push('styles')
+    <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
+@endpush
+
 @section('title', 'Cours')
 
 @section('content')
@@ -10,7 +14,7 @@
     @php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <div class="container">
-        <div class="row" style="margin-top: 45px;">
+        <div class="row previewParent">
             @foreach ($courses as $course)
                 @include('authenticated.layouts.apercuCours')
                 @php($id += 1)
