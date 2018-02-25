@@ -23,21 +23,25 @@ img.tape {
     padding-bottom     : 10px;
 }
 
-.previewBody {
+.previewCase p {
+    color              : #50775D;
+}
+
+.previewIcons {
     position           : absolute;
         bottom         : 0;
 }
 
-.previewBody .fa-bookmark,
-.previewBody .fa-star {
+.previewIcons .fa-bookmark,
+.previewIcons .fa-star {
     color              : #E8E7CF;
 }
 
-.previewBody .fa-bookmark.active {
+.previewIcons .fa-bookmark.active {
     color              : #DC4535;
 }
 
-.previewBody .fa-star.active {
+.previewIcons .fa-star.active {
     color              : #FCDB69;
 }
 

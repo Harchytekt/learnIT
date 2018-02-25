@@ -11,7 +11,7 @@
             <hr>
             <p>{{ $course->description }}</p>
             @if ($view == 'all')
-                <div class="previewBody">
+                <div class="previewIcons">
                     @if ($course->isEnrollment())
                         <i class="fas fa-bookmark active"></i>
                     @else
