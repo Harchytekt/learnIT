@@ -24,11 +24,11 @@
                     @endif
                 </div>
             @endif
-            @if ($course->published)
-                <a href="" class="btn btn-link courseLink">Voir le cours</a> <!-- $course->id -->
-            @else
-                <a href="" class="btn btn-link courseLink">Éditer le cours</a> <!-- $course->id -->
-            @endif
+        @endif
+        @if ($course->published)
+            <a href="" class="btn btn-link courseLink">Voir le cours</a> <!-- $course->id -->
+        @else
+            <a href="" class="btn btn-link courseLink">Éditer le cours</a> <!-- $course->id -->
         @endif
     </div>
 </div>
