@@ -62,4 +62,9 @@ class CourseController extends Controller
 
         return view('authenticated.mesCours.encours', compact('courses'));
     }
+
+    public function show(Course $course)
+    {
+        return view('authenticated.show', compact('course'));
+    }
 }
