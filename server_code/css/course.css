@@ -5,6 +5,10 @@
             box-shadow : 5px -5px #213C32;
 }
 
+#chapterBlock {
+    margin-bottom      : 100px;
+}
+
 img.pushpin {
     display            : inline;
 }
