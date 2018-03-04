@@ -21,7 +21,7 @@
                 <hr>
             @endif
             <div class="card-block">
-                <form method="POST" action="/cours/{{ $course->id }}/commentaires/">
+                <form method="POST" action="/cours/{{ $course->id }}/commentaires">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <textarea class="form-control" name="body" placeholder="Écrivez votre commentaire." required></textarea>
@@ -30,7 +30,6 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Ajoutez votre commentaire</button>
                     </div>
-
                 </form>
             </div>
         </div>
