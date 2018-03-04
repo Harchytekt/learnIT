@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Collection;
 
 class Course extends Model
 {
+    public function isPublished() {
+        return $this->published == 1;
+    }
+    
+    public function chapters()
+    {
+        return $this->hasMany(Chapter::class);
+    }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);
