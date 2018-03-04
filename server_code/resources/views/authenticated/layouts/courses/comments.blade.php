@@ -1,4 +1,4 @@
-<div class="col-12 col-md-8 offset-md-2 vignetteBg" id="commentsBlock">
+<div class="col-12 col-md-8 offset-md-2 vignette" id="commentsBlock">
     <img class="tape" id="up" src="{{ asset('img/tape.svg') }}" alt="" height="52" width="183.3">
 
     <h2 class="grey">Commentaires</h2>

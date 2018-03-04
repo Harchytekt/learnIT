@@ -41,6 +41,7 @@ Route::get('/coursinscrits', 'CourseController@showEnrollments');
 Route::get('/favoris', 'CourseController@showFavorites');
 Route::get('/encours', 'CourseController@showInProgress');
 Route::get('/cours/{course}', 'CourseController@show');
+Route::get('/cours/{course}/{chapter}', 'ChapterController@show');
 
 Route::post('/cours/{course}/commentaires', 'CommentController@store');
 

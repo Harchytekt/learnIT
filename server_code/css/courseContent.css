@@ -10,8 +10,11 @@
     color              : #2AB77E;
 }
 
-.vignetteBg {
+.vignette {
     background-color   : #FFFFF0;
+    color              : #4E4E4F;
+    font-family        : 'Fira Code';
+    font-weight        : normal;
 }
 
 h1,
