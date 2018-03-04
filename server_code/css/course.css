@@ -1,0 +1,31 @@
+#courseBlock {
+    border-radius      : 10px;
+    -webkit-box-shadow : 5px -5px #213C32;
+            box-shadow : 5px -5px #213C32;
+}
+
+img.pushpin {
+    display            : inline;
+}
+
+img.pushpin.up {
+    top                : -30px;
+}
+
+img.pushpin.left {
+    position           : relative;
+        left           : -15px;
+}
+
+img.pushpin.right {
+    position           : absolute;
+        right          : -15px;
+}
+
+ol.chapters {
+    padding-left       : 20px;
+}
+
+ol.chapters li {
+    list-style         : none;
+}

@@ -1,0 +1,56 @@
+.star {
+    color              : #FCDB69;
+}
+
+.white {
+    color              : #FFF;
+}
+
+.green {
+    color              : #2AB77E;
+}
+
+.vignetteBg {
+    background-color   : #FFFFF0;
+}
+
+h1,
+.grey {
+    color              : #2E2E2F;
+}
+
+p {
+    color              : #4E4E4F;"
+}
+
+.bold {
+    font-weight        : bold;
+}
+
+.underline {
+    text-decoration    : underline;
+}
+
+.italic {
+    font-style         : italic;
+}
+
+.wrong {
+    color              : #DC4535;
+}
+
+blockquote {
+    margin             : 10px 0 10px 50px;
+    padding-left       : 15px;
+    border-left        : 3px solid #FDDC5F;
+    font-style         : italic;
+}
+
+.outer {
+    width              : 100%;
+}
+
+.inner {
+    display            : table;
+    margin             : 0 auto;
+}
