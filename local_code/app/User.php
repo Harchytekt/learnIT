@@ -50,6 +50,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
+    public function publishComment(Comment $comment)
+    {
+        $this->courses()->save($comment);
+    }
+
     public function getName() {
         if ($this->lastname != '' || $this->firstname != '') {
             return  $this->firstname.' '.$this->lastname;

@@ -42,6 +42,8 @@ Route::get('/favoris', 'CourseController@showFavorites');
 Route::get('/encours', 'CourseController@showInProgress');
 Route::get('/cours/{course}', 'CourseController@show');
 
+Route::post('/cours/{course}/commentaires', 'CommentController@store');
+
 Route::get('/coursecrits', function() {
     return view('authenticated.mesCours.ecrits');
 })->middleware('auth');
