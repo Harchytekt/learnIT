@@ -11,7 +11,7 @@
         </h1>
         <p class="lead">
             Désolé, la méthode de requête n'est pas autorisée. <br>
-            La session a sûrement expiré avant l'exécution de la méthode.
+            Vérifiez que la session n'a pas expiré avant l'exécution de la méthode.
         </p>
 
         <a href="/" class="btn btn-lg btn-success errorBtn" id="welcome" title="Vers la page de bienvenue"><i class="fas fa-globe"></i> Bienvenue</a>
