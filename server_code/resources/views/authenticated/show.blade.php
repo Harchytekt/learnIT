@@ -6,7 +6,7 @@
 <title>{{ $course->name }}</title>
 
 @section('content')
-    <div class="col-10 offset-1" style="background-color: #FFFFF0; border-radius: 10px;">
+    <div class="col-12 col-md-10 offset-md-1" style="background-color: #FFFFF0; border-radius: 10px; box-shadow: 5px -5px #213C32;">
         <img class="pushpin" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52" style="display: inline;
         position: relative; top: -30px; left: -15px;">
         <img class="pushpin" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52" style="display: inline;
@@ -38,7 +38,7 @@
         position: absolute; right: -15px;">
     </div>
 
-    <div class="col-10 offset-1 col-sm-8 offset-sm-2" style="margin-top: 64px; margin-bottom: 100px; background-color: #FFFFF0; border-radius: 10px; transform: rotate(-1deg);">
+    <div class="col-12 col-md-8 offset-md-2" style="margin-top: 64px; margin-bottom: 100px; background-color: #FFFFF0; border-radius: 10px; transform: rotate(-1deg); box-shadow: 3px -3px #213C32;">
         <img class="tape" src="{{ asset('img/tape.svg') }}" alt="" height="52" width="183.3" style="display: block;
         margin-left: auto; margin-right: auto; position: relative; top: -30px; left: 5px;">
 
