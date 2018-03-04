@@ -21,7 +21,7 @@
         @else
             <div class="row previewParent">
                 @foreach ($courses as $course)
-                    @include('authenticated.layouts.apercuCours')
+                    @include('authenticated.layouts.courses.apercuCours')
                     @php($id += 1)
                 @endforeach
             </div>

@@ -29,7 +29,7 @@
                 <h4 class="void">Vous n'avez pas encore de favoris. <i class="far fa-frown"></i></h4>
             @else
                 @foreach ($favs as $course)
-                    @include('authenticated.layouts.apercuCours')
+                    @include('authenticated.layouts.courses.apercuCours')
                     @php($id += 1)
                 @endforeach
             @endif
@@ -42,7 +42,7 @@
                     <h4 class="void">Vous n'êtes pas encore inscrit à un cours. <i class="far fa-frown"></i></h4>
                 @else
                     @foreach ($enrs as $course)
-                        @include('authenticated.layouts.apercuCours')
+                        @include('authenticated.layouts.courses.apercuCours')
                         @php($id += 1)
                     @endforeach
                 @endif

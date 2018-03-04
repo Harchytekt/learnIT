@@ -11,7 +11,7 @@
 
     <div class="container">
         <div class="row previewParent">
-            @include('authenticated.layouts.ajouterCours')
+            @include('authenticated.layouts.courses.ajouterCours')
         </div>
     </div>
 @endsection
