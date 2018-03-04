@@ -13,8 +13,11 @@
 .vignette {
     background-color   : #FFFFF0;
     color              : #4E4E4F;
-    font-family        : 'Fira Code';
+    font-family        : 'Fira Code', "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight        : normal;
+    -webkit-font-feature-settings: "calt" 1;
+            font-feature-settings: "calt" 1;  /* Enable ligatures for IE 10+, Edge */
+    text-rendering: optimizeLegibility; /* Force ligatures for Webkit, Blink, Gecko */
 }
 
 h1,
