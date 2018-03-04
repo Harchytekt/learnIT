@@ -27,10 +27,10 @@
                 programmation</span> dont les instructions permettent, par exemple, de :
             <ul style="list-style-type: square;">
                 <li>
-                    réaliser des opérations mathématiques (additions, soustraction,…).
+                    réaliser des opérations mathématiques (additions, soustraction,...).
                 </li>
                 <li>
-                    obtenir des données au clavier, depuis un fichier,…
+                    obtenir des données au clavier, depuis un fichier,...
                 </li>
                 <li>
                     afficher des données à l’écran ou écrire dans un fichier.
@@ -52,13 +52,13 @@
             <ul style="list-style-type: decimal;">
                 <li>
                     <span class="bold">ceux de haut niveau</span>, compréhensibles par
-                    l’humain : Python, Java, C, PHP, Perl,…<br>
+                    l’humain : Python, Java, C, PHP, Perl,...<br>
                     <span class="italic">Il s’agit souvent d'un langage formel avec des
                     mots anglais.</span>
                 </li>
                 <li>
                     <span class="bold">ceux de bas niveau</span>, exécutables par un
-                    ordinateur : Atmel, MIPS32,…<br>
+                    ordinateur : Atmel, MIPS32,...<br>
                     <span class="italic">Nommés langages machine ou assembleur.</span>
                 </li>
             </ul>
