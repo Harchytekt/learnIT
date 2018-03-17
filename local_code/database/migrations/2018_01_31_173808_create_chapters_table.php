@@ -18,6 +18,7 @@ class CreateChaptersTable extends Migration
             $table->integer('course_id')->unsigned();
             $table->string('name');
             $table->text('description');
+            $table->longText('body');
             $table->integer('published')->default(0);
             $table->timestamps();
         });
