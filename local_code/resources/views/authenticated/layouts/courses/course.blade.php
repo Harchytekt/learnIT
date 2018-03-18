@@ -14,6 +14,8 @@
                         <li>
                             <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->name }}</a>
                         </li>
+                    @else
+                        <li class="disabledChapter">{{ $chapter->name }}</li>
                     @endif
                 @endforeach
             </ol>

@@ -11,3 +11,7 @@
 @section('content')
     @include('authenticated.layouts.chapter')
 @endsection
+
+@push('js')
+    <script src="{{ asset('js/chapitre.js') }}"></script>
+@endpush

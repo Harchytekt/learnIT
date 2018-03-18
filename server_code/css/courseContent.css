@@ -12,6 +12,16 @@ h4,
     color              : #2AB77E;
 }
 
+h6 a {
+    color              : #BDBDBD;
+    text-decoration    : none;
+}
+
+h6 a:hover,
+h6 a:focus {
+    color              : #999;
+}
+
 .vignette {
     background-color   : #FFFFF0;
     color              : #4E4E4F;
@@ -62,4 +72,34 @@ blockquote {
 .inner {
     display            : table;
     margin             : 0 auto;
+}
+
+span.pop {
+    color              : #DE5833;
+    cursor             : pointer;
+    /*text-decoration: underline;*/
+}
+
+.disabledChapter,
+a.disabled {
+    pointer-events     : none;
+    color              : #ACACA6;
+    font-style         : italic;
+    text-decoration    : underline;
+}
+
+.page-link {
+    color              : #00AAFF;
+}
+.page-link:focus,
+.page-link:hover {
+    background-color   : #C2DAE6;
+}
+
+.page-item.active .page-link {
+    background-color   : #00AAFF;
+}
+
+.inactive.part {
+    display: none;
 }

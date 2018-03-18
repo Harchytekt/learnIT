@@ -1,4 +1,4 @@
-nav, div.dropdown-menu.show {
+nav.navbar, div.dropdown-menu.show {
     position           : fixed;
     background-color   : #8C4119;
     border-bottom      : 2px solid #000;
