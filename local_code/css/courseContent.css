@@ -114,6 +114,7 @@ pre code {
 }
 
 h3.popover-header,
-.popover-body {
+.popover-body,
+pre code {
     font-family        : 'Fira Code', "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
