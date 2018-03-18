@@ -103,3 +103,17 @@ a.disabled {
 .inactive.part {
     display: none;
 }
+
+pre {
+    border            : none;
+}
+
+pre code {
+    border             : 2px solid #333;
+    border-radius      : 15px 5px 5px 25px/5px 25px 25px 5px;
+}
+
+h3.popover-header,
+.popover-body {
+    font-family        : 'Fira Code', "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
