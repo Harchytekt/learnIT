@@ -38,7 +38,9 @@ Route::get('/supprimercompte', 'UserController@destroy');
 /* Mes cours */
 
 Route::get('/coursinscrits', 'CourseController@showEnrollments');
+Route::get('/coursinscrits/{course}', 'CourseController@changeEnrollmentState');
 Route::get('/favoris', 'CourseController@showFavorites');
+Route::get('/favoris/{course}', 'CourseController@changeFavoriteState');
 Route::get('/encours', 'CourseController@showInProgress');
 Route::get('/cours/{course}', 'CourseController@show');
 Route::get('/cours/{course}/{chapter}', 'ChapterController@show');

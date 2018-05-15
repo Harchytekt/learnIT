@@ -30,6 +30,18 @@ class CourseController extends Controller
         return view('authenticated.cours', compact('courses'));
     }
 
+	public function changeEnrollmentState(Course $course)
+	{
+		Enrollment::setEnrollmentStatus($course);
+		return redirect()->back();
+	}
+
+	public function changeFavoriteState(Course $course)
+	{
+		Favorite::setFavoriteStatus($course);
+		return redirect()->back();
+	}
+
     public function showEnrollments()
     {
         $courses = '';

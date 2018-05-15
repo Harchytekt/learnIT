@@ -32,6 +32,12 @@ img.tape {
         bottom         : 0;
 }
 
+.previewIcons a,
+.previewIcons a:hover,
+.previewIcons a:focus {
+	text-decoration: none;
+}
+
 .previewIcons .fa-bookmark,
 .previewIcons .fa-star {
     color              : #E8E7CF;
@@ -41,8 +47,18 @@ img.tape {
     color              : #DC4535;
 }
 
+.previewIcons .fa-bookmark:hover,
+.previewIcons .fa-bookmark:focus {
+    color              : #E8847A;
+}
+
 .previewIcons .fa-star.active {
     color              : #FCDB69;
+}
+
+.previewIcons .fa-star:hover,
+.previewIcons .fa-star:focus {
+    color              : #FAE8AA;
 }
 
 .courseLink {
