@@ -4,10 +4,10 @@
     <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
 @endpush
 
-@section('title', 'Cours')
+@section('title', 'Tous les cours')
 
 @section('content')
-    <h1>Cours</h1>
+    <h1>Tous les cours</h1>
 
     @php($id = 0)
     @php($view = 'all')
