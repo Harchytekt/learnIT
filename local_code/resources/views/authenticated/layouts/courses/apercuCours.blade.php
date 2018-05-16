@@ -13,24 +13,26 @@
             <div class="previewIcons" hiddenValue="{{ $course->id }}">
 				<a href="/coursinscrits/{{ $course->id }}">
                     @if ($course->isEnrollment())
-                        <i class="fas fa-bookmark active"></i>
+                        <i class="fas fa-bookmark active" title="Se désinscrire"></i>
                     @else
-                        <i class="fas fa-bookmark"></i>
+                        <i class="fas fa-bookmark" title="S'inscrire"></i>
                     @endif
 				</a>
 				<a href="/favoris/{{ $course->id }}">
                     @if ($course->isFavorite())
-						<i class="fas fa-star active"></i>
+						<i class="fas fa-star active" title="Retirer des favoris"></i>
                     @else
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star" title="Ajouter aux favoris"></i>
                     @endif
 				</a>
             </div>
         @endif
         @if ($course->published)
-            <a href="/cours/{{ $course->id }}" class="btn btn-link courseLink">Voir le cours</a> <!-- $course->id -->
+            <a href="/cours/{{ $course->id }}" class="btn btn-link courseLink">Voir le cours</a>
+			<!-- $course->id -->
         @else
-            <a href="" class="btn btn-link courseLink">Éditer le cours</a> <!-- $course->id -->
+            <a href="" class="btn btn-link courseLink">Éditer le cours</a>
+			<!-- $course->id -->
         @endif
     </div>
 </div>

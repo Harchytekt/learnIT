@@ -28,7 +28,7 @@
             <div class="col-11">
 				<h2 id="star"><i class="fas fa-star"></i> Favoris</h2>
 				<span id="nbOfStar">({{ $nbFavs }})</span>
-				<a href="/favoris" class="linkH2Title"><i class="fas fa-link fa-sm"></i></a>
+				<a href="/favoris" class="linkH2Title" title="Vers les favoris"><i class="fas fa-link fa-sm"></i></a>
 			</div>
 
             @if ($nbFavs == 0)
@@ -44,7 +44,7 @@
 			<div class="col-11">
 				<h2 id="bookm"><i class="fas fa-bookmark"></i> Inscrits</h2>
 				<span id="nbOfBookm">({{ $nbEnrols }})</span>
-				<a href="/coursinscrits" class="linkH2Title"><i class="fas fa-link fa-sm"></i></a>
+				<a href="/coursinscrits" class="linkH2Title" title="Vers les cours auxquels vous êtes inscrit"><i class="fas fa-link fa-sm"></i></a>
 			</div>
 
             @if ($nbEnrols == 0)
