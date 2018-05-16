@@ -82,16 +82,21 @@ img.tape {
     color              : #00AAFF;
 }
 
-.addCourse {
-    -webkit-transform          : rotate(-2deg);
-            transform          : rotate(-2deg);
-}
-
-.addCourseBody {
+#addCourseBody {
     padding-bottom     : 42px;
     text-align         : center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	top: -30px;
+	display: table;
 }
 
-.addCourseBody .fa-plus {
+#addCourseBodyInner {
+    display: table-cell;
+	vertical-align: middle;
+}
+
+#addCourseBody .fa-plus {
     color              : rgba(0, 0, 0, 0.1);
 }

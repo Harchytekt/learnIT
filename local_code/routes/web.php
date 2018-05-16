@@ -25,10 +25,6 @@ Route::get('/accueil', 'HomeController@index')->name('accueil');
 
 Route::get('/cours', 'CourseController@index');
 
-Route::get('/ecrire', function() {
-    return view('authenticated.ecrire');
-})->middleware('auth');
-
 Route::get('/compte', 'UserController@index');
 Route::post('/majnames', 'UserController@updateNames');
 Route::post('/majemail', 'UserController@updateEmail');
@@ -49,6 +45,7 @@ Route::post('/cours/{course}/commentaires', 'CommentController@store');
 
 Route::get('/coursecrits', 'CourseController@showWritten');
 Route::get('/coursecrits/{course}', 'CourseController@publishCourse');
+Route::get('/ecrire', 'CourseController@showUnpublishedCourses');
 
 /* Mes chiffres */
 

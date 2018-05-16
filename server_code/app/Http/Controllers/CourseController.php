@@ -82,6 +82,16 @@ class CourseController extends Controller
         return view('authenticated.mesCours.encours', compact('courses'));
     }
 
+    public function showUnpublishedCourses()
+    {
+        $courses = '';
+        if (Auth::user()->isATutor()) {
+            $courses = Course::getWrittenCourses(Auth::user()->id)->where('published', 0);
+        }
+
+        return view('authenticated.ecrire', compact('courses'));
+    }
+
     public function showWritten()
     {
         $courses = '';
