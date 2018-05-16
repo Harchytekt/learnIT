@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\Enrollment;
 use App\Favorite;
+use Auth;
 
 class CourseController extends Controller
 {
@@ -42,6 +43,12 @@ class CourseController extends Controller
 		return redirect()->back();
 	}
 
+	public function publishCourse(Course $course)
+	{
+		Course::publish($course);
+		return redirect()->back();
+	}
+
     public function showEnrollments()
     {
         $courses = '';
@@ -73,6 +80,16 @@ class CourseController extends Controller
         }
 
         return view('authenticated.mesCours.encours', compact('courses'));
+    }
+
+    public function showWritten()
+    {
+        $courses = '';
+        if (Auth::user()->isATutor()) {
+            $courses = Course::getWrittenCourses(Auth::user()->id);
+        }
+
+        return view('authenticated.mesCours.ecrits', compact('courses'));
     }
 
     public function show(Course $course)

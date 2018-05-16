@@ -10,7 +10,7 @@
     <h1>Tous les cours</h1>
 
     @php($id = 0)
-    @php($view = 'all')
+    @php($view = 'preview')
     @php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <div class="container">

@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Collection;
 
 class Course extends Model
 {
+	protected $fillable = ['published'];
+
     public function isPublished() {
         return $this->published == 1;
     }
-    
+
+	public static function publish(Course $course) {
+		return static::where('id', $course->id)->update(['published' => 1]);
+	}
+
     public function chapters()
     {
         return $this->hasMany(Chapter::class);
@@ -47,5 +53,10 @@ class Course extends Model
 
     public function hasComments() {
         return $this->comments->count() != 0;
+    }
+
+	public static function getWrittenCourses(int $userId) {
+		$collection = collect(static::where('creator_id', $userId)->get());
+		return $collection->sortBy('name');
     }
 }

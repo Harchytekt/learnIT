@@ -47,9 +47,8 @@ Route::get('/cours/{course}/{chapter}', 'ChapterController@show');
 
 Route::post('/cours/{course}/commentaires', 'CommentController@store');
 
-Route::get('/coursecrits', function() {
-    return view('authenticated.mesCours.ecrits');
-})->middleware('auth');
+Route::get('/coursecrits', 'CourseController@showWritten');
+Route::get('/coursecrits/{course}', 'CourseController@publishCourse');
 
 /* Mes chiffres */
 

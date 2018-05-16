@@ -20,7 +20,7 @@ img.tape {
 }
 
 .previewCase {
-    padding-bottom     : 10px;
+    padding-bottom     : 15px;
 }
 
 .previewCase p {
@@ -59,6 +59,19 @@ img.tape {
 .previewIcons .fa-star:hover,
 .previewIcons .fa-star:focus {
     color              : #FAE8AA;
+}
+
+.previewIcons .fa-cloud {
+    color              : #2AB77E;
+}
+
+.previewIcons .fa-cloud-upload-alt:hover,
+.previewIcons .fa-cloud-upload-alt:focus {
+    color              : #837E59;
+}
+
+.previewIcons .fa-cloud-upload-alt {
+    color              : #DC4535;
 }
 
 .courseLink {

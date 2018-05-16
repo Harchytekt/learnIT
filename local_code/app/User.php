@@ -74,6 +74,13 @@ class User extends Authenticatable
     }
 
     public function isATutor() {
-        return $this->tutor == 1;
+		/*$writtenCourses = Course::getWrittenCourses($this->id);
+		foreach ($writtenCourses as $course) {
+			if ($course->isPublished()) {
+				return true;
+			}
+		}
+		return false;*/
+		return Course::getWrittenCourses($this->id)->count() > 0;
     }
 }
