@@ -69,41 +69,6 @@ h4#rmAccount {
     margin             : 0 auto;
 }
 
-.alert {
-    position           : fixed;
-        top            : 90px;
-        right          : 0;
-    z-index            : 10
-}
-
-.alert p {
-    margin-bottom      : 0;
-    margin-right       : 25px;
-}
-
-.close:before {
-    color              : #DC3545;
-}
-
-.close:hover:before,
-.close:focus:before,
-.alert .close:focus:before,
-.alert .close:hover:before {
-    color              : #2E2E2F;
-}
-
-.close, .close:focus,
-.close:hover {
-    cursor             : pointer;
-}
-
-.alert .close,
-.alert .close:hover,
-.alert .close:focus,
-.alert .close:active {
-    position           : absolute !important;
-}
-
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
     h3,
