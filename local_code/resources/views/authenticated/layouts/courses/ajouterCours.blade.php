@@ -3,7 +3,7 @@
 
     <div id="addCourseBody">
 		<div id="addCourseBodyInner">
-			<a href="" title="Écrire un nouveau cours">
+			<a href="/ecrireNouveau" title="Écrire un nouveau cours">
 	        	<i class="fas fa-plus fa-10x"></i>
 		    </a>
 	    </div>

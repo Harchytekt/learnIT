@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Course;
 use App\Enrollment;
@@ -105,5 +106,25 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         return view('authenticated.show', compact('course'));
+    }
+
+	public function initCourse() {
+		return view('authenticated.initCours');
+	}
+
+    public function courseInitialization(Request $request) {
+		Validator::make($request->all(), [
+			'name' => 'required|unique:courses|string|min:2|max:255|regex:/([A-Za-zÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ0-9 \'\(\)-])/',
+	        'description' => 'required|string|min:6|max:512|regex:/([A-Za-zÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ0-9 &@\'.,!?;:\/=+*%\(\)°€$-])/',
+		])->validate();
+
+        $course = new Course;
+		$course->name = request('name');
+        $course->description = request('description');
+		$course->creator_id = Auth::user()->id;
+        $course->save();
+
+        $message = "Le cours a été créé avec succès !";
+        return redirect('/ecrire')->withMessage($message);
     }
 }

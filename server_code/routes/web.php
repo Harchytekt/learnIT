@@ -42,10 +42,8 @@ Route::get('/cours/{course}', 'CourseController@show');
 Route::get('/cours/{course}/{chapter}', 'ChapterController@show');
 
 Route::post('/cours/{course}/commentaires', 'CommentController@store');
-
 Route::get('/coursecrits', 'CourseController@showWritten');
 Route::get('/coursecrits/{course}', 'CourseController@publishCourse');
-Route::get('/ecrire', 'CourseController@showUnpublishedCourses');
 
 /* Mes chiffres */
 
@@ -60,3 +58,10 @@ Route::get('/chiffreschapters', function() {
 Route::get('/chiffresecrits', function() {
     return view('authenticated.mesChiffres.ecrits');
 })->middleware('auth');
+
+/* Ecrire */
+
+Route::get('/ecrire', 'CourseController@showUnpublishedCourses');
+
+Route::get('/ecrireNouveau', 'CourseController@initCourse');
+Route::post('/addTitle', 'CourseController@courseInitialization');

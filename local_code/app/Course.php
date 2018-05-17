@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class Course extends Model
 {
-	protected $fillable = ['published'];
+	protected $fillable = ['published', 'name', 'description'];
 
     public function isPublished() {
         return $this->published == 1;
