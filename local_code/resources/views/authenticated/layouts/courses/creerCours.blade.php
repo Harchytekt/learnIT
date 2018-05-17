@@ -3,6 +3,8 @@
     <img class="pushpin right up" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
     <h1>Création du cours</h1>
 
+	<p id="info"><i>Attention, ces données ne pourront plus être modifiées une fois sauvegardées.<i></p>
+
 	<div class="vignetteContent">
 		<form class="form-horizontal" method="POST" action="/addTitle">
 			{{ csrf_field() }}
@@ -34,10 +36,10 @@
 			<div class="form-group end">
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Connexion</button>
+						<button type="submit" class="btn btn-success btn-block" title="Enregistrer"><i class="fas fa-save"></i> Enregistrer</button>
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<a class="btn btn-secondary" href="/ecrire">Annuler</a>
+						<a class="btn btn-secondary" href="/ecrire"><i class="fas fa-times"></i> Annuler</a>
 					</div>
 				</div>
 			</div>
