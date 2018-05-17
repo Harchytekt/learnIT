@@ -1,0 +1,21 @@
+.vignette {
+	background-color   : #FFFFF0;
+	color              : #4E4E4F;
+}
+
+h1,
+.grey {
+	color              : #2E2E2F;
+}
+
+.vignetteContent {
+	margin: 20px;
+}
+
+.help-block {
+	color: #DC4535;
+}
+
+#info {
+	color: grey;
+}
