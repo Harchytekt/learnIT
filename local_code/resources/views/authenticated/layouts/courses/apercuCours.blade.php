@@ -37,11 +37,11 @@
 				@endif
             </div>
         @endif
-        @if ($course->published)
+        @if ($course->published && $view != 'tutor')
             <a href="/cours/{{ $course->id }}" class="btn btn-link courseLink">Voir le cours</a>
 			<!-- $course->id -->
         @else
-            <a href="" class="btn btn-link courseLink">Éditer le cours</a>
+            <a href="/edit/{{ $course->id }}" class="btn btn-link courseLink">Éditer le cours</a>
 			<!-- $course->id -->
         @endif
     </div>

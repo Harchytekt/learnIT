@@ -88,6 +88,15 @@ a.disabled {
     text-decoration    : underline;
 }
 
+a.btn,
+.modal-content {
+	font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.modal-content {
+	background-color   : #FFFFF0;
+}
+
 .page-link {
     color              : #00AAFF;
 }

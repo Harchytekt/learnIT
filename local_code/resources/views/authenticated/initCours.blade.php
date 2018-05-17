@@ -8,5 +8,5 @@
 @section('title', 'Création du cours')
 
 @section('content')
-    @include('authenticated.layouts.courses.creerCours')
+    @include('authenticated.edit.creerCours')
 @endsection

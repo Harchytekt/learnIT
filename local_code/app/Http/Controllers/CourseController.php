@@ -47,7 +47,8 @@ class CourseController extends Controller
 	public function publishCourse(Course $course)
 	{
 		Course::publish($course);
-		return redirect()->back();
+		$message = "Le cours a été publié avec succès !";
+		return redirect()->back()->withMessage($message);
 	}
 
     public function showEnrollments()

@@ -65,3 +65,5 @@ Route::get('/ecrire', 'CourseController@showUnpublishedCourses');
 
 Route::get('/ecrireNouveau', 'CourseController@initCourse');
 Route::post('/addTitle', 'CourseController@courseInitialization');
+Route::get('/edit/{course}', 'EditCourseController@show');
+Route::get('/edit/{course}/{chapter}', 'EditChapterController@show');
