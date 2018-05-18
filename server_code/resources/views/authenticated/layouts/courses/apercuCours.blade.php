@@ -1,6 +1,6 @@
 <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-3 preview" style="transform: rotate({{ $angles[$id % 10] }}deg);">
     @if ($id % 2 == 0)
-        <img class="pushpin" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
+        <img class="pushpin" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
     @else
         <img class="tape" src="{{ asset('img/tape.svg') }}" alt="" height="52" width="183.3">
     @endif

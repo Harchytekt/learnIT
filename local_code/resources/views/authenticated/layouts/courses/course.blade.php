@@ -1,6 +1,6 @@
 <div class="col-12 col-md-10 offset-md-1 vignette" id="courseBlock">
-    <img class="pushpin up left" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
-    <img class="pushpin right up" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
+    <img class="pushpin up left" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
+    <img class="pushpin right up" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
     <h1>{{ $course->name }}</h1>
 
     <p>{{ $course->description }}</p>
@@ -58,7 +58,7 @@
 									Une fois publié, il sera accessible à tous.
 								</div>
 								<div class="modal-footer">
-									<a href="/coursecrits/{{ $course->id }}" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i> Publier</a>
+									<a href="/publier/cours/{{ $course->id }}" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i> Publier</a>
 									<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Annuler</button>
 								</div>
 							</div>
@@ -69,6 +69,6 @@
         </div>
     </div>
 
-    <img class="pushpin bottom left" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
-    <img class="pushpin right bottom" src="{{ asset('img/pushpin.svg') }}" alt="" height="52" width="52">
+    <img class="pushpin bottom left" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
+    <img class="pushpin right bottom" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
 </div>
