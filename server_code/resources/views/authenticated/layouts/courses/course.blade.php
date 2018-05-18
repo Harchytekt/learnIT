@@ -10,12 +10,18 @@
             <h3 class="text-center">Chapitres</h3>
             <ol class="chapters">
                 @foreach ($course->chapters as $chapter)
-                    @if ($chapter->isPublished() || $course->userIsTutor())
+                    @if ($chapter->isPublished())
                         <li>
                             <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->order_id }}. {{ $chapter->name }}</a>
                         </li>
                     @else
-                        <li class="disabledChapter">{{ $chapter->order_id }}. {{ $chapter->name }}</li>
+						@if ($course->userIsTutor())
+							<li>
+	                            <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->order_id }}. {{ $chapter->name }} <i class="wrong">(Non publié)</i></a>
+	                        </li>
+						@else
+							<li class="disabledChapter">{{ $chapter->order_id }}. {{ $chapter->name }}</li>
+						@endif
                     @endif
                 @endforeach
             </ol>
