@@ -19,7 +19,6 @@ class CreateChaptersTable extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('part_nb')->unsigned();
             $table->string('name');
-            $table->text('description');
             $table->integer('published')->default(0);
             $table->timestamps();
         });
