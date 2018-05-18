@@ -33,4 +33,8 @@ class Chapter extends Model
 		}
 		return $res;
     }
+
+	public static function publish(Chapter $chapter) {
+		return static::where('id', $chapter->id)->update(['published' => 1]);
+	}
 }

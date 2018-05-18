@@ -21,4 +21,11 @@ class ChapterController extends Controller
     {
         return view('authenticated.chapitre', compact('course', 'chapter'));
     }
+
+	public function publish(Chapter $chapter)
+	{
+		Chapter::publish($chapter);
+		$message = "Le chapitre a été publié avec succès !";
+		return redirect()->back()->withMessage($message);
+	}
 }
