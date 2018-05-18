@@ -10,17 +10,17 @@
             <h3 class="text-center">Chapitres</h3>
             <ol class="chapters">
                 @foreach ($course->chapters as $chapter)
-                    @if ($chapter->isPublished())
+                    @if ($chapter->isPublished() || $course->userIsTutor())
                         <li>
-                            <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->name }}</a>
+                            <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->order_id }}. {{ $chapter->name }}</a>
                         </li>
                     @else
-                        <li class="disabledChapter">{{ $chapter->name }}</li>
+                        <li class="disabledChapter">{{ $chapter->order_id }}. {{ $chapter->name }}</li>
                     @endif
                 @endforeach
             </ol>
 
-			@if ($course->creator_id == Auth::user()->id)
+			@if ($course->userIsTutor())
 				<hr>
 				<div class="inner">
 					<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
+use Auth;
 
 class Course extends Model
 {
@@ -59,4 +60,9 @@ class Course extends Model
 		$collection = collect(static::where('creator_id', $userId)->get());
 		return $collection->sortBy('name');
     }
+
+	public function userIsTutor()
+	{
+		return Auth::user()->id == $this->creator_id;
+	}
 }
