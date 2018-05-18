@@ -19,12 +19,12 @@ class Favorite extends Model
     }
 
     public static function isFavorite(Course $course) {
-        return static::where('course_id', $course->id)->count() == 1;
+        return static::where('course_id', $course->id)->where('student_id', Auth::user()->id)->count() == 1;
     }
 
     public static function setFavoriteStatus(Course $course) {
 		if (self::isFavorite($course)) {
-			return static::where('course_id', $course->id)->delete();
+			return static::where('course_id', $course->id)->where('student_id', Auth::user()->id)->delete();
 		}
 		self::addFavorite($course);
     }

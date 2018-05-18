@@ -30,12 +30,12 @@ class Enrollment extends Model
     }
 
     public static function isAnEnrollment(Course $course) {
-        return static::where('course_id', $course->id)->count() == 1;
+        return static::where('course_id', $course->id)->where('student_id', Auth::user()->id)->count() == 1;
     }
 
     public static function setEnrollmentStatus(Course $course) {
 		if (self::isAnEnrollment($course)) {
-			return static::where('course_id', $course->id)->delete();
+			return static::where('course_id', $course->id)->where('student_id', Auth::user()->id)->delete();
 		}
 		self::addEnrollment($course);
     }
