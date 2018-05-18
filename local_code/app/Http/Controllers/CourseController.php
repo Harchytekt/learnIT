@@ -110,7 +110,8 @@ class CourseController extends Controller
     }
 
 	public function initCourse() {
-		return view('authenticated.initCours');
+		$type = 'cours';
+		return view('authenticated.init', compact('type'));
 	}
 
     public function courseInitialization(Request $request) {

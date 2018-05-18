@@ -65,6 +65,10 @@ Route::get('/chiffresecrits', function() {
 Route::get('/ecrire', 'CourseController@showUnpublishedCourses');
 
 Route::get('/ecrireNouveau', 'CourseController@initCourse');
-Route::post('/addTitle', 'CourseController@courseInitialization');
+Route::post('/ajouterTitreCours', 'CourseController@courseInitialization');
 Route::get('/edit/{course}', 'EditCourseController@show');
 Route::get('/edit/{course}/{chapter}', 'EditChapterController@show');
+Route::get('/nouveauChapitre/{course}', 'ChapterController@initChapter');
+Route::post('/ajouterTitreChapitre/{course}', 'ChapterController@chapterInitialization');
+
+// Add a new part => increment part_nb in chapter

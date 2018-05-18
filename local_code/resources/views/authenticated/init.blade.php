@@ -5,8 +5,8 @@
     <link href="{{ asset('css/initCours.css') }}" rel="stylesheet">
 @endpush
 
-@section('title', 'Création du cours')
+@section('title', 'Création du '.$type)
 
 @section('content')
-    @include('authenticated.edit.creerCours')
+    @include('authenticated.edit.creer')
 @endsection
