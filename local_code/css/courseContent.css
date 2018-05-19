@@ -6,6 +6,11 @@
     color              : #FFF;
 }
 
+#chapterName {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
 h3,
 h4,
 .green {
@@ -22,6 +27,68 @@ h6 a:focus {
     color              : #999;
 }
 
+.editor {
+	font-family: 'Fira Code' !important;
+	font-size: 1rem;
+	line-height: 1.5
+}
+
+.editor .ql-editor h3,
+.editor .ql-editor h4,
+.editor .ql-editor h5,
+.editor .ql-editor h6 {
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+
+}
+
+.editor .ql-editor h3 {
+	font-size: 1.75rem;
+}
+
+.editor .ql-editor h4 {
+	font-size: 1.5rem;
+}
+
+.editor .ql-editor h5 {
+	font-size: 1.25rem;
+}
+
+.editor .ql-editor h6 {
+	font-size: 1rem;
+}
+
+.editor .ql-editor blockquote {
+	margin             : 10px 0 10px 50px;
+	padding-left       : 15px;
+	border-left        : 3px solid #FDDC5F;
+	font-style         : italic;
+	color              : #808080;
+}
+
+.ql-container {
+	border-radius: 20px;
+}
+
+.ql-toolbar {
+	border-radius: 20px 20px 0 0;
+}
+
+#edit.ql-container {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.ql-container,
+.ql-editor {
+	height: auto;
+}
+
+#pageNav {
+	margin-top: 20px;
+}
+
 .vignette {
     background-color   : #FFFFF0;
     color              : #4E4E4F;
@@ -34,34 +101,6 @@ h6 a:focus {
 h1,
 .grey {
     color              : #2E2E2F;
-}
-
-p {
-    color              : #4E4E4F;"
-}
-
-.bold {
-    font-weight        : bold;
-}
-
-.underline {
-    text-decoration    : underline;
-}
-
-.italic {
-    font-style         : italic;
-}
-
-.wrong {
-    color              : #DC4535;
-}
-
-blockquote {
-    margin             : 10px 0 10px 50px;
-    padding-left       : 15px;
-    border-left        : 3px solid #FDDC5F;
-    font-style         : italic;
-    color              : #808080;
 }
 
 .outer {
@@ -112,17 +151,8 @@ a.btn,
     display            : none;
 }
 
-pre {
-    border            : none;
-}
-
-pre code {
-    border             : 2px solid #333;
-    border-radius      : 15px 5px 5px 25px/5px 25px 25px 5px;
-}
-
 h3.popover-header,
 .popover-body,
-pre code {
+.editor .ql-editor pre {
     font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
