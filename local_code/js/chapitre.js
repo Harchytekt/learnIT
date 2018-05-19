@@ -36,7 +36,7 @@ $(`.pop`).popover({trigger: `hover`});
 
 $(document).ready(function() {
     if (nbParts > 0) {
-        var nav = `<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">`;
+        var nav = `<nav aria-label="Navigation" id="pageNav"><ul class="pagination justify-content-center">`;
         nav += `<li class="page-item ${ previousState }"><a class="page-link" href="?part=1" tabindex="-1"><i class="fas fa-angle-double-left fa-lg"></i><span class="sr-only">Début</span></a></li>`;
         nav += `<li class="page-item ${ previousState }"><a class="page-link" href="?part=${ previous }" tabindex="-1"><i class="fas fa-angle-left fa-lg"></i><span class="sr-only">Précédent</span></a></li>`;
 

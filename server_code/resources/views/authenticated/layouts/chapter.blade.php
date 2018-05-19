@@ -56,7 +56,13 @@
 		</h6>
         <h1 style="text-align: center; padding-bottom: 20px;">{{ $chapter->order_id }}. {{ $chapter->name }}</h1>
 
-        <div class="pagination-container">{!! $chapter->getBody() !!}</div>
+        <div class="pagination-container">
+			@if ($chapter->part_nb == 1)
+				<div class="editor">{!! $chapter->getBody() !!}</div>
+			@else
+				{!! $chapter->getBody() !!}
+			@endif
+		</div>
 		<!-- entities escape  -->
 	</div>
 

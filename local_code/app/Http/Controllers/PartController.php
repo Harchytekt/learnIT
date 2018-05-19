@@ -30,4 +30,11 @@ class PartController extends Controller
 		$message = "Vous n'êtes pas autorisé à voir cette page !";
 		return redirect()->back()->withMessage($message);
     }
+
+	public function store(Request $request)
+	{
+		$part = Part::find($request->part);
+		$part->body = $request->html;
+		$part->save();
+	}
 }

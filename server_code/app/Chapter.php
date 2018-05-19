@@ -27,7 +27,7 @@ class Chapter extends Model
 			} else {
 				$res .= "inactive part'>";
 			}
-			$res .= $part->body;
+			$res .= '<div class="editor">'.$part->body.'</div>';
 			$res .= "</div>";
 			$i += 1;
 		}
