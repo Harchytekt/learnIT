@@ -8,17 +8,17 @@
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 					<div class="btn-group mr-2" role="group" aria-label="First group">
 						@if (!empty($_GET['part'])) <!-- Gets the js value -->
-						    <a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $_GET['part'] }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i> Éditer</a>
+						    <a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $_GET['part'] }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 						@else
-							<a href="" class="btn btn-warning disabled" title="Éditer le chapitre"><i class="fas fa-edit"></i> Éditer</a>
+							<a href="" class="btn btn-warning disabled" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 						@endif
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<a href="" class="btn btn-success" title="Ajouter une partie"><i class="fas fa-plus"></i> Ajouter une partie</a>
+						<a href="" class="btn btn-success" title="Ajouter une partie"><i class="fas fa-plus"></i></a>
 					</div>
 					@if (!$chapter->isPublished())
 						<div class="btn-group mr-2" role="group" aria-label="Third group">
-							<button type="button" class="btn btn-info" title="Publier le chapitre" data-toggle="modal" data-target="#confirmerPublication"><i class="fas fa-cloud-upload-alt"></i> Publier</button>
+							<button type="button" class="btn btn-info" title="Publier le chapitre" data-toggle="modal" data-target="#confirmerPublication"><i class="fas fa-cloud-upload-alt"></i></button>
 							<!-- Verification modal -->
 						</div>
 					@endif
@@ -54,7 +54,7 @@
         <h6>
 			<a href="/cours/{{ $course->id }}" class="tip" data-toggle="tooltip" data-placement="top" title="Retour à la description du cours">{{ $course->name }}</a>
 		</h6>
-        <h1 style="text-align: center; padding-bottom: 20px;">{{ $chapter->order_id }}. {{ $chapter->name }}</h1>
+        <h1 id="chapterName">{{ $chapter->order_id }}. {{ $chapter->name }}</h1>
 
         <div class="pagination-container">
 			@if ($chapter->part_nb == 1)
