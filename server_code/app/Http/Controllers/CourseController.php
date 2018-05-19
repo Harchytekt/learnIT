@@ -106,7 +106,11 @@ class CourseController extends Controller
 
     public function show(Course $course)
     {
-        return view('authenticated.show', compact('course'));
+        if ($course->creator_id == Auth::user()->id || $course->isPublished()) {
+			return view('authenticated.show', compact('course'));
+		}
+		$message = "Vous n'êtes pas autorisé à voir ce cours !";
+		return redirect()->back()->withMessage($message);
     }
 
 	public function initCourse() {

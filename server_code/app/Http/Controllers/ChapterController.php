@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Chapter;
 use App\Course;
 use App\Part;
+use Auth;
 
 class ChapterController extends Controller
 {
@@ -22,7 +23,11 @@ class ChapterController extends Controller
 
     public function show(Course $course, Chapter $chapter)
     {
-        return view('authenticated.chapitre', compact('course', 'chapter'));
+		if ($course->creator_id == Auth::user()->id || $chapter->isPublished()) {
+			return view('authenticated.chapitre', compact('course', 'chapter'));
+		}
+		$message = "Vous n'êtes pas autorisé à voir ce chapitre !";
+		return redirect()->back()->withMessage($message);
     }
 
 	public function publish(Chapter $chapter)
