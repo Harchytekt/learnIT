@@ -24,7 +24,7 @@
                 <form method="POST" action="/cours/{{ $course->id }}/commentaires">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <textarea class="form-control" name="body" placeholder="Écrivez votre commentaire." required></textarea>
+                        <textarea class="form-control" name="body" placeholder="Écrivez votre commentaire..." required></textarea>
                     </div>
 
                     <div class="form-group">
