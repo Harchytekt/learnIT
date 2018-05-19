@@ -7,7 +7,11 @@
 			<div class="inner">
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<a href="" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i> Éditer</a>
+						@if (!empty($_GET['part'])) <!-- Gets the js value -->
+						    <a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $_GET['part'] }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i> Éditer</a>
+						@else
+							<a href="" class="btn btn-warning disabled" title="Éditer le chapitre"><i class="fas fa-edit"></i> Éditer</a>
+						@endif
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
 						<a href="" class="btn btn-success" title="Ajouter une partie"><i class="fas fa-plus"></i> Ajouter une partie</a>

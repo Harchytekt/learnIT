@@ -8,5 +8,5 @@
 @section('title', 'Création du '.$type)
 
 @section('content')
-    @include('authenticated.edit.creer')
+    @include('authenticated.layouts.edit.creer')
 @endsection

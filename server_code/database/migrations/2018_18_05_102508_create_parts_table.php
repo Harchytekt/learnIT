@@ -16,6 +16,7 @@ class CreatePartsTable extends Migration
         Schema::create('parts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('chapter_id')->unsigned();
+            $table->integer('order_id')->unsigned()->default(1);
             $table->longText('body');
             $table->timestamps();
         });
