@@ -37,4 +37,18 @@ class PartController extends Controller
 		$part->body = $request->html;
 		$part->save();
 	}
+
+    public function partInitialization(Chapter $chapter) {
+		$part = new Part;
+		$part->chapter_id = $chapter->id;
+		$part->order_id = Part::where('chapter_id', $chapter->id)->max('order_id') + 1;
+		$part->save();
+
+		$chapter = Chapter::find($chapter->id);
+		$chapter->part_nb = Part::where('chapter_id', $chapter->id)->max('order_id');
+        $chapter->save();
+
+        $message = "La partie a été créé avec succès !";
+        return redirect('/cours/'.$chapter->course_id.'/'.$chapter->id.'?part='.$part->id)->withMessage($message);
+    }
 }

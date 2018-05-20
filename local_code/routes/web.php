@@ -70,6 +70,7 @@ Route::get('/edit/{course}', 'EditCourseController@show');
 Route::get('/edit/{course}/{chapter}', 'EditChapterController@show');
 Route::get('/nouveauChapitre/{course}', 'ChapterController@initChapter');
 Route::post('/ajouterTitreChapitre/{course}', 'ChapterController@chapterInitialization');
+Route::get('/nouvellePartie/{chapter}', 'PartController@partInitialization');
 Route::get('/editer/{course}/{chapter}/{part}', 'PartController@showEditView');
 Route::post('/editer/sauver', 'PartController@store');
 
