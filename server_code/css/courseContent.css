@@ -116,6 +116,15 @@ h1,
     margin             : 0 auto;
 }
 
+.outerQuiz {
+	border: 1px solid #CCC;
+	border-radius: 20px;
+}
+
+.quiz {
+	padding: 12px 15px;
+}
+
 span.pop {
 	display: none;
     color              : #17A2B8;
