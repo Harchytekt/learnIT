@@ -17,6 +17,7 @@ class CreatePartsTable extends Migration
             $table->increments('id');
             $table->integer('chapter_id')->unsigned();
             $table->integer('order_id')->unsigned()->default(1);
+            $table->string('type')->default('theory');
             $table->longText('body');
             $table->timestamps();
         });
