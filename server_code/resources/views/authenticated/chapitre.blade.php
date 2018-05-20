@@ -26,11 +26,16 @@
             <p><i class="{{ $icon }}"></i> {{ session('message') }}</p>
         </div>
     @endif
-	
+
     @include('authenticated.layouts.chapter')
 @endsection
 
 @push('js')
+	<script>
+		// Used to display first part if given part number
+		// is greater than the number of parts.
+		var maxPart = {{ $chapter->part_nb }};
+	</script>
     <script src="{{ asset('js/chapitre.js') }}"></script>
     <script src="{{ asset('js/highlight.pack.js') }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>

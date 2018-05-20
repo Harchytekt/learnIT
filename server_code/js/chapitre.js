@@ -21,6 +21,7 @@ if (qsParm.part === undefined ||
     window.location.href = `?part=1`;
 }
 var part = parseInt(qsParm.part), nbParts = $(`.part`).length;
+part = (part < 1 || part > maxPart) ? 1 : part;
 var previous = (part == 1) ? 0 : (part - 1), next = (part == nbParts) ? 0 : (part + 1);
 var previousState, nextState;
 if (previous == 0) {
