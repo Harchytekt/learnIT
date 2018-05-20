@@ -41,14 +41,14 @@
                 <a class="nav-link account fa-spin-hover" href="/compte"><i class="fas fa-sliders-h"></i> {{ Auth::user()->username }}</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!--<form class="form-inline my-2 my-lg-0">
             <div class="input-group">
                 <input class="form-control" type="search" placeholder="Chercher un cours">
                 <div class="input-group-btn">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </div>
-        </form>
+        </form>-->
         <a class="btn btn-outline-danger fa-spin-hover" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();"><i class="fas fa-power-off"></i> Déconnexion
