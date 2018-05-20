@@ -20,6 +20,7 @@ class Chapter extends Model
 
 		$i = 1;
 		$res = "";
+		$type = "";
 		foreach ($body as $part) {
 			$res .= "<div id='".$i."' class='";
 			if ($i == 1) {
@@ -27,7 +28,9 @@ class Chapter extends Model
 			} else {
 				$res .= "inactive part'>";
 			}
-			$res .= '<div class="editor">'.$part->body.'</div>';
+			// get type of the part (quiz or theory)
+			$type = ($part->type == "quiz") ? "quiz" : "editor";
+			$res .= '<div class="'.$type.'">'.$part->body.'</div>';
 			$res .= "</div>";
 			$i += 1;
 		}

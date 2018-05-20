@@ -43,7 +43,8 @@ img.tape {
     color              : #E8E7CF;
 }
 
-.previewIcons .fa-bookmark.active {
+.previewIcons .fa-bookmark.active,
+.previewIcons .fa-cloud-upload-alt {
     color              : #DC4535;
 }
 
@@ -68,10 +69,6 @@ img.tape {
 .previewIcons .fa-cloud-upload-alt:hover,
 .previewIcons .fa-cloud-upload-alt:focus {
     color              : #837E59;
-}
-
-.previewIcons .fa-cloud-upload-alt {
-    color              : #DC4535;
 }
 
 .courseLink {

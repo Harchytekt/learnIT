@@ -33,7 +33,6 @@ if (next == 0) {
 
 
 $(`.tip`).tooltip();
-$(`.pop`).popover({trigger: `hover`});
 
 $(document).ready(function() {
     if (nbParts > 0) {

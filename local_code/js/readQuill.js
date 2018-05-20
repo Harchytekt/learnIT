@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 var options = {
 	//debug: 'info',
 	modules: {
@@ -13,8 +15,10 @@ var editor;
 $(document).ready(function() {
 	//editor.enable(false);
 	if ($('.active').length != 0) {
-		editor = new Quill('.active .editor', options);
-		//editor.enable(true);
+		if ($('.active .editor').length != 0) {
+			editor = new Quill('.active .editor', options);
+			//editor.enable(true);
+		}
 	} else {
 		editor = new Quill('.editor', options);
 		//editor.enable(true);

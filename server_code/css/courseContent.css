@@ -17,6 +17,10 @@ h4,
     color              : #2AB77E;
 }
 
+.red {
+    color              : #DC4535;
+}
+
 h6 a {
     color              : #BDBDBD;
     text-decoration    : none;
@@ -113,9 +117,15 @@ h1,
 }
 
 span.pop {
-    color              : #DE5833;
+	display: none;
+    color              : #17A2B8;
     cursor             : pointer;
-    /*text-decoration: underline;*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .disabledChapter,
@@ -154,5 +164,6 @@ a.btn,
 h3.popover-header,
 .popover-body,
 .editor .ql-editor pre {
+	color: #4E4E4F;
     font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }

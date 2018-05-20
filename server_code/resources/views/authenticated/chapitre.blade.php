@@ -44,4 +44,7 @@
 
 	<!-- Initialize Quill editor -->
 	<script src="{{ asset('js/readQuill.js') }}"></script>
+
+	<!-- Quiz -->
+	<script src="{{ asset('js/readQuiz.js') }}"></script>
 @endpush
