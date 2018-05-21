@@ -10,7 +10,7 @@
 						<button type="button" id="save" class="btn btn-success btn-block" title="Enregistrer les modifications"><i class="fas fa-save"></i></button>
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<a href="/cours/{{ $course->id }}/{{ $chapter->id }}?part={{ $part->order_id }}" class="btn btn-secondary" title="Annuler les modifications"><i class="fas fa-times"></i></a>
+						<a href="/cours/{{ $course->id }}/{{ $chapter->id }}/{{ $part->order_id }}" class="btn btn-secondary" title="Annuler les modifications"><i class="fas fa-times"></i></a>
 					</div>
 				</div>
 			</div>

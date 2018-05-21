@@ -2,28 +2,26 @@
 
 var data, previous = {};
 $(document).ready(function() {
-	if ($('.active .quiz').length != 0) {
-		readQuiz();
+	readQuiz();
 
-		$(document).on('change', 'input:radio', function(event) {
-			let name = $(this).attr('name');
-			if (previous[name] !== undefined) {
-				setPopover(previous[name], true);
-			}
-			previous[name] = $(this).attr('id').split('_');
-			setPopover(previous[name], false);
-		});
-	}
+	$(document).on('change', 'input:radio', function(event) {
+		let name = $(this).attr('name');
+		if (previous[name] !== undefined) {
+			setPopover(previous[name], true);
+		}
+		previous[name] = $(this).attr('id').split('_');
+		setPopover(previous[name], false);
+	});
 });
 
 /**
  * This function is used to add the quiz into the view.
  */
 function readQuiz() {
-	data = JSON.parse($('.active .quiz').html());
+	data = JSON.parse($('.quiz').html());
 	let res = `<h4>Quiz facultatif... 👨🏻‍💻</h4>
 	${ readQuestions(data.questions) }`;
-	$('.active .quiz').html(res);
+	$('.quiz').html(res);
 }
 
 /**

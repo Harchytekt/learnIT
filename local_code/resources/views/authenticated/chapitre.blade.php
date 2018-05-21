@@ -31,20 +31,20 @@
 @endsection
 
 @push('js')
+	<script src="{{ asset('js/chapitre.js') }}"></script>
+	@if ($part->type == "quiz" || $part->type == "test")
+		<!-- Quiz -->
+		<script src="{{ asset('js/readQuiz.js') }}"></script>
+	@else
+		<script src="{{ asset('js/highlight.pack.js') }}"></script>
+	    <script>hljs.initHighlightingOnLoad();</script>
+		<!-- Include the Quill library -->
+		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+		<!-- Initialize Quill editor -->
+		<script src="{{ asset('js/readQuill.js') }}"></script>
+	@endif
 	<script>
-		// Used to display first part if given part number
-		// is greater than the number of parts.
-		var maxPart = {{ $chapter->part_nb }};
+		getNav({{ $course->id }}, {{ $chapter->id }}, {{ $part->order_id }}, {{ $chapter->part_nb }});
 	</script>
-    <script src="{{ asset('js/chapitre.js') }}"></script>
-    <script src="{{ asset('js/highlight.pack.js') }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-	<!-- Include the Quill library -->
-	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-	<!-- Initialize Quill editor -->
-	<script src="{{ asset('js/readQuill.js') }}"></script>
-
-	<!-- Quiz -->
-	<script src="{{ asset('js/readQuiz.js') }}"></script>
 @endpush

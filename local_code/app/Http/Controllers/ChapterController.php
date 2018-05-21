@@ -21,10 +21,20 @@ class ChapterController extends Controller
         $this->middleware('auth');
     }
 
-    public function show(Course $course, Chapter $chapter)
+	public function showFirstPart(Course $course, Chapter $chapter)
+    {
+		return $this::show($course, $chapter, 1);
+    }
+
+    public function show(Course $course, Chapter $chapter, int $part_order_id)
     {
 		if ($course->creator_id == Auth::user()->id || $chapter->isPublished()) {
-			return view('authenticated.chapitre', compact('course', 'chapter'));
+			$part = Part::getPart($chapter->id, $part_order_id);
+			if ($part !== null) {
+				return view('authenticated.chapitre', compact('course', 'chapter', 'part'));
+			}
+			$message = "Cette partie n'existe pas !";
+			return redirect()->back()->withMessage($message);
 		}
 		$message = "Vous n'êtes pas autorisé à voir ce chapitre !";
 		return redirect()->back()->withMessage($message);

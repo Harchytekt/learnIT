@@ -39,7 +39,8 @@ Route::get('/favoris', 'CourseController@showFavorites');
 Route::get('/favoris/{course}', 'CourseController@changeFavoriteState');
 Route::get('/encours', 'CourseController@showInProgress');
 Route::get('/cours/{course}', 'CourseController@show');
-Route::get('/cours/{course}/{chapter}', 'ChapterController@show');
+Route::get('/cours/{course}/{chapter}', 'ChapterController@showFirstPart');
+Route::get('/cours/{course}/{chapter}/{part}', 'ChapterController@show');
 
 Route::post('/cours/{course}/commentaires', 'CommentController@store');
 Route::get('/coursecrits', 'CourseController@showWritten');

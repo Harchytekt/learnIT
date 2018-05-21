@@ -7,14 +7,10 @@
 			<div class="inner">
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 					<div class="btn-group mr-2" role="group" aria-label="First group">
-						@if (!empty($_GET['part'])) <!-- Gets the js value -->
-						    <a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $_GET['part'] }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
-						@else
-							<a href="" class="btn btn-warning disabled" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
-						@endif
+						<a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $part->id }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<a href="" class="btn btn-success" title="Ajouter une partie"><i class="fas fa-plus"></i></a>
+						<a href="/nouvellePartie/{{ $chapter->id }}" class="btn btn-success" title="Ajouter une partie"><i class="fas fa-plus"></i></a>
 					</div>
 					@if (!$chapter->isPublished())
 						<div class="btn-group mr-2" role="group" aria-label="Third group">
@@ -56,14 +52,13 @@
 		</h6>
         <h1 id="chapterName">{{ $chapter->order_id }}. {{ $chapter->name }}</h1>
 
-        <div class="pagination-container">
-			@if ($chapter->part_nb == 1)
-				<div class="editor">{!! $chapter->getBody() !!}</div>
-			@else
-				{!! $chapter->getBody() !!}
-			@endif
-		</div>
-		<!-- entities escape  -->
+        @if ($chapter->part_nb == 1)
+			<div class="editor">{!! $part->getBody() !!}</div>
+		@else
+			{!! $part->getBody() !!}
+
+			<nav aria-label="Navigation" id="pageNav"></nav>
+		@endif
 	</div>
 
 	<img class="pushpin bottom left" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">

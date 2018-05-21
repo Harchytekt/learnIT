@@ -13,14 +13,7 @@ var options = {
 // Init Quill editor
 var editor;
 $(document).ready(function() {
-	//editor.enable(false);
-	if ($('.active').length != 0) {
-		if ($('.active .editor').length != 0) {
-			editor = new Quill('.active .editor', options);
-			//editor.enable(true);
-		}
-	} else {
+	if ($('.editor').length != 0) {
 		editor = new Quill('.editor', options);
-		//editor.enable(true);
 	}
 });

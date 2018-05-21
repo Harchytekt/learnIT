@@ -21,10 +21,9 @@ class PartController extends Controller
         $this->middleware('auth');
     }
 
-    public function showEditView(Course $course, Chapter $chapter, int $partOrderId)
+    public function showEditView(Course $course, Chapter $chapter, Part $part)
     {
 		if ($course->creator_id == Auth::user()->id) {
-			$part = Part::where('chapter_id', $chapter->id)->where('order_id', $partOrderId)->first();
 			return view('authenticated.edit.edit', compact('course', 'chapter', 'part'));
 		}
 		$message = "Vous n'êtes pas autorisé à voir cette page !";

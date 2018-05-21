@@ -41,7 +41,7 @@
 	<script src="{{ asset('js/editQuill.js') }}"></script>
 	<script>
 		$(document).on('click', '#save', function() {
-			saveChanges({{ $part->id }}, "/cours/{{ $course->id }}/{{ $chapter->id }}?part={{ $part->order_id }}");
+			saveChanges({{ $part->id }}, "/cours/{{ $course->id }}/{{ $chapter->id }}/{{ $part->order_id }}");
 		});
 	</script>
 @endpush

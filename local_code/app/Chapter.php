@@ -11,35 +11,6 @@ class Chapter extends Model
         return $this->published == 1;
     }
 
-    public function getBody()
-    {
-		$body = Part::getPartsFromChapter($this->id);
-		if ($this->part_nb == 1) {
-			return $body[0]->body;
-		}
-
-		$i = 1;
-		$res = "";
-		foreach ($body as $part) {
-			$res .= "<div id='".$i."' class='";
-			if ($i == 1) {
-				$res .= "active part'>";
-			} else {
-				$res .= "inactive part'>";
-			}
-
-			if ($part->type == "quiz") {
-				$res .= '<div class="outerQuiz"><div class="quiz">'.$part->body.'</div></div>';
-			} else {
-				$res .= '<div class="editor">'.$part->body.'</div>';
-			}
-
-			$res .= "</div>";
-			$i += 1;
-		}
-		return $res;
-    }
-
 	public static function publish(Chapter $chapter) {
 		return static::where('id', $chapter->id)->update(['published' => 1]);
 	}
