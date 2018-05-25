@@ -79,7 +79,7 @@ h6 a:focus {
 	border-radius: 20px 20px 0 0;
 }
 
-#edit.ql-container {
+#edit .ql-container {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
@@ -175,4 +175,13 @@ h3.popover-header,
 .editor .ql-editor pre {
 	color: #4E4E4F;
     font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+label.form-check-label {
+	padding-left: 10px;
+	display: inline;
+}
+
+.form-check-input {
+	margin-left: 0;
 }

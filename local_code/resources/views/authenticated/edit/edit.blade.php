@@ -32,13 +32,18 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('js/highlight.pack.js') }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-	<!-- Include the Quill library -->
-	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+	@if ($part->type == "quiz" || $part->type == "test")
+		<!-- Quiz -->
+		<script src="{{ asset('js/editQuiz.js') }}"></script>
+	@else
+	    <script src="{{ asset('js/highlight.pack.js') }}"></script>
+	    <script>hljs.initHighlightingOnLoad();</script>
+		<!-- Include the Quill library -->
+		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-	<!-- Initialize Quill editor -->
-	<script src="{{ asset('js/editQuill.js') }}"></script>
+		<!-- Initialize Quill editor -->
+		<script src="{{ asset('js/editQuill.js') }}"></script>
+	@endif
 	<script>
 		$(document).on('click', '#save', function() {
 			saveChanges({{ $part->id }}, "/cours/{{ $course->id }}/{{ $chapter->id }}/{{ $part->order_id }}");

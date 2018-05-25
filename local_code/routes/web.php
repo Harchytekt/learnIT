@@ -74,5 +74,3 @@ Route::post('/ajouterTitreChapitre/{course}', 'ChapterController@chapterInitiali
 Route::get('/nouvellePartie/{chapter}', 'PartController@partInitialization');
 Route::get('/editer/{course}/{chapter}/{part}', 'PartController@showEditView');
 Route::post('/editer/sauver', 'PartController@store');
-
-// Add a new part => increment part_nb in chapter

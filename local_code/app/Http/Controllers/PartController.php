@@ -33,7 +33,13 @@ class PartController extends Controller
 	public function store(Request $request)
 	{
 		$part = Part::find($request->part);
-		$part->body = $request->html;
+		echo $request;
+		if ($part->type == 'theory') {
+			$part->body = $request->html;
+		} else {
+			$part->body = $request->quiz;
+		}
+
 		$part->save();
 	}
 
