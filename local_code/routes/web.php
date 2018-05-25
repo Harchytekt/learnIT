@@ -74,3 +74,4 @@ Route::post('/ajouterTitreChapitre/{course}', 'ChapterController@chapterInitiali
 Route::get('/nouvellePartie/{chapter}/{type}', 'PartController@partInitialization');
 Route::get('/editer/{course}/{chapter}/{part}', 'PartController@showEditView');
 Route::post('/editer/sauver', 'PartController@store');
+Route::post('/test/sauver', 'TestController@store');

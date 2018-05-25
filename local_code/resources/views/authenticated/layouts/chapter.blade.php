@@ -9,10 +9,12 @@
 					<div class="btn-group mr-2" role="group" aria-label="First group">
 						<a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $part->id }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 					</div>
-					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<button type="button" class="btn btn-info" title="Ajouter une partie" data-toggle="modal" data-target="#typeModal"><i class="fas fa-plus"></i></button>
-						<!-- Type of Part modal -->
-					</div>
+					@if (!$chapter->lastPartIsTest())
+						<div class="btn-group mr-2" role="group" aria-label="Second group">
+							<button type="button" class="btn btn-info" title="Ajouter une partie" data-toggle="modal" data-target="#typeModal"><i class="fas fa-plus"></i></button>
+							<!-- Type of Part modal -->
+						</div>
+					@endif
 					@if (!$chapter->isPublished())
 						<div class="btn-group mr-2" role="group" aria-label="Third group">
 							<button type="button" class="btn btn-info" title="Publier le chapitre" data-toggle="modal" data-target="#confirmerPublication"><i class="fas fa-cloud-upload-alt"></i></button>

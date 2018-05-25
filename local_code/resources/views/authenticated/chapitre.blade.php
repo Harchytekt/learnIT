@@ -8,6 +8,7 @@
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link href="{{ asset('css/courseContent.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/highlightStyles/sunburst.css') }}" rel="stylesheet">
+	<meta name="csrf-token" content="{{ csrf_token() }}"> <!-- To save result -->
 @endpush
 
 <title>{{ $chapter->name }}</title>
@@ -31,7 +32,9 @@
 @endsection
 
 @push('js')
-	<script>var chapterId = {{ $chapter->id }};</script>
+	<script>
+		var courseId = {{ $course->id }}, chapterId = {{ $chapter->id }}, currentIsTest = "{{ $part->type }}" == "test";
+	</script>
 	<script src="{{ asset('js/chapitre.js') }}"></script>
 	@if ($part->type == "quiz" || $part->type == "test")
 		<!-- Quiz -->

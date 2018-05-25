@@ -10,12 +10,14 @@
             <h3 class="text-center">Chapitres</h3>
             <ol class="chapters">
                 @foreach ($course->chapters as $chapter)
-                    @if ($chapter->isPublished())
+                    @if ($chapter->isPublished() && $chapter->getLockState() < 2)
                         <li>
                             <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->order_id }}. {{ $chapter->name }}</a>
                         </li>
+					@elseif ($chapter->isPublished())
+						<li class="disabledChapter">{{ $chapter->order_id }}. {{ $chapter->name }} <i class="wrong">(Débloquez moi !)</i></li>
                     @else
-						@if ($course->userIsTutor())
+						@if (!$chapter->isPublished() && $course->userIsTutor())
 							<li>
 	                            <a href="/cours/{{ $course->id }}/{{ $chapter->id }}">{{ $chapter->order_id }}. {{ $chapter->name }} <i class="wrong">(Non publié)</i></a>
 	                        </li>
