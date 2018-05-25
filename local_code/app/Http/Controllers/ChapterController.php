@@ -65,6 +65,7 @@ class ChapterController extends Controller
 
 		$part = new Part;
 		$part->chapter_id = $chapter->id;
+		$part->type = 'theory';
 		$part->save();
 
         $message = "Le chapitre a été créé avec succès !";
