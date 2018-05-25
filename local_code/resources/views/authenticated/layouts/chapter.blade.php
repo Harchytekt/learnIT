@@ -10,7 +10,8 @@
 						<a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $part->id }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<a href="/nouvellePartie/{{ $chapter->id }}" class="btn btn-info" title="Ajouter une partie"><i class="fas fa-plus"></i></a>
+						<button type="button" class="btn btn-info" title="Ajouter une partie" data-toggle="modal" data-target="#typeModal"><i class="fas fa-plus"></i></button>
+						<!-- Type of Part modal -->
 					</div>
 					@if (!$chapter->isPublished())
 						<div class="btn-group mr-2" role="group" aria-label="Third group">
@@ -21,13 +22,41 @@
 				</div>
 			</div>
 
+
+			<!-- Type of Part Modal -->
+			<div class="modal fade" id="typeModal" tabindex="-1" role="dialog" aria-labelledby="typePartModal" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="typePartModal">Choix du type de partie</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="typeOfPart" class="control-label">Type de la partie :</label>
+								<select id="typeOfPart" class="custom-select">
+									<option selected value="1">Théorie</option>
+									<option value="2">Quiz non-côté</option>
+									<option value="3">Quiz coté</option>
+								</select>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="addnewPart" class="btn btn-info"><i class="fas fa-plus"></i> Ajouter</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Annuler</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			@if (!$chapter->isPublished())
-				<!-- Modal -->
-				<div class="modal fade" id="confirmerPublication" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<!-- Verification Modal -->
+				<div class="modal fade" id="confirmerPublication" tabindex="-1" role="dialog" aria-labelledby="confirmPublication" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+								<h5 class="modal-title" id="confirmPublication">Confirmation</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>

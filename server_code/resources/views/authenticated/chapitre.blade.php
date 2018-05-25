@@ -31,6 +31,7 @@
 @endsection
 
 @push('js')
+	<script>var chapterId = {{ $chapter->id }};</script>
 	<script src="{{ asset('js/chapitre.js') }}"></script>
 	@if ($part->type == "quiz" || $part->type == "test")
 		<!-- Quiz -->

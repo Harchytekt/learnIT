@@ -43,10 +43,25 @@ class PartController extends Controller
 		$part->save();
 	}
 
-    public function partInitialization(Chapter $chapter) {
+    public function partInitialization(Chapter $chapter, string $type) {
+		switch ($type) {
+			case '1':
+				$type = 'theory';
+				break;
+			case '2':
+				$type = 'quiz';
+				break;
+			case '3':
+				$type = 'test';
+				break;
+			default:
+				$message = "La partie n'ap pas pu être créée !";
+				return redirect('/cours/'.$chapter->course_id.'/'.$chapter->id)->withMessage($message);
+		}
 		$part = new Part;
 		$part->chapter_id = $chapter->id;
 		$part->order_id = Part::where('chapter_id', $chapter->id)->max('order_id') + 1;
+		$part->type = $type;
 		$part->save();
 
 		$chapter = Chapter::find($chapter->id);
@@ -54,6 +69,6 @@ class PartController extends Controller
         $chapter->save();
 
         $message = "La partie a été créé avec succès !";
-        return redirect('/cours/'.$chapter->course_id.'/'.$chapter->id.'?part='.$part->id)->withMessage($message);
+        return redirect('/cours/'.$chapter->course_id.'/'.$chapter->id.'/'.$part->order_id)->withMessage($message);
     }
 }

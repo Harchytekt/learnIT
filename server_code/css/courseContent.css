@@ -185,3 +185,7 @@ label.form-check-label {
 .form-check-input {
 	margin-left: 0;
 }
+
+select.custom-select {
+	border-radius: 255px 25px 225px 25px/25px 225px 25px 255px !important;
+}

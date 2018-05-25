@@ -38,3 +38,7 @@ function getNav(courseId, chapterId, partOrderId, maxPartNb) {
 
 	$(`#pageNav`).html(res);
 }
+
+$(document).on('click', "#addnewPart", function() {
+	window.location.href = `/nouvellePartie/${ chapterId }/${ $(`#typeOfPart`).val() }`;
+});
