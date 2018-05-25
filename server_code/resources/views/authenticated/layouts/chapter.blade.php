@@ -10,7 +10,7 @@
 						<a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $part->id }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 					</div>
 					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<a href="/nouvellePartie/{{ $chapter->id }}" class="btn btn-success" title="Ajouter une partie"><i class="fas fa-plus"></i></a>
+						<a href="/nouvellePartie/{{ $chapter->id }}" class="btn btn-info" title="Ajouter une partie"><i class="fas fa-plus"></i></a>
 					</div>
 					@if (!$chapter->isPublished())
 						<div class="btn-group mr-2" role="group" aria-label="Third group">

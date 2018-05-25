@@ -31,7 +31,7 @@
 				<div class="inner">
 					<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group mr-2" role="group" aria-label="First group">
-							<a href="/nouveauChapitre/{{ $course->id }}" class="btn btn-success" title="Ajouter un chapitre"><i class="fas fa-plus"></i> Ajouter un chapitre</a>
+							<a href="/nouveauChapitre/{{ $course->id }}" class="btn btn-info" title="Ajouter un chapitre"><i class="fas fa-plus"></i> Ajouter un chapitre</a>
 						</div>
 						@if (!$course->isPublished())
 							<div class="btn-group mr-2" role="group" aria-label="Second group">
