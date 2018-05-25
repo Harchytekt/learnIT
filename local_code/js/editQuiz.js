@@ -104,10 +104,6 @@ function addChoices() {
 	return res;
 }
 
-function getDataFromForm() {
-	//console.log($(`form.form-horizontal`).serializeObject());
-}
-
 /**
 * This function/object is used to serialize
 * a formulaire into a format compatible with
@@ -160,9 +156,14 @@ function getChoices(data, nb) {
  * @param $urlBack
  *		The previous page's URL.
  */
-function saveChanges($partId, $urlBack) {
-	let data = JSON.stringify($(`form.form-horizontal`).serializeObject());
+function saveChanges($partId, $urlBack, data = null) {
+	if (data === null) {
+		data = JSON.stringify($(`form.form-horizontal`).serializeObject());
+	} else {
+		data = JSON.stringify(data);
+	}
 	let newData = { quiz: data, part: $partId };
+	console.log(newData);
 
 	$.post({
 		url: '/editer/sauver',
@@ -179,4 +180,21 @@ function saveChanges($partId, $urlBack) {
 function updateButtonState() {
 	$(`#addQuestion`).prop('disabled', (nbOfQuestions >= maxNbOfQuestions));
 	$(`#removeQuestion`).prop('disabled', (nbOfQuestions > 2) ? false : true);
+}
+
+$('#importQuiz').on('submit', function(event) {
+	event.stopPropagation();
+	event.preventDefault();
+	var file = $('input[type="file"]')[0].files[0];
+	readFile(file, function(e) {
+		saveChanges(10, '/cours/4/2/8', JSON.parse(e.target.result));
+	});
+});
+
+function readFile(file, callback) {
+	if (typeof (FileReader) != "undefined") {
+		var reader = new FileReader();
+		reader.onload = callback;
+		reader.readAsText(file);
+	}
 }

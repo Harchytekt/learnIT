@@ -32,6 +32,10 @@
         <h1 id="chapterName">{{ $chapter->order_id }}. {{ $chapter->name }}</h1>
 
 		@if ($isQuiz)
+			<form id="importQuiz">
+				<input type="file" id="exampleInputFile" accept="text/json, .json">
+				<button type="submit" class="btn btn-sm btn-primary">Import the file</button>
+			</form>
 			{!! $part->getBody() !!}
 		@else
 			<!-- Create toolbar container -->
