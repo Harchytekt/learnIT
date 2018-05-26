@@ -1,18 +1,40 @@
 @extends('layouts.auth')
 
+@push('styles')
+    <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/alert.css') }}" rel="stylesheet">
+@endpush
+
 @section('title', 'Écrire')
 
 @section('content')
     <h1>Rédaction de cours</h1>
 
+	@if (session('message'))
+        @if (strpos(session('message'), 'succès' ) !== false)
+            @php ($alertType = "alert-success")
+            @php ($icon = "fas fa-check")
+        @else
+            @php ($alertType = "alert-danger")
+            @php ($icon = "fas fa-times")
+        @endif
+        <div class="alert alert-dismissible {{ $alertType }}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <p><i class="{{ $icon }}"></i> {{ session('message') }}</p>
+        </div>
+    @endif
+
+	@php($id = 0)
+	@php($view = 'tutor')
+	@php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
+
     <div class="container">
-        <div class="row" style="margin-top: 45px;">
-            <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-3" style="background-color: #FFFFE5; border-radius: 10px; margin-bottom: 45px; transform: rotate(-2deg);">
-                <img style="display: block; margin-left: auto; margin-right: auto; position: relative; top: -30px; left: 5px;" src="{{ asset('img/tape.svg') }}" alt="" height="52" width="183.3">
-                <div style="padding-bottom: 42px; text-align: center;" title="Écrire un nouveau cours">
-                    <i class="fas fa-plus fa-10x" style="color: rgba(0, 0, 0, 0.1);"></i>
-                </div>
-            </div>
+        <div class="row previewParent">
+            @include('authenticated.layouts.courses.ajouterCours')
+			@foreach ($courses as $course)
+				@include('authenticated.layouts.courses.apercuCours')
+				@php($id += 1)
+			@endforeach
         </div>
     </div>
 @endsection

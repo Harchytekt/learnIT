@@ -1,16 +1,30 @@
 @extends('layouts.auth')
 
+@push('styles')
+    <link href="{{ asset('css/apercuCours.css') }}" rel="stylesheet">
+@endpush
+
 @section('title', 'Écrits')
 
 @section('content')
-    <h1>Vos cours.</h1>
+    <h1>Cours que vous avez écrits</h1>
+
+	@php($id = 0)
+	@php($view = 'tutor')
+	@php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <div class="container">
         <div class="row">
-            <div style="color: #FFF; text-align: center; width: 100%; margin-top: 25%;">
-                <h3>C'est vide ici ! <i class="far fa-comment"></i></h3>
-                <a class="btn btn-info" href="/ecrire">Écrivez votre cours !</a>
-            </div>
+            @if (!Auth::user()->isATutor())
+                @include('authenticated.layouts.vide')
+            @else
+				<div class="row previewParent">
+	                @foreach ($courses as $course)
+	                    @include('authenticated.layouts.courses.apercuCours')
+	                    @php($id += 1)
+	                @endforeach
+	            </div>
+            @endif
         </div>
     </div>
 @endsection

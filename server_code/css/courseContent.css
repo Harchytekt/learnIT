@@ -1,0 +1,200 @@
+.star {
+    color              : #FCDB69;
+}
+
+.white {
+    color              : #FFF;
+}
+
+#chapterName {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+h3,
+h4,
+.green {
+    color              : #2AB77E;
+}
+
+.red {
+    color              : #DC4535;
+}
+
+h6 a {
+    color              : #BDBDBD;
+    text-decoration    : none;
+}
+
+h6 a:hover,
+h6 a:focus {
+    color              : #999;
+}
+
+.editor {
+	font-family: 'Fira Code' !important;
+	font-size: 1rem;
+	line-height: 1.5
+}
+
+.editor .ql-editor h3,
+.editor .ql-editor h4,
+.editor .ql-editor h5,
+.editor .ql-editor h6 {
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+
+}
+
+.editor .ql-editor h3 {
+	font-size: 1.75rem;
+}
+
+.editor .ql-editor h4 {
+	font-size: 1.5rem;
+}
+
+.editor .ql-editor h5 {
+	font-size: 1.25rem;
+}
+
+.editor .ql-editor h6 {
+	font-size: 1rem;
+}
+
+.editor .ql-editor blockquote {
+	margin             : 10px 0 10px 50px;
+	padding-left       : 15px;
+	border-left        : 3px solid #FDDC5F;
+	font-style         : italic;
+	color              : #808080;
+}
+
+.ql-container {
+	border-radius: 20px;
+}
+
+.ql-toolbar {
+	border-radius: 20px 20px 0 0;
+}
+
+#edit .ql-container {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.ql-container,
+.ql-editor {
+	height: auto;
+}
+
+#pageNav {
+	margin-top: 20px;
+}
+
+.vignette {
+    background-color   : #FFFFF0;
+    color              : #4E4E4F;
+    font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight        : normal;
+	-webkit-font-variant-ligatures: none;
+	font-variant-ligatures: none; /* Disable the font ligatures */
+}
+
+.vignetteContent {
+	margin: 20px;
+}
+
+h1,
+.grey {
+    color              : #2E2E2F;
+}
+
+.outer {
+    width              : 100%;
+}
+
+.inner {
+    display            : table;
+    margin             : 0 auto;
+}
+
+.outerQuiz {
+	border: 1px solid #CCC;
+	border-radius: 20px;
+}
+
+.quiz {
+	padding: 12px 15px;
+}
+
+span.pop {
+	display: none;
+    color              : #17A2B8;
+    cursor             : pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.disabledChapter,
+a.disabled {
+    pointer-events     : none;
+    color              : #ACACA6;
+    font-style         : italic;
+    text-decoration    : underline;
+}
+
+a.btn,
+.modal-content {
+	font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.modal-content {
+	background-color   : #FFFFF0;
+}
+
+.page-link,
+.blue {
+    color              : #00AAFF;
+}
+.page-link:focus,
+.page-link:hover {
+    background-color   : #C2DAE6;
+}
+
+.page-item.active .page-link {
+    background-color   : #00AAFF;
+}
+
+.inactive.part {
+    display            : none;
+}
+
+h3.popover-header,
+.popover-body,
+.editor .ql-editor pre {
+	color: #4E4E4F;
+    font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+label.form-check-label {
+	padding-left: 10px;
+	display: inline;
+}
+
+.form-check-input {
+	margin-left: 0;
+}
+
+select.custom-select {
+	border-radius: 255px 25px 225px 25px/25px 225px 25px 255px !important;
+}
+
+button:disabled {
+	cursor: not-allowed;
+}

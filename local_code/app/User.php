@@ -50,6 +50,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
+    public function publishComment(Comment $comment)
+    {
+        $this->courses()->save($comment);
+    }
+
     public function getName() {
         if ($this->lastname != '' || $this->firstname != '') {
             return  $this->firstname.' '.$this->lastname;
@@ -59,6 +74,13 @@ class User extends Authenticatable
     }
 
     public function isATutor() {
-        return $this->tutor == 1;
+		/*$writtenCourses = Course::getWrittenCourses($this->id);
+		foreach ($writtenCourses as $course) {
+			if ($course->isPublished()) {
+				return true;
+			}
+		}
+		return false;*/
+		return Course::getWrittenCourses($this->id)->count() > 0;
     }
 }

@@ -2,6 +2,7 @@
 
 @push('styles')
     <link href="{{ asset('css/compte.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/alert.css') }}" rel="stylesheet">
 @endpush
 
 @section('title', 'Compte')

@@ -17,17 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+/* Accueil */
+
 Route::get('/accueil', 'HomeController@index')->name('accueil');
 
 /* Logged in */
 
-Route::get('/cours', function() {
-    return view('authenticated.cours');
-})->middleware('auth');
-
-Route::get('/ecrire', function() {
-    return view('authenticated.ecrire');
-})->middleware('auth');
+Route::get('/cours', 'CourseController@index');
 
 Route::get('/compte', 'UserController@index');
 Route::post('/majnames', 'UserController@updateNames');
@@ -37,21 +33,19 @@ Route::get('/supprimercompte', 'UserController@destroy');
 
 /* Mes cours */
 
-Route::get('/coursinscrits', function() {
-    return view('authenticated.mesCours.inscrits');
-})->middleware('auth');
+Route::get('/coursinscrits', 'CourseController@showEnrollments');
+Route::get('/coursinscrits/{course}', 'CourseController@changeEnrollmentState');
+Route::get('/favoris', 'CourseController@showFavorites');
+Route::get('/favoris/{course}', 'CourseController@changeFavoriteState');
+Route::get('/encours', 'CourseController@showInProgress');
+Route::get('/cours/{course}', 'CourseController@show');
+Route::get('/cours/{course}/{chapter}', 'ChapterController@showFirstPart');
+Route::get('/cours/{course}/{chapter}/{part}', 'ChapterController@show');
 
-Route::get('/favoris', function() {
-    return view('authenticated.mesCours.favoris');
-})->middleware('auth');
-
-Route::get('/encours', function() {
-    return view('authenticated.mesCours.encours');
-})->middleware('auth');
-
-Route::get('/coursecrits', function() {
-    return view('authenticated.mesCours.ecrits');
-})->middleware('auth');
+Route::post('/cours/{course}/commentaires', 'CommentController@store');
+Route::get('/coursecrits', 'CourseController@showWritten');
+Route::get('/publier/cours/{course}', 'CourseController@publish');
+Route::get('/publier/chapitre/{chapter}', 'ChapterController@publish');
 
 /* Mes chiffres */
 
@@ -66,3 +60,19 @@ Route::get('/chiffreschapters', function() {
 Route::get('/chiffresecrits', function() {
     return view('authenticated.mesChiffres.ecrits');
 })->middleware('auth');
+
+/* Ecrire */
+
+Route::get('/ecrire', 'CourseController@showUnpublishedCourses');
+
+Route::get('/ecrireNouveau', 'CourseController@initCourse');
+Route::post('/ajouterTitreCours', 'CourseController@courseInitialization');
+Route::get('/edit/{course}', 'EditCourseController@show');
+Route::get('/edit/{course}/{chapter}', 'EditChapterController@show');
+Route::get('/nouveauChapitre/{course}', 'ChapterController@initChapter');
+Route::post('/ajouterTitreChapitre/{course}', 'ChapterController@chapterInitialization');
+Route::get('/nouvellePartie/{chapter}/{type}', 'PartController@partInitialization');
+Route::get('/editer/{course}/{chapter}/{part}', 'PartController@showEditView');
+Route::post('/editer/sauver', 'PartController@store');
+Route::post('/test/sauver', 'TestController@store');
+Route::get('/editer/aideImport', 'PartController@help');

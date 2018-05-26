@@ -1,0 +1,40 @@
+#courseBlock,
+#chapterBlock {
+    border-radius      : 10px;
+    -webkit-box-shadow : 5px -5px #213C32;
+            box-shadow : 5px -5px #213C32;
+}
+
+#chapterBlock {
+    margin-bottom      : 100px;
+}
+
+img.pushpin {
+    display            : inline;
+}
+
+img.pushpin.up {
+    top                : -20px;
+}
+
+img.pushpin.bottom {
+    bottom                : -20px;
+}
+
+img.pushpin.left {
+    position           : relative;
+        left           : -35px;
+}
+
+img.pushpin.right {
+    position           : absolute;
+        right          : -25px;
+}
+
+ol.chapters {
+    padding-left       : 20px;
+}
+
+ol.chapters li {
+    list-style         : none;
+}

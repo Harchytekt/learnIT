@@ -1,0 +1,99 @@
+.previewParent {
+    margin-top         : 45px;
+}
+
+.preview,
+.addCourse {
+    background-color   : #FFFFF0;
+    border-radius      : 10px;
+    margin-bottom      : 45px;
+}
+
+img.pushpin,
+img.tape {
+    display            : block;
+    margin-left        : auto;
+    margin-right       : auto;
+    position           : relative;
+        top            : -30px;
+        left           : 5px;
+}
+
+.previewCase {
+    padding-bottom     : 15px;
+}
+
+.previewCase p {
+    color              : #50775D;
+}
+
+.previewIcons {
+    position           : absolute;
+        bottom         : 0;
+}
+
+.previewIcons a,
+.previewIcons a:hover,
+.previewIcons a:focus {
+	text-decoration: none;
+}
+
+.previewIcons .fa-bookmark,
+.previewIcons .fa-star {
+    color              : #E8E7CF;
+}
+
+.previewIcons .fa-bookmark.active,
+.previewIcons .fa-cloud-upload-alt {
+    color              : #DC4535;
+}
+
+.previewIcons .fa-bookmark:hover,
+.previewIcons .fa-bookmark:focus {
+    color              : #E8847A;
+}
+
+.previewIcons .fa-star.active {
+    color              : #FCDB69;
+}
+
+.previewIcons .fa-star:hover,
+.previewIcons .fa-star:focus {
+    color              : #FAE8AA;
+}
+
+.previewIcons .fa-cloud {
+    color              : #2AB77E;
+}
+
+.previewIcons .fa-cloud-upload-alt:hover,
+.previewIcons .fa-cloud-upload-alt:focus {
+    color              : #837E59;
+}
+
+.courseLink {
+    position           : absolute;
+        bottom         : 0;
+        right          : 15px;
+    padding            : 0;
+    color              : #00AAFF;
+}
+
+#addCourseBody {
+    padding-bottom     : 42px;
+    text-align         : center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	top: -30px;
+	display: table;
+}
+
+#addCourseBodyInner {
+    display: table-cell;
+	vertical-align: middle;
+}
+
+#addCourseBody .fa-plus {
+    color              : rgba(0, 0, 0, 0.1);
+}
