@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Auth;
+use App\Chapter;
 
 class Course extends Model
 {
@@ -14,8 +15,24 @@ class Course extends Model
         return $this->published == 1;
     }
 
+    public function isFinished() {
+        return $this->finished == 1;
+    }
+
+	/**
+	 * This function returns if the course can be set as finished.
+	 * For that, it must contains at least 3 published chapters.
+	 */
+    public function canBeFinished() {
+        return Chapter::where('course_id', $this->id)->where('published', 1)->count() > 2;
+    }
+
 	public static function publish(Course $course) {
 		return static::where('id', $course->id)->update(['published' => 1]);
+	}
+
+	public static function finish(Course $course) {
+		return static::where('id', $course->id)->update(['finished' => 1]);
 	}
 
     public function chapters()

@@ -46,6 +46,7 @@ Route::post('/cours/{course}/commentaires', 'CommentController@store');
 Route::get('/coursecrits', 'CourseController@showWritten');
 Route::get('/publier/cours/{course}', 'CourseController@publish');
 Route::get('/publier/chapitre/{chapter}', 'ChapterController@publish');
+Route::get('/terminer/cours/{course}', 'CourseController@finish');
 
 /* Mes chiffres */
 
