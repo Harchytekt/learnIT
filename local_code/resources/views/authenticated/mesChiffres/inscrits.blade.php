@@ -26,7 +26,7 @@
         <div class="row" style="margin-top: 45px;">
             <div class="col-10 offset-1 col-md-5 col-lg-4 col-xl-2" style="margin-bottom: 45px;">
                 <div style="background-color: #FFFFE5; border-radius: 1000px; text-align: center; height: 150px; width: 150px; margin: 0 auto;">
-                    <h2 style="font-size: 4rem; line-height: 130px;">4</h2>
+                    <h2 style="font-size: 4rem; line-height: 130px;">{{ App\Enrollment::numberOfEnrollments() }}</h2>
                     <p style="position: relative; top: -40px;">cours suivis</p>
                 </div>
             </div>
