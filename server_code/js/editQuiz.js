@@ -1,6 +1,7 @@
 /* jshint -W033, esversion: 6 */
 
 var previous = {}, nbOfQuestions = 0, currentNbOfQuestions, maxNbOfQuestions = 10;
+var file;
 $(document).ready(function() {
 	if (data == 0) {
 		initQuizEditor();
@@ -151,19 +152,16 @@ function getChoices(data, nb) {
  * This function is used to save the changes
  * of the current part of the chapter.
  *
- * @param $partId
- *		The id of the current part of the chapter.
- * @param $urlBack
- *		The previous page's URL.
+ * @param data
+ *		If given, this is the content of the imported quiz.
  */
-function saveChanges($partId, $urlBack, data = null) {
+function saveChanges(data = null) {
 	if (data === null) {
 		data = JSON.stringify($(`form.form-horizontal`).serializeObject());
 	} else {
 		data = JSON.stringify(data);
 	}
-	let newData = { quiz: data, part: $partId };
-	console.log(newData);
+	let newData = { quiz: data, part: partId };
 
 	$.post({
 		url: '/editer/sauver',
@@ -172,7 +170,7 @@ function saveChanges($partId, $urlBack, data = null) {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		},
 		success: (data) => {
-			window.location = $urlBack;
+			window.location = urlBack;
 		},
 	});
 }
@@ -182,12 +180,26 @@ function updateButtonState() {
 	$(`#removeQuestion`).prop('disabled', (nbOfQuestions > 2) ? false : true);
 }
 
-$('#importQuiz').on('submit', function(event) {
+$('input[type="file"]').on('change', function() {
+	var ext = $(this).val().split('.')[1];
+
+	if (ext == 'json') {
+		$('#importQ').attr('disabled', false);
+		$('#error').css('display', 'none');
+		$('#error').html('');
+		file = $(this)[0].files[0];
+	} else {
+		$('#importQ').attr('disabled', true);
+		$('#error').html(`⚠️ Seuls les fichiers dont l'extension est <wrong>.json</wrong> sont acceptés !`);
+		$('#error').css('display', 'block');
+	}
+});
+
+$('#importQuiz').on('click', '#importQ', function(event) {
 	event.stopPropagation();
 	event.preventDefault();
-	var file = $('input[type="file"]')[0].files[0];
 	readFile(file, function(e) {
-		saveChanges(10, '/cours/4/2/8', JSON.parse(e.target.result));
+		saveChanges(JSON.parse(e.target.result));
 	});
 });
 

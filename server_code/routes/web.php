@@ -75,3 +75,4 @@ Route::get('/nouvellePartie/{chapter}/{type}', 'PartController@partInitializatio
 Route::get('/editer/{course}/{chapter}/{part}', 'PartController@showEditView');
 Route::post('/editer/sauver', 'PartController@store');
 Route::post('/test/sauver', 'TestController@store');
+Route::get('/editer/aideImport', 'PartController@help');

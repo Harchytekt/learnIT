@@ -2,7 +2,7 @@
     <img class="pushpin up left" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
     <img class="pushpin right up" src="{{ asset('img/pushpin2.svg') }}" alt="" height="65" width="65">
 
-    <div style="padding: 20px">
+    <div class="vignetteContent">
 		@if ($course->userIsTutor())
 			<div class="inner">
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">

@@ -33,7 +33,7 @@ class PartController extends Controller
 	public function store(Request $request)
 	{
 		$part = Part::find($request->part);
-		
+
 		if ($part->type == 'theory') {
 			$part->body = $request->html;
 		} else {
@@ -71,4 +71,9 @@ class PartController extends Controller
         $message = "La partie a été créé avec succès !";
         return redirect('/cours/'.$chapter->course_id.'/'.$chapter->id.'/'.$part->order_id)->withMessage($message);
     }
+
+	public function help()
+	{
+		return view('authenticated.edit.help');
+	}
 }

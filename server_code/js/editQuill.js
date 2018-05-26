@@ -37,14 +37,9 @@ var editor = new Quill('.editor', options);
 /**
  * This function is used to save the changes
  * of the current part of the chapter.
- *
- * @param $partId
- *		The id of the current part of the chapter.
- * @param $urlBack
- *		The previous page's URL.
  */
-function saveChanges($partId, $urlBack) {
-	var newData = { html: $('.ql-editor').html(), part: $partId };
+function saveChanges() {
+	var newData = { html: $('.ql-editor').html(), part: partId };
 
 	$.post({
 		url: '/editer/sauver',
@@ -53,7 +48,7 @@ function saveChanges($partId, $urlBack) {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		},
 		success: (data) => {
-			window.location = $urlBack;
+			window.location = urlBack;
 		},
 	});
 }

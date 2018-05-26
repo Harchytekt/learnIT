@@ -32,6 +32,9 @@
 @endsection
 
 @push('js')
+	<script>
+		var partId = {{ $part->id }}, urlBack = "/cours/{{ $course->id }}/{{ $chapter->id }}/{{ $part->order_id }}";
+	</script>
 	@if ($part->type == "quiz" || $part->type == "test")
 		<!-- Quiz -->
 		<script src="{{ asset('js/editQuiz.js') }}"></script>
@@ -46,7 +49,7 @@
 	@endif
 	<script>
 		$(document).on('click', '#save', function() {
-			saveChanges({{ $part->id }}, "/cours/{{ $course->id }}/{{ $chapter->id }}/{{ $part->order_id }}");
+			saveChanges();
 		});
 	</script>
 @endpush

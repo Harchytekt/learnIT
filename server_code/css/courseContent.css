@@ -102,6 +102,10 @@ h6 a:focus {
 	font-variant-ligatures: none; /* Disable the font ligatures */
 }
 
+.vignetteContent {
+	margin: 20px;
+}
+
 h1,
 .grey {
     color              : #2E2E2F;
@@ -154,7 +158,8 @@ a.btn,
 	background-color   : #FFFFF0;
 }
 
-.page-link {
+.page-link,
+.blue {
     color              : #00AAFF;
 }
 .page-link:focus,
@@ -188,4 +193,8 @@ label.form-check-label {
 
 select.custom-select {
 	border-radius: 255px 25px 225px 25px/25px 225px 25px 255px !important;
+}
+
+button:disabled {
+	cursor: not-allowed;
 }
