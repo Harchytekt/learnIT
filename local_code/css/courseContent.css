@@ -182,9 +182,12 @@ h3.popover-header,
     font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+label {
+	display: inline;
+}
+
 label.custom-control-label {
 	padding-left: 10px;
-	display: inline;
 }
 
 .custom-control-input {

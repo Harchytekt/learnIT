@@ -21,7 +21,7 @@ class Part extends Model
 		$res = "";
 		if ($this->type == "quiz" || $this->type == "test") {
 			$res .= '<div class="outerQuiz"><div class="quiz"></div></div>
-			<script>var data = '.(($this->body !== null) ? $this->body : '0').';</script>';
+			<script>var data = '.(($this->body !== null && $this->body != '') ? $this->body : '0').';</script>';
 		} else {
 			$res .= '<div class="editor">'.$this->body.'</div>';
 		}

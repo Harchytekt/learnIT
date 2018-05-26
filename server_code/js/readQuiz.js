@@ -1,6 +1,6 @@
 /* jshint -W033, esversion: 6 */
 
-var previous = {}, maxDisplayedQuestionNb = 5, questionNumber = data.questions.length;
+var previous = {}, maxDisplayedQuestionNb = 5, questionNumber;
 var chosensAnswers = [], result = 0, resultArray = [];
 // var data is initialized in the Part model
 $(document).ready(function() {
@@ -21,7 +21,14 @@ $(document).ready(function() {
 function readQuiz() {
 	let res = ``;
 	res += (currentIsTest) ? `<h4>Questionnaire final ! 👨🏻‍🏫</h4>` : `<h4>Quiz facultatif... 👨🏻‍💻</h4>`;
-	res += (data == 0) ? `Le quiz n'est pas encore disponible.` : `${ readQuestions(data.questions) }`;
+
+	if (data == 0) {
+		res += `Le quiz n'est pas encore disponible.`;
+	} else {
+		questionNumber = data.questions.length;
+		res += `${ readQuestions(data.questions) }`;
+	}
+
 	$('.quiz').html(res);
 }
 
