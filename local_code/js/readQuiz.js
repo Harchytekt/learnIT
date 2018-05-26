@@ -70,11 +70,12 @@ function readQuestions(questions) {
 function readChoices(questionNb, choices) {
 	let res = ``;
 	for (let i = 0; i < choices.length; i++) {
-		res += `<div class="form-check">`;
-		res += `<input type="radio" class="form-check-input" name="qcm${ questionNb }" id="${ questionNb }_${ i }" value="${ choices[i].choice }">`;
-		res += `<label class="form-check-label" for="${ questionNb }_${ i }" id="label${ questionNb }_${ i }">${ choices[i].choice }</label> `;
-		res += `<span class="pop" data-toggle="popover" data-placement="right" for="label${ questionNb }_${ i }"><i class="fas fa-info-circle"></i></span>`
-		res += `</div>`;
+		res += `<div class="form-check"><div class="custom-control custom-radio">`;
+		res += `<input type="radio" class="custom-control-input" name="qcm${ questionNb }" id="${ questionNb }_${ i }" value="${ choices[i].choice }">`;
+		res += `<label class="custom-control-label" for="${ questionNb }_${ i }" id="label${ questionNb }_${ i }">${ choices[i].choice }</label> `;
+		res += `<span class="pop" data-toggle="popover" data-placement="right" for="label${ questionNb }_${ i }"><i class="fas fa-info-circle"></i></span>`;
+		res += `</div></div>`;
+
 	}
 	return res;
 }

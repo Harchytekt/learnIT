@@ -14,7 +14,7 @@ $(document).ready(function() {
 	}
 });
 
-$(document).on('change', '.form-check-input', function() {
+$(document).on('change', '.custom-control-input', function() {
 	let currentName = $(this).attr(`name`);
 	let inputChoices = $(`input[name="${ currentName }"]`);
 	for (let input of inputChoices) {
@@ -97,8 +97,10 @@ function addChoices() {
 				<input id="explanation${ i }Q${ currentNbOfQuestions }" class="form-control" type="text" name="explanation" required>
 			</div>
 			<div class="form-group">
-				<input type="radio" class="form-check-input" name="answersQ${ currentNbOfQuestions }" id="answer${ i }Q${ currentNbOfQuestions }" ${ (i == 1) ? "checked" : "" }>
-				<label class="form-check-label" for="answer${ i }Q${ currentNbOfQuestions }" class="control-label">${ (i == 1) ? "vrai" : "faux" }</label>
+				<div class="custom-control custom-radio">
+					<input type="radio" class="custom-control-input" name="answersQ${ currentNbOfQuestions }" id="answer${ i }Q${ currentNbOfQuestions }" ${ (i == 1) ? "checked" : "" }>
+					<label class="custom-control-label" for="answer${ i }Q${ currentNbOfQuestions }" class="control-label">${ (i == 1) ? "vrai" : "faux" }</label>
+				</div>
 			</div>
 		</div>`;
 	}
