@@ -33,28 +33,10 @@ class TestController extends Controller
 		$enrollId = Enrollment::getEnrollment($courseId)->id;
 
 		if (Test::getTest($enrollId, $chapterId) === null) {
-			$test = new Test;
-			$test->enrollment_id = $enrollId;
-			$test->chapter_id = $request->chapterId;
-			$test->bestResult = $result;
-			$test->testNumber = 1;
-			$test->tested = 1;
-			$test->passed = ($result > 7) ? 1 : 0;
-			$test->tested_at = new \DateTime();
+			Test::createAndNote($enrollId, $chapterId, $result);
 		} else {
 			$test = Test::getTest($enrollId, $chapterId);
-
-			if ($result > $test->bestResult) {
-				$test->bestResult = $result;
-			}
-			$test->testNumber = $test->testNumber + 1;
-			if ($test->passed == 0 && $result > 7) {
-				$test->passed = 1;
-			}
+			$test->note($result);
 		}
-
-		$test->result = $result;
-
-		$test->save();
 	}
 }
