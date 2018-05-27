@@ -2,10 +2,6 @@
 	margin-top: 45px;
 }
 
-#statisticsBar .col-10 {
-	margin-bottom: 45px;
-}
-
 .statisticsBubble {
 	background-color: #FFFFE5;
 	border-radius: 1000px;
@@ -68,4 +64,11 @@
 
 .unpublished {
 	color: #E0A800;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+	#statisticsBar .col-5 {
+		margin-bottom: 45px;
+	}
 }
