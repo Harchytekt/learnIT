@@ -147,7 +147,7 @@ function eventOnTestCorrection() {
 	getChosenResult();
 
 	// Disable all radio buttons
-	$(`.form-check-input`).prop(`disabled`, true);
+	$(`.custom-control-input`).prop(`disabled`, true);
 
 	// Display popover
 	chosensAnswers = (Object.keys(previous).map(function(v) { return previous[v]; }));
