@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Auth;
 use App\Chapter;
+use App\Enrollment;
 
 class Course extends Model
 {
@@ -18,6 +19,25 @@ class Course extends Model
     public function isFinished() {
         return $this->finished == 1;
     }
+
+
+	public function isTested() {
+		$chapters = $this->getAllPublishedChapters();
+		foreach ($chapters as $chapter) {
+			if ($chapter->isTested())
+				return true;
+		}
+		return false;
+	}
+
+	public function isCompleted()
+	{
+		$enrollment = Enrollment::where('student_id', Auth::user()->id)->where('course_id', $this->id)->first();
+		if ($enrollment === null) {
+			return false;
+		}
+		return $enrollment->isCompleted();
+	}
 
 	/**
 	 * This function returns if the course can be set as finished.
@@ -50,6 +70,39 @@ class Course extends Model
         return $this->belongsTo(User::class);
     }
 
+	public function getAllChapters()
+	{
+		return Chapter::where('course_id', $this->id)->get();
+	}
+
+	public function getAllPublishedChapters()
+	{
+		return Chapter::where('course_id', $this->id)->where('published', 1)->get();
+	}
+
+	public function getAverage()
+	{
+		$chapters = $this->getAllPublishedChapters();
+		$chaptersNb = (new Chapter)->countChapters($chapters);
+		$result = 0;
+
+		foreach ($chapters as $chapter) {
+			$tempResult = $chapter->getResult(true);
+			if ($tempResult != -1) {
+				$result += $chapter->getResult(true);
+			}
+
+		}
+		if ($result == 0)
+			return $result;
+
+		$result = $result / $chaptersNb;
+
+		if (is_float($result))
+			return round($result, 2);
+		return $result;
+	}
+
     public static function getCourseFromIDArray($IDArray) {
         foreach ($IDArray as $i => $value) {
             if ($i == 0) {
@@ -81,5 +134,27 @@ class Course extends Model
 	public function userIsTutor()
 	{
 		return Auth::user()->id == $this->creator_id;
+	}
+
+	public function countCourses($coursesId)
+	{
+		$coursesNb = 0;
+		foreach ($coursesId as $id) {
+			if (Course::where('id', $id)->first()->canBeCounted()) {
+				$coursesNb++;
+			}
+		}
+		return $coursesNb;
+	}
+
+	public function canBeCounted()
+	{
+		$chapters = Chapter::where('course_id', $this->id)->get();
+		foreach ($chapters as $chapter) {
+			if ($chapter->isTested()) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

@@ -3,11 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Chapter;
+use App\Course;
 use Auth;
 
 class Enrollment extends Model
 {
 	public $timestamps = false; // To create a new enrollment without timestamp
+
+	public function isCompleted()
+	{
+		return $this->completed == 1;
+	}
 
 	public static function numberOfEnrollments() {
         return static::where('student_id', Auth::user()->id)->count();
@@ -17,6 +24,27 @@ class Enrollment extends Model
         return static::where('student_id', Auth::user()->id)
             ->where('completed', 0)->count();
     }
+
+    public static function numberOfCompletedEnrollments() {
+        return static::where('student_id', Auth::user()->id)
+            ->where('completed', 1)->count();
+    }
+
+	public static function getAverage()
+	{
+		$coursesId = static::getAllEnrollments();
+		$coursesNb = (new Course)->countCourses($coursesId);
+		$result = 0;
+
+		foreach ($coursesId as $course_id) {
+			$result += Course::where('id', $course_id)->first()->getAverage();
+		}
+		$result = $result / $coursesNb;
+
+		if (is_float($result))
+			return round($result, 2);
+		return $result;
+	}
 
     public static function getAllEnrollments() {
         return static::where('student_id', Auth::user()->id)

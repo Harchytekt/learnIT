@@ -31,7 +31,7 @@ main {
 
 .close:hover:before,
 .close:focus:before {
-    color              : #FFF;
+    color              : white;
 }
 
 .close, .close:focus,
@@ -48,12 +48,12 @@ main {
 
 .alert .close:focus:before,
 .alert .close:hover:before {
-    color              : #FFF;
+    color              : white;
 }
 
 .jumbotron {
     text-align         : center;
-    border-color       : #FFF;
+    border-color       : white;
 }
 
 .center {
@@ -68,7 +68,7 @@ main {
     font-family        : 'Parisienne', cursive;
     margin             : 0;
     font-size          : 1.2rem;
-    color              : #FFF;
+    color              : white;
 }
 
 .card {
@@ -91,7 +91,7 @@ main {
 }
 
 .card .card-body {
-    background-color   : #FFF;
+    background-color   : white;
     padding            : 40px 50px;
     border-top         : 2px solid black;
     text-align         : left;
@@ -103,11 +103,11 @@ main {
 }
 
 h1 {
-    color              : #FFF;
+    color              : white;
 }
 
 .card h1 {
-    color              : #FFF;
+    color              : white;
     text-align         : center;
     margin-top         : 0.5rem;
 }

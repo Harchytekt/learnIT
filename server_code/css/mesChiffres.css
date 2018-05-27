@@ -1,0 +1,71 @@
+#statisticsBar {
+	margin-top: 45px;
+}
+
+#statisticsBar .col-10 {
+	margin-bottom: 45px;
+}
+
+.statisticsBubble {
+	background-color: #FFFFE5;
+	border-radius: 1000px;
+	text-align: center;
+	height: 150px;
+	width: 150px;
+	margin: 0 auto;
+}
+
+.statisticsBubble h2 {
+	font-size: 4rem;
+	line-height: 130px;
+}
+
+.statisticsBubble h2#percentage,
+.statisticsBubble h4 {
+	display: inline;
+}
+
+.statisticsBubble p {
+	position: relative;
+	top: -40px;
+}
+
+#jumbotronTitle {
+	color: white;
+	width: 100%;
+}
+
+#jumbotronTitle a {
+	color: white;
+}
+
+#jumbotronTitle a:focus,
+#jumbotronTitle a:hover {
+	color: #0D0D0D;
+}
+
+.jumbotron {
+	color: #50775D;
+	background-color: rgba(255, 255, 255, 0.80);
+	padding: 2rem 0;
+}
+
+.passed {
+	color: #2AB77E;
+}
+
+.failed {
+	color: #DC3545;
+}
+
+.pending {
+	color: #00AAFF;
+}
+
+.waiting {
+	color: #FCDB69;
+}
+
+.unpublished {
+	color: #E0A800;
+}

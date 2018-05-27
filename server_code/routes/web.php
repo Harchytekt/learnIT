@@ -50,13 +50,9 @@ Route::get('/terminer/cours/{course}', 'CourseController@finish');
 
 /* Mes chiffres */
 
-Route::get('/chiffresinscrits', function() {
-    return view('authenticated.mesChiffres.inscrits');
-})->middleware('auth');
+Route::get('/chiffresinscrits', 'StatisticsCourseController@showCoursesList');
 
-Route::get('/chiffreschapters', function() {
-    return view('authenticated.mesChiffres.chapters');
-})->middleware('auth');
+Route::get('/chiffreschapters/{course}', 'StatisticsCourseController@showChaptersList');
 
 Route::get('/chiffresecrits', function() {
     return view('authenticated.mesChiffres.ecrits');
