@@ -34,6 +34,9 @@ class Enrollment extends Model
 	{
 		$coursesId = static::getAllEnrollments();
 		$coursesNb = (new Course)->countCourses($coursesId);
+		if ($coursesNb == 0)
+			return 0;
+		
 		$result = 0;
 
 		foreach ($coursesId as $course_id) {
