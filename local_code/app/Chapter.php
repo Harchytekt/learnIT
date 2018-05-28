@@ -22,7 +22,7 @@ class Chapter extends Model
 	public function isPassed()
 	{
 		$enrollment = Enrollment::where('student_id', Auth::user()->id)->where('course_id', $this->course_id)->first();
-		if ($enrollment === null) // TODO: verify if code cannot be better
+		if ($enrollment === null)
 			return false;
 
 		$test = Test::where('enrollment_id', $enrollment->id)->where('chapter_id', $this->id)->first();
