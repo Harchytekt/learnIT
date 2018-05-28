@@ -7,7 +7,7 @@
 			<div class="inner">
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $part->id }}" class="btn btn-warning" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
+						<a href="/editer/{{ $course->id }}/{{ $chapter->id }}/{{ $part->id }}" class="btn btn-success" title="Éditer le chapitre"><i class="fas fa-edit"></i></a>
 					</div>
 					@if (!$chapter->lastPartIsTest())
 						<div class="btn-group mr-2" role="group" aria-label="Second group">
@@ -17,7 +17,7 @@
 					@endif
 					@if (!$chapter->isPublished())
 						<div class="btn-group mr-2" role="group" aria-label="Third group">
-							<button type="button" class="btn btn-info" title="Publier le chapitre" data-toggle="modal" data-target="#confirmerPublication"><i class="fas fa-cloud-upload-alt"></i></button>
+							<button type="button" class="btn btn-warning" title="Publier le chapitre" data-toggle="modal" data-target="#confirmerPublication"><i class="fas fa-cloud-upload-alt"></i></button>
 							<!-- Verification modal -->
 						</div>
 					@endif
@@ -68,7 +68,7 @@
 								Une fois publié, il sera accessible à tous.
 							</div>
 							<div class="modal-footer">
-								<a href="/publier/chapitre/{{ $chapter->id }}" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i> Publier</a>
+								<a href="/publier/chapitre/{{ $chapter->id }}" class="btn btn-warning"><i class="fas fa-cloud-upload-alt"></i> Publier</a>
 								<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Annuler</button>
 							</div>
 						</div>

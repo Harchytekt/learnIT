@@ -1,6 +1,6 @@
 /* jshint -W033, esversion: 6 */
 
-var previous = {}, maxDisplayedQuestionNb = 5, questionNumber = data.questions.length;
+var previous = {}, maxDisplayedQuestionNb = 5, questionNumber;
 var chosensAnswers = [], result = 0, resultArray = [];
 // var data is initialized in the Part model
 $(document).ready(function() {
@@ -21,7 +21,14 @@ $(document).ready(function() {
 function readQuiz() {
 	let res = ``;
 	res += (currentIsTest) ? `<h4>Questionnaire final ! 👨🏻‍🏫</h4>` : `<h4>Quiz facultatif... 👨🏻‍💻</h4>`;
-	res += (data == 0) ? `Le quiz n'est pas encore disponible.` : `${ readQuestions(data.questions) }`;
+
+	if (data == 0) {
+		res += `Le quiz n'est pas encore disponible.`;
+	} else {
+		questionNumber = data.questions.length;
+		res += `${ readQuestions(data.questions) }`;
+	}
+
 	$('.quiz').html(res);
 }
 
@@ -70,11 +77,12 @@ function readQuestions(questions) {
 function readChoices(questionNb, choices) {
 	let res = ``;
 	for (let i = 0; i < choices.length; i++) {
-		res += `<div class="form-check">`;
-		res += `<input type="radio" class="form-check-input" name="qcm${ questionNb }" id="${ questionNb }_${ i }" value="${ choices[i].choice }">`;
-		res += `<label class="form-check-label" for="${ questionNb }_${ i }" id="label${ questionNb }_${ i }">${ choices[i].choice }</label> `;
-		res += `<span class="pop" data-toggle="popover" data-placement="right" for="label${ questionNb }_${ i }"><i class="fas fa-info-circle"></i></span>`
-		res += `</div>`;
+		res += `<div class="form-check"><div class="custom-control custom-radio">`;
+		res += `<input type="radio" class="custom-control-input" name="qcm${ questionNb }" id="${ questionNb }_${ i }" value="${ choices[i].choice }">`;
+		res += `<label class="custom-control-label" for="${ questionNb }_${ i }" id="label${ questionNb }_${ i }">${ choices[i].choice }</label> `;
+		res += `<span class="pop" data-toggle="popover" data-placement="right" for="label${ questionNb }_${ i }"><i class="fas fa-info-circle"></i></span>`;
+		res += `</div></div>`;
+
 	}
 	return res;
 }
@@ -139,7 +147,7 @@ function eventOnTestCorrection() {
 	getChosenResult();
 
 	// Disable all radio buttons
-	$(`.form-check-input`).prop(`disabled`, true);
+	$(`.custom-control-input`).prop(`disabled`, true);
 
 	// Display popover
 	chosensAnswers = (Object.keys(previous).map(function(v) { return previous[v]; }));

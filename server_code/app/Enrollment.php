@@ -3,11 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Chapter;
+use App\Course;
 use Auth;
 
 class Enrollment extends Model
 {
 	public $timestamps = false; // To create a new enrollment without timestamp
+
+	public function isCompleted()
+	{
+		return $this->completed == 1;
+	}
 
 	public static function numberOfEnrollments() {
         return static::where('student_id', Auth::user()->id)->count();
@@ -17,6 +24,35 @@ class Enrollment extends Model
         return static::where('student_id', Auth::user()->id)
             ->where('completed', 0)->count();
     }
+
+    public static function numberOfCompletedEnrollments() {
+        return static::where('student_id', Auth::user()->id)
+            ->where('completed', 1)->count();
+    }
+
+	public static function getAverage($isWritten)
+	{
+		if ($isWritten) {
+			$coursesId = (new Course)->getAllWrittenCourses();
+		} else {
+			$coursesId = static::getAllEnrollments();
+		}
+
+		$coursesNb = (new Course)->countCourses($coursesId);
+		if ($coursesNb == 0)
+			return 0;
+
+		$result = 0;
+
+		foreach ($coursesId as $course_id) {
+			$result += Course::where('id', $course_id)->first()->getAverage($isWritten);
+		}
+		$result = $result / $coursesNb;
+
+		if (is_float($result))
+			return round($result, 2);
+		return $result;
+	}
 
     public static function getAllEnrollments() {
         return static::where('student_id', Auth::user()->id)
@@ -28,6 +64,11 @@ class Enrollment extends Model
             ->where('completed', 0)
             ->pluck('course_id')->toArray();
     }
+
+	public function getStudentNumber()
+	{
+		// code...
+	}
 
     public static function isAnEnrollment(Course $course) {
         return static::where('course_id', $course->id)->where('student_id', Auth::user()->id)->count() == 1;

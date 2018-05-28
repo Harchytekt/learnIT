@@ -182,12 +182,15 @@ h3.popover-header,
     font-family        : "Fira Code", "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-label.form-check-label {
-	padding-left: 10px;
+label {
 	display: inline;
 }
 
-.form-check-input {
+label.custom-control-label {
+	padding-left: 10px;
+}
+
+.custom-control-input {
 	margin-left: 0;
 }
 
@@ -197,4 +200,10 @@ select.custom-select {
 
 button:disabled {
 	cursor: not-allowed;
+}
+
+.custom-radio .custom-control-label::before {
+	border: 2px solid #333;
+	border-radius: 50% 45% 40% 50% / 40% 50% 50% 45%;
+	background-color: unset;
 }

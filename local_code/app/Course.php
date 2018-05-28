@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Auth;
+use App\Chapter;
+use App\Enrollment;
 
 class Course extends Model
 {
@@ -14,8 +16,43 @@ class Course extends Model
         return $this->published == 1;
     }
 
+    public function isFinished() {
+        return $this->finished == 1;
+    }
+
+
+	public function isTested() {
+		$chapters = $this->getAllPublishedChapters();
+		foreach ($chapters as $chapter) {
+			if ($chapter->isTested())
+				return true;
+		}
+		return false;
+	}
+
+	public function isCompleted()
+	{
+		$enrollment = Enrollment::where('student_id', Auth::user()->id)->where('course_id', $this->id)->first();
+		if ($enrollment === null) {
+			return false;
+		}
+		return $enrollment->isCompleted();
+	}
+
+	/**
+	 * This function returns if the course can be set as finished.
+	 * For that, it must contains at least 3 published chapters.
+	 */
+    public function canBeFinished() {
+        return Chapter::where('course_id', $this->id)->where('published', 1)->count() > 2;
+    }
+
 	public static function publish(Course $course) {
 		return static::where('id', $course->id)->update(['published' => 1]);
+	}
+
+	public static function finish(Course $course) {
+		return static::where('id', $course->id)->update(['finished' => 1]);
 	}
 
     public function chapters()
@@ -32,6 +69,69 @@ class Course extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+	public function getAllChapters()
+	{
+		return Chapter::where('course_id', $this->id)->get();
+	}
+
+	public static function getNumberOfWrittenCourses()
+	{
+		return static::where('creator_id', Auth::user()->id)->count();
+	}
+
+	public static function getAllWrittenCourses()
+	{
+		return static::where('creator_id', Auth::user()->id)->pluck('id')->toArray();
+	}
+
+	public static function getStudentsOfAllMyCourses()
+	{
+		$courses = static::where('creator_id', Auth::user()->id)->get();
+		$nbOfStudents = 0;
+		foreach ($courses as $course) {
+			$nbOfStudents += $course->getStudentsNumber();
+		}
+
+		return $nbOfStudents;
+	}
+
+	public function getStudentsNumber()
+	{
+		return Enrollment::where('course_id', $this->id)->count();
+	}
+
+	public function getAllPublishedChapters()
+	{
+		return Chapter::where('course_id', $this->id)->where('published', 1)->get();
+	}
+
+	public function getAverage($isWritten)
+	{
+		$chapters = $this->getAllPublishedChapters();
+		$chaptersNb = (new Chapter)->countChapters($chapters);
+		$result = 0;
+
+		foreach ($chapters as $chapter) {
+			if ($isWritten) {
+				$tempResult = $chapter->getAllResults();
+			} else {
+				$tempResult = $chapter->getResult(true);
+			}
+
+			if ($tempResult != -1) {
+				$result += $tempResult;
+			}
+		}
+		if ($result == 0)
+			return $result;
+
+		$result = $result / $chaptersNb;
+
+		if (is_float($result))
+			return round($result, 2);
+		return $result;
+	}
 
     public static function getCourseFromIDArray($IDArray) {
         foreach ($IDArray as $i => $value) {
@@ -64,5 +164,30 @@ class Course extends Model
 	public function userIsTutor()
 	{
 		return Auth::user()->id == $this->creator_id;
+	}
+
+	public function countCourses($coursesId)
+	{
+		$coursesNb = 0;
+		foreach ($coursesId as $id) {
+			if (Course::where('id', $id)->first()->canBeCounted()) {
+				$coursesNb++;
+			}
+		}
+		return $coursesNb;
+	}
+
+	public function canBeCounted()
+	{
+		$chapters = Chapter::where('course_id', $this->id)->get();
+		/*if (empty($chapters[0]))
+			return false;*/
+
+		foreach ($chapters as $chapter) {
+			if ($chapter->isTested()) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

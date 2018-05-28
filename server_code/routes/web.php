@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('bienvenue');
 });
 
+Route::get('/humans', function() { return Redirect::to('humans.txt'); });
+
 Auth::routes();
 
 /* Accueil */
@@ -46,20 +48,14 @@ Route::post('/cours/{course}/commentaires', 'CommentController@store');
 Route::get('/coursecrits', 'CourseController@showWritten');
 Route::get('/publier/cours/{course}', 'CourseController@publish');
 Route::get('/publier/chapitre/{chapter}', 'ChapterController@publish');
+Route::get('/terminer/cours/{course}', 'CourseController@finish');
 
 /* Mes chiffres */
 
-Route::get('/chiffresinscrits', function() {
-    return view('authenticated.mesChiffres.inscrits');
-})->middleware('auth');
-
-Route::get('/chiffreschapters', function() {
-    return view('authenticated.mesChiffres.chapters');
-})->middleware('auth');
-
-Route::get('/chiffresecrits', function() {
-    return view('authenticated.mesChiffres.ecrits');
-})->middleware('auth');
+Route::get('/chiffresinscrits', 'StatisticsCourseController@showCoursesList');
+Route::get('/chiffresinscrits/chapitre/{course}', 'StatisticsCourseController@showChaptersList');
+Route::get('/chiffresecrits', 'StatisticsCourseController@showWrittenCoursesList');
+Route::get('/chiffresecrits/chapitre/{course}', 'StatisticsCourseController@showWrittenChaptersList');
 
 /* Ecrire */
 

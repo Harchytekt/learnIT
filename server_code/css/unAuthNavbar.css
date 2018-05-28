@@ -7,7 +7,7 @@ nav, .dropdown-menu.show {
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
-    color              : #FFF;
+    color              : white;
 }
 
 .navbar .navbar-toggler {
@@ -45,7 +45,7 @@ nav, .dropdown-menu.show {
 .navbar-right li.nav-item a.nav-link:focus,
 .dropdown-menu.show .dropdown-item:focus,
 .dropdown-menu.show .dropdown-item:hover {
-    color              : #FFF;
+    color              : white;
     text-decoration    : underline;
     background-color   : unset;
 }

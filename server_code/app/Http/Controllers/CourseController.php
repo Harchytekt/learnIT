@@ -51,6 +51,13 @@ class CourseController extends Controller
 		return redirect()->back()->withMessage($message);
 	}
 
+	public function finish(Course $course)
+	{
+		Course::finish($course);
+		$message = "La rédaction du cours a été terminée avec succès !";
+		return redirect()->back()->withMessage($message);
+	}
+
     public function showEnrollments()
     {
         $courses = '';

@@ -7,7 +7,7 @@ nav.navbar, div.dropdown-menu.show {
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
-    color              : #FFF;
+    color              : white;
 }
 
 a,
@@ -37,7 +37,7 @@ div.dropdown-menu.show .dropdown-item {
 .navbar-light .navbar-nav .nav-link:hover,
 div.dropdown-menu.show .dropdown-item:focus,
 div.dropdown-menu.show .dropdown-item:hover {
-    color              : #FFF;
+    color              : white;
     background-color   : unset;
 }
 
@@ -60,11 +60,11 @@ div.dropdown-menu.show .dropdown-item.active {
 .navbar .btn-outline-danger,
 .navbar .btn-outline-danger:hover,
 .navbar .btn-outline-danger:focus {
-    color              : #FFF;
+    color              : white;
 }
 
 form .btn-outline-primary {
-    background-color   : #FFF;
+    background-color   : white;
 }
 
 .dropdown-menu {
