@@ -29,12 +29,12 @@ class HomeController extends Controller
         $favs = '';
         $enrs = '';
         $favIDs = Favorite::getAllFavorites(); // Array of favorites courses IDs
-        if (Favorite::numberOfFavorites() != 0) {
+        if (Favorite::getNumberOfFavorites() != 0) {
             $favs = Course::getCourseFromIDArray($favIDs);
         }
 
         $enrIDs = Enrollment::getAllEnrollments(); // Array of enrollments courses IDs
-        if (Enrollment::numberOfEnrollments() != 0) {
+        if (Enrollment::getNumberOfEnrollments() != 0) {
             $enrs = Course::getCourseFromIDArray($enrIDs);
         }
 

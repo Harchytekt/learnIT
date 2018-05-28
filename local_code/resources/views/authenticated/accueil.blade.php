@@ -15,8 +15,8 @@
     @php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <h3>Bienvenue {{ Auth::user()->username }} !</h3>
-	@php($nbEnrols = App\Enrollment::numberOfEnrollments())
-	@php($nbFavs = App\Favorite::numberOfFavorites())
+	@php($nbEnrols = App\Enrollment::getNumberOfEnrollments())
+	@php($nbFavs = App\Favorite::getNumberOfFavorites())
 
     <div class="container">
         <div class="row">

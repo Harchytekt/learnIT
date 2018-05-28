@@ -10,34 +10,16 @@ class Test extends Model
 {
     public $timestamps = false; // To create a new test without timestamp
 
-	public function isPassed()
-	{
-		return $this->passed == 1;
-	}
-
-	public function isTested()
-	{
-		return $this->tested == 1;
-	}
-
-	public function getResult($best)
-	{
-		if ($best)
-			return $this->bestResult;
-		return $this->result;
-	}
-
-	public function getTestNumber()
-	{
-		return $this->testNumber;
-	}
-
-	public static function getTest(int $enrollId, int $chapterId)
-	{
-		// If not static, gets a status 500 (Internal Server Error)
-		return static::where('enrollment_id', $enrollId)->where('chapter_id', $chapterId)->first();
-	}
-
+	/**
+	 * This function creates and saves a new test.
+	 *
+	 * @var $enrollId
+	 *		The enrollment ID linked to the new test.
+	 * @var $chapterId
+	 *		The chapter ID linked to the new test.
+	 * @var $result
+	 *		The result of the new test.
+	 */
 	public function createAndNote(int $enrollId, int $chapterId, int $result)
 	{
 		$test = new Test;
@@ -56,6 +38,66 @@ class Test extends Model
 		$test->setEnrollmentCompleted();
 	}
 
+	/**
+	 * This function returns the result of the test.
+	 *
+	 * @var $best
+	 *		If true, the returned value is the best result.
+	 *		Otherwise, the value is the last result.
+	 */
+	public function getResult($best)
+	{
+		if ($best)
+			return $this->bestResult;
+		return $this->result;
+	}
+
+	/**
+	 * This function returns the test linked by the given
+	 * enrollment and chapter.
+	 *
+	 * @var $enrollId
+	 *		The ID of the enrollment.
+	 * @var $chapterId
+	 *		The ID of the chapter.
+	 */
+	public static function getTest(int $enrollId, int $chapterId)
+	{
+		// If not static, gets a status 500 (Internal Server Error)
+		return static::where('enrollment_id', $enrollId)->where('chapter_id', $chapterId)->first();
+	}
+
+	/**
+	 * This function returns the number of times
+	 * that the chapter has been tested by the user.
+	 */
+	public function getTestNumber()
+	{
+		return $this->testNumber;
+	}
+
+	/**
+	 * This function returns if the test has already been passed.
+	 */
+	public function isPassed()
+	{
+		return $this->passed == 1;
+	}
+
+	/**
+	 * This function returns if the test has already been tested.
+	 */
+	public function isTested()
+	{
+		return $this->tested == 1;
+	}
+
+	/**
+	 * This function update the test with the given result.
+	 *
+	 * @var $result
+	 *		The new result of the test.
+	 */
 	public function note(int $result)
 	{
 		if ($result > $this->bestResult) {
@@ -75,6 +117,9 @@ class Test extends Model
 		$this->setEnrollmentCompleted();
 	}
 
+	/**
+	 * This function sets an enrollment as completed.
+	 */
 	public function setEnrollmentCompleted()
 	{
 		$currentChapter = Chapter::find($this->chapter_id);

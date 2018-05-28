@@ -50,7 +50,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function comments()
+	public function comments()
     {
         return $this->hasMany(Comment::class);
     }
@@ -60,11 +60,9 @@ class User extends Authenticatable
         return $this->hasMany(Course::class);
     }
 
-    public function publishComment(Comment $comment)
-    {
-        $this->courses()->save($comment);
-    }
-
+	/**
+	 * This function is used to get the first and last name of the user.
+	 */
     public function getName() {
         if ($this->lastname != '' || $this->firstname != '') {
             return  $this->firstname.' '.$this->lastname;
@@ -73,14 +71,21 @@ class User extends Authenticatable
         }
     }
 
+	/**
+	 * This function is used to return if the user is a tutor or not.
+	 */
     public function isATutor() {
-		/*$writtenCourses = Course::getWrittenCourses($this->id);
-		foreach ($writtenCourses as $course) {
-			if ($course->isPublished()) {
-				return true;
-			}
-		}
-		return false;*/
 		return Course::getWrittenCourses($this->id)->count() > 0;
+    }
+
+	/**
+	 * This function is used to save and publish comments.
+	 *
+	 * @var $comment
+	 *		The comment to save and publish
+	 */
+    public function publishComment(Comment $comment)
+    {
+        $this->courses()->save($comment);
     }
 }

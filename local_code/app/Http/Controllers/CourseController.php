@@ -62,7 +62,7 @@ class CourseController extends Controller
     {
         $courses = '';
         $enrIDs = Enrollment::getAllEnrollments(); // Array of enrollments courses IDs
-        if (Enrollment::numberOfEnrollments() != 0) {
+        if (Enrollment::getNumberOfEnrollments() != 0) {
             $courses = Course::getCourseFromIDArray($enrIDs);
         }
 
@@ -73,7 +73,7 @@ class CourseController extends Controller
     {
         $courses = '';
         $favIDs = Favorite::getAllFavorites(); // Array of favorites courses IDs
-        if (Favorite::numberOfFavorites() != 0) {
+        if (Favorite::getNumberOfFavorites() != 0) {
             $courses = Course::getCourseFromIDArray($favIDs);
         }
 
@@ -84,7 +84,7 @@ class CourseController extends Controller
     {
         $courses = '';
         $enrIDs = Enrollment::getInProgressEnrollments(); // Array of in progress courses IDs
-        if (Enrollment::numberOfEnrollments() != 0) {
+        if (Enrollment::getNumberOfEnrollments() != 0) {
             $courses = Course::getCourseFromIDArray($enrIDs);
         }
 

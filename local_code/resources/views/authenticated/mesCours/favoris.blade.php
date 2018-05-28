@@ -14,7 +14,7 @@
     @php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <div class="container">
-        @if (App\Favorite::numberOfFavorites() == 0)
+        @if (App\Favorite::getNumberOfFavorites() == 0)
             <div class="row">
                 @include('authenticated.layouts.vide')
             </div>

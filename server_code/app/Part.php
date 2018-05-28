@@ -7,15 +7,9 @@ use App\Chapter;
 
 class Part extends Model
 {
-	public static function getPartsFromChapter(int $chapter_id) {
-        $collection = collect(static::where('chapter_id', $chapter_id)->get());
-        return $collection;
-    }
-
-	public static function getPart(int $chapter_id, int $order_id) {
-		return static::where('chapter_id', $chapter_id)->where('order_id', $order_id)->first();
-    }
-
+	/**
+	 * This function gets the body of the current part.
+	 */
 	public function getBody()
     {
 		$res = "";
@@ -26,5 +20,17 @@ class Part extends Model
 			$res .= '<div class="editor">'.$this->body.'</div>';
 		}
 		return $res;
+    }
+
+	/**
+	 * This function gets a part of a given chapter.
+	 *
+	 * @var $chapter_id
+	 *		The ID of the chapter.
+	 * @var $order_id
+	 *		The order ID of the part tho get.
+	 */
+	public static function getPart(int $chapter_id, int $order_id) {
+		return static::where('chapter_id', $chapter_id)->where('order_id', $order_id)->first();
     }
 }

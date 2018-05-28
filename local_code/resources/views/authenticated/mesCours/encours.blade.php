@@ -14,7 +14,7 @@
     @php($angles = array(5, 1, -2, -6, 4, -1, 2, -5, -4, 6))
 
     <div class="container">
-        @if (App\Enrollment::numberOfInProgressEnrollments() == 0)
+        @if (App\Enrollment::getNumberOfInProgressEnrollments() == 0)
             <div class="row">
                 @include('authenticated.layouts.vide')
             </div>
