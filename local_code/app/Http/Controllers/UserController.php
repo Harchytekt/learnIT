@@ -10,7 +10,6 @@ use Hash;
 
 class UserController extends Controller
 {
-
     /**
      * Create a new controller instance.
      *
@@ -21,10 +20,53 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+	/**
+	 * Delete the account of the current user.
+	 */
+    public function destroy() {
+        $user = User::find(Auth::user()->id);
+
+        Auth::logout();
+
+        if ($user->delete()) {
+            session()->flash('flash_message', 'Le compte a été correctement supprimé.');
+            session()->flash('flash_type', 'alert-success');
+            return redirect('/');
+        } else {
+            session()->flash('flash_message', 'Le compte n\'a pas pu être supprimé.');
+            session()->flash('flash_type', 'alert-danger');
+            return redirect('/');
+        }
+    }
+
     public function index() {
         return view('authenticated.compte');
     }
 
+	/**
+	 * Update the email of the current user.
+	 */
+    public function updateEmail() {
+        $user = User::find(Auth::user()->id);
+
+        $rules = User::$rules;
+        $rules['email'] = $rules['email'].','.Auth::user()->id;
+        $validation = Validator::make(['email' => request('email'),], ['email' => $rules['email']]);
+
+        if ($validation->passes()) {
+            $user->email = request('email');
+            $user->save();
+            $message = "L'adresse email a été modifiée avec succès !";
+        } else {
+            $message = "L'adresse n'a pas pu être modifiée.";
+        }
+
+        return redirect('/compte')->withMessage($message);
+    }
+
+	/**
+	 * Update the first and last names of the current user.
+	 */
     public function updateNames() {
         $user = User::find(Auth::user()->id);
 
@@ -50,30 +92,9 @@ class UserController extends Controller
         return redirect('/compte')->withMessage($message);
     }
 
-    public function updateEmail() {
-        $user = User::find(Auth::user()->id);
-
-        $rules = User::$rules;
-        $rules['email'] = $rules['email'].','.Auth::user()->id;
-        $validation = Validator::make(['email' => request('email'),], ['email' => $rules['email']]);
-
-        /*dd($validation->passes(),
-            $validation->messages(),
-            ['email' => request('email')],
-            ['email' => $rules['email']]
-        );*/
-
-        if ($validation->passes()) {
-            $user->email = request('email');
-            $user->save();
-            $message = "L'adresse email a été modifiée avec succès !";
-        } else {
-            $message = "L'adresse n'a pas pu être modifiée.";
-        }
-
-        return redirect('/compte')->withMessage($message);
-    }
-
+	/**
+	 * Update the password of the current user.
+	 */
     public function updatePassword() {
         $user = User::find(Auth::user()->id);
 
@@ -95,21 +116,5 @@ class UserController extends Controller
         }
 
         return redirect('/compte')->withMessage($message);
-    }
-
-    public function destroy() {
-        $user = User::find(Auth::user()->id);
-
-        Auth::logout();
-
-        if ($user->delete()) {
-            session()->flash('flash_message', 'Le compte a été correctement supprimé.');
-            session()->flash('flash_type', 'alert-success');
-            return redirect('/');
-        } else {
-            session()->flash('flash_message', 'Le compte n\'a pas pu être supprimé.');
-            session()->flash('flash_type', 'alert-danger');
-            return redirect('/');
-        }
     }
 }

@@ -21,28 +21,25 @@ class PartController extends Controller
         $this->middleware('auth');
     }
 
-    public function showEditView(Course $course, Chapter $chapter, Part $part)
-    {
-		if ($course->creator_id == Auth::user()->id) {
-			return view('authenticated.edit.edit', compact('course', 'chapter', 'part'));
-		}
-		$message = "Vous n'êtes pas autorisé à voir cette page !";
-		return redirect()->back()->withMessage($message);
-    }
-
-	public function store(Request $request)
+	/**
+	 * Show the 'import a quiz' help page.
+	 */
+	public function help()
 	{
-		$part = Part::find($request->part);
-
-		if ($part->type == 'theory') {
-			$part->body = $request->html;
-		} else {
-			$part->body = $request->quiz;
-		}
-
-		$part->save();
+		return view('authenticated.edit.help');
 	}
 
+	/**
+	 * Show the view of the initialization of a new part.
+	 *
+	 * @var $chapter
+	 *		The chapter in which the part will be added.
+	 * @var $type
+	 *		The type of the new part:
+	 *			- 1, a theoric part;
+	 *			- 2, a quiz part;
+	 *			- 3, a test (rated) part.
+	 */
     public function partInitialization(Chapter $chapter, string $type) {
 		switch ($type) {
 			case '1':
@@ -72,8 +69,43 @@ class PartController extends Controller
         return redirect('/cours/'.$chapter->course_id.'/'.$chapter->id.'/'.$part->order_id)->withMessage($message);
     }
 
-	public function help()
+	/**
+	 * Show the edition view of the given part.
+	 *
+	 * @var $course
+	 *		The course containing the chapter.
+	 * @var $chapter
+	 *		The chapter containing the part.
+	 * @var $part
+	 *		The part to edit.
+	 */
+    public function showEditView(Course $course, Chapter $chapter, Part $part)
+    {
+		if ($course->creator_id == Auth::user()->id) {
+			return view('authenticated.edit.edit', compact('course', 'chapter', 'part'));
+		}
+		$message = "Vous n'êtes pas autorisé à voir cette page !";
+		return redirect()->back()->withMessage($message);
+    }
+
+	/**
+	 * Save the part into the database.
+	 *
+	 * @var $request
+	 *		The request contains:
+	 *			the html code of the theoric part
+	 *			or the quiz.
+	 */
+	public function store(Request $request)
 	{
-		return view('authenticated.edit.help');
+		$part = Part::find($request->part);
+
+		if ($part->type == 'theory') {
+			$part->body = $request->html;
+		} else {
+			$part->body = $request->quiz;
+		}
+
+		$part->save();
 	}
 }

@@ -21,6 +21,14 @@ class TestController extends Controller
         $this->middleware('auth');
     }
 
+	/**
+	 * Save the test into the database.
+	 *
+	 * @var $request
+	 *		The request contains the ID of the course,
+	 *		the ID of the chapter and
+	 *		the result of the test.
+	 */
 	public function store(Request $request)
 	{
 		$courseId = $request->courseId;

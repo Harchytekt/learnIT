@@ -21,6 +21,12 @@ class EditCourseController extends Controller
         $this->middleware('auth');
     }
 
+	/**
+	 * Show the edit view of a course.
+	 *
+	 * @var $course
+	 *		The course to edit.
+	 */
     public function show(Course $course)
     {
         return view('authenticated.edit.show', compact('course'));

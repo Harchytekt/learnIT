@@ -7,7 +7,13 @@ use App\Comment;
 
 class CommentController extends Controller
 {
-    public function store(Course $course)
+	/**
+	 * Save the comment into the database.
+	 *
+	 * @var $course
+	 *		The course to which the comment will be added 
+	 */
+	public function store(Course $course)
     {
         $this->validate(request(), ['body' => 'required|min:2']);
 
