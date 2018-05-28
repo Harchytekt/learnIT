@@ -13,7 +13,7 @@
                 <a class="nav-link fa-spin-hover" href="/cours"><i class="fas fa-university"></i> Cours</a>
             </li>
             <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle fa-spin-hover" data-toggle="dropdown" role="button" aria-haspopup="true"     aria-expanded="true" href="/mescours"><i class="fas fa-list-ul"></i>
+                <a class="nav-link dropdown-toggle fa-spin-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" href="/mescours"><i class="fas fa-list-ul"></i>
                 Mes cours</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 44px, 0px); top: 0px; left: 0px; will-change: transform;">
                     <a class="dropdown-item fa-spin-hover" href="/coursinscrits"><i class="fas fa-bookmark"></i>
