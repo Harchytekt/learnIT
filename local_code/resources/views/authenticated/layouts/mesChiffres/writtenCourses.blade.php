@@ -20,9 +20,8 @@
 				-
 			@endif
 		</td>
-
 	@else
-		<td class="text-center">En attente <i class="fas fa-spinner waiting"></i></td>
+		<td class="text-center">Non publié <i class="fas fa-pencil-alt unpublished"></i></td>
 		<td class="text-right">-</td>
 		<td class="text-right">-</td>
 	@endif
