@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('bienvenue');
 });
 
+Route::get('/humans', function() { return Redirect::to('humans.txt'); });
+
 Auth::routes();
 
 /* Accueil */
