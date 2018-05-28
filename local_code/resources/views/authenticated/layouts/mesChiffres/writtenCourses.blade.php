@@ -1,6 +1,13 @@
 <tr>
 	@php($course = App\Course::where('id', $courseId)->first())
-	<td>{{ $course->name }} <a href="/chiffresecrits/chapters/{{ $courseId }}" title="Voir par chapitres"><i class="fas fa-eye"></i></a></td>
+	<td>
+		{{ $course->name }}
+		@if ($course->isPublished() && $course->isTested())
+			<a class="chapterLink" href="/chiffresecrits/chapters/{{ $courseId }}" title="Voir par chapitres"><i class="far fa-eye"></i><i class="fas fa-eye"></i></a>
+		@else
+			<i class="far fa-eye-slash inactiveEye" title="Ce chapitre n'a aucune donnée supplémentaire."></i>
+		@endif
+	</td>
 	@if ($course->isPublished())
 		<td class="text-center">Publié <i class="fas fa-cloud passed"></i></td>
 		<td class="text-right">

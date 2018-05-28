@@ -47,6 +47,19 @@
 	padding: 2rem 0;
 }
 
+.inactiveEye {
+	color: #333;
+}
+
+a.chapterLink:hover [data-prefix="far"],
+a.chapterLink [data-prefix="fas"] {
+    display: none;
+}
+
+a.chapterLink:hover [data-prefix="fas"] {
+    display: inline;
+}
+
 .passed {
 	color: #2AB77E;
 }

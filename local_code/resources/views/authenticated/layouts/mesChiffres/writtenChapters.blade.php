@@ -6,6 +6,8 @@
 				Débloqué par défaut
 			@elseif (!$chapter->isPublished())
 				Non publié <i class="fas fa-pencil-alt unpublished"></i>
+			@elseif (!$chapter->isTested())
+				En attente <i class="fas fa-spinner waiting"></i>
 			@endif
 		</td>
 		<td class="text-right">-</td>
