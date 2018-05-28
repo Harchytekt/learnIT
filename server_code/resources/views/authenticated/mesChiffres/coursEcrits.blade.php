@@ -16,7 +16,7 @@
 				@include('authenticated.layouts.vide')
 			</div>
 		@else
-	        @include('authenticated.layouts.mesChiffres.statisticsBarWritten')
+	        @include('authenticated.layouts.mesChiffres.barreStatsEcrits')
         	<div class="row">
 	            <div id="jumbotronTitle" class="text-center">
 	                <h2>Détails</h2>
@@ -34,7 +34,7 @@
 	                    </thead>
 	                    <tbody>
 							@foreach (App\Course::getAllWrittenCourses() as $courseId)
-								@include('authenticated.layouts.mesChiffres.writtenCourses')
+								@include('authenticated.layouts.mesChiffres.coursEcrits')
 			                @endforeach
 	                    </tbody>
 	                </table>

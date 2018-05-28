@@ -11,7 +11,7 @@
     <h1>Chiffres pour vos inscriptions par chapitres.</h1>
 
     <div class="container">
-        @include('authenticated.layouts.mesChiffres.statisticsBarWritten')
+        @include('authenticated.layouts.mesChiffres.barreStatsEcrits')
         <div class="row">
             <div id="jumbotronTitle" class="text-center">
                 <h2>Détails</h2>
@@ -29,7 +29,7 @@
                     </thead>
                     <tbody>
 						@foreach ($course->getAllChapters() as $chapter)
-							@include('authenticated.layouts.mesChiffres.writtenChapters')
+							@include('authenticated.layouts.mesChiffres.chapitresEcrits')
 						@endforeach
                     </tbody>
                 </table>

@@ -53,9 +53,9 @@ Route::get('/terminer/cours/{course}', 'CourseController@finish');
 /* Mes chiffres */
 
 Route::get('/chiffresinscrits', 'StatisticsCourseController@showCoursesList');
-Route::get('/chiffresinscrits/chapters/{course}', 'StatisticsCourseController@showChaptersList');
+Route::get('/chiffresinscrits/chapitre/{course}', 'StatisticsCourseController@showChaptersList');
 Route::get('/chiffresecrits', 'StatisticsCourseController@showWrittenCoursesList');
-Route::get('/chiffresecrits/chapters/{course}', 'StatisticsCourseController@showWrittenChaptersList');
+Route::get('/chiffresecrits/chapitre/{course}', 'StatisticsCourseController@showWrittenChaptersList');
 
 /* Ecrire */
 

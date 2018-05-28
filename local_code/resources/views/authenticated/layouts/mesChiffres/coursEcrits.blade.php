@@ -3,7 +3,7 @@
 	<td>
 		{{ $course->name }}
 		@if ($course->isPublished() && $course->isTested())
-			<a class="chapterLink" href="/chiffresecrits/chapters/{{ $courseId }}" title="Voir par chapitres"><i class="far fa-eye"></i><i class="fas fa-eye"></i></a>
+			<a class="chapterLink" href="/chiffresecrits/chapitre/{{ $courseId }}" title="Voir par chapitres"><i class="far fa-eye"></i><i class="fas fa-eye"></i></a>
 		@else
 			<i class="far fa-eye-slash inactiveEye" title="Ce chapitre n'a aucune donnée supplémentaire."></i>
 		@endif
