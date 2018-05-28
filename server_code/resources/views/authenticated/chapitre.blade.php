@@ -49,6 +49,7 @@
 		<script src="{{ asset('js/readQuill.js') }}"></script>
 	@endif
 	<script>
+		// Initialize navigation bar.
 		getNav({{ $course->id }}, {{ $chapter->id }}, {{ $part->order_id }}, {{ $chapter->part_nb }});
 	</script>
 @endpush

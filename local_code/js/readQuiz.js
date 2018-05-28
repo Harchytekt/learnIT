@@ -2,6 +2,7 @@
 
 var previous = {}, maxDisplayedQuestionNb = 5, questionNumber;
 var chosensAnswers = [], result = 0, resultArray = [];
+
 // var data is initialized in the Part model
 $(document).ready(function() {
 	readQuiz();

@@ -1,5 +1,18 @@
 /* jshint esversion: 6 */
 
+/**
+ * This function is used to get the navigation bar
+ * of the current part of the chapter.
+ *
+ * @param courseId
+ *		The ID of the current course.
+ * @param chapterId
+ *		The ID of the current chapter.
+ * @param partOrderId
+ *		The order ID of the current part.
+ * @param maxPartNb
+ *		The number of parts of the chapter.
+ */
 function getNav(courseId, chapterId, partOrderId, maxPartNb) {
 	var url = `/cours/${ courseId }/${ chapterId }`;
 	var res = `<ul class="pagination justify-content-center">
@@ -39,6 +52,7 @@ function getNav(courseId, chapterId, partOrderId, maxPartNb) {
 	$(`#pageNav`).html(res);
 }
 
+// Add the event of the button to add a new part of the chapter.
 $(document).on('click', "#addnewPart", function() {
 	window.location.href = `/nouvellePartie/${ chapterId }/${ $(`#typeOfPart`).val() }`;
 });

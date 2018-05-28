@@ -14,6 +14,7 @@ $(document).ready(function() {
 	}
 });
 
+// Change the label linked to the radio button between 'vrai' and 'faux'.
 $(document).on('change', '.custom-control-input', function() {
 	let currentName = $(this).attr(`name`);
 	let inputChoices = $(`input[name="${ currentName }"]`);
@@ -22,14 +23,24 @@ $(document).on('change', '.custom-control-input', function() {
 	}
 });
 
+// Add event to the add question button.
 $(document).on('click', '#addQuestion', function() {
 	addNewQuestion();
 });
 
+// Add event to the remove question button.
 $(document).on('click', '#removeQuestion', function() {
 	removeLastQuestion();
 });
 
+/**
+ * This function is used to initialise the quiz editor by
+ * setting an empty form.
+ *
+ * @param quizQuestionsNumber
+ *		The number of questions in the form.
+ *		By default it's set to 2.
+ */
 function initQuizEditor(quizQuestionsNumber = 2) {
 	let res = `<form class="form-horizontal">`;
 	for (let i = 0; i < quizQuestionsNumber; i++) {
@@ -39,6 +50,10 @@ function initQuizEditor(quizQuestionsNumber = 2) {
 	$('.quiz').html(res);
 }
 
+/**
+ * This function is used to set the data from the quiz
+ * to modify inside the form.
+ */
 function getQuizData() {
 	let currentQuestion, currentChoices;
 	for (let i = 0; i < data.questions.length; i++) {
@@ -55,6 +70,15 @@ function getQuizData() {
 	}
 }
 
+/**
+ * This function is used to add a new question to the form.
+ *
+ * @param isInit
+ *		The boolean value used to know if the question is added
+ *		when initialising the form.
+ *		If true, the question is added to the string containing the form,
+ *		otherwise, the question is added inside the page.
+ */
 function addNewQuestion(isInit = false) {
 	if (nbOfQuestions < maxNbOfQuestions) {
 		currentNbOfQuestions = nbOfQuestions + 1;
@@ -76,6 +100,11 @@ function addNewQuestion(isInit = false) {
 	updateButtonState();
 }
 
+/**
+ * This function is used to remove the last question of the form.
+ * The minimal number of question has to be 2, so the function cannot
+ * be used unless there are three or more questions.
+ */
 function removeLastQuestion() {
 	if (nbOfQuestions > 2) {
 		$(`#Q${ nbOfQuestions-- }`).remove();
@@ -84,6 +113,12 @@ function removeLastQuestion() {
 	updateButtonState();
 }
 
+/**
+ * This function is used to add the three choices
+ * of a question in the quiz form.
+ *
+ * @return the html code of the choices.
+ */
 function addChoices() {
 	let res = ``;
 	for (let i = 1; i <= 3; i++) {
@@ -130,6 +165,15 @@ $.fn.serializeObject = function() {
 	return quiz;
 };
 
+/**
+ * This function is used to get the current question's choices.
+ *
+ * @param data
+ *		The object containing the completed form.
+ * @param nb
+ *		The number of the question.
+ * @return the current question's choices.
+ */
 function getChoices(data, nb) {
 	let choices = [], currentChoice, goodAnswer;
 	let nbOfChoices = 3, nbFields = (nbOfChoices * 2) + 1, i = nb, choiceNumber = 0;
@@ -177,11 +221,19 @@ function saveChanges(data = null) {
 	});
 }
 
+/**
+ * This function is used to update the state of the buttons
+ * used to add and remove questions.
+ *
+ * The quiz has to have less than 10 questions to add one.
+ * It has to have more than two questions to remobe one.
+ */
 function updateButtonState() {
 	$(`#addQuestion`).prop('disabled', (nbOfQuestions >= maxNbOfQuestions));
 	$(`#removeQuestion`).prop('disabled', (nbOfQuestions > 2) ? false : true);
 }
 
+// Verify if the given file is '.json'.
 $('input[type="file"]').on('change', function() {
 	var ext = $(this).val().split('.')[1];
 
@@ -197,6 +249,7 @@ $('input[type="file"]').on('change', function() {
 	}
 });
 
+// Import the given quiz if the file extension is good.
 $('#importQuiz').on('click', '#importQ', function(event) {
 	event.stopPropagation();
 	event.preventDefault();
@@ -205,6 +258,14 @@ $('#importQuiz').on('click', '#importQ', function(event) {
 	});
 });
 
+/**
+ * This function is used to get the given file from the form.
+ *
+ * @param file
+ *		The object containing the file content.
+ * @param callback
+ *		The callback used to get the content of the file.
+ */
 function readFile(file, callback) {
 	if (typeof (FileReader) != "undefined") {
 		var reader = new FileReader();
