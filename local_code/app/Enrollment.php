@@ -32,7 +32,12 @@ class Enrollment extends Model
 
 	public static function getAverage($isWritten)
 	{
-		$coursesId = static::getAllEnrollments();
+		if ($isWritten) {
+			$coursesId = (new Course)->getAllWrittenCourses();
+		} else {
+			$coursesId = static::getAllEnrollments();
+		}
+
 		$coursesNb = (new Course)->countCourses($coursesId);
 		if ($coursesNb == 0)
 			return 0;

@@ -180,6 +180,9 @@ class Course extends Model
 	public function canBeCounted()
 	{
 		$chapters = Chapter::where('course_id', $this->id)->get();
+		/*if (empty($chapters[0]))
+			return false;*/
+
 		foreach ($chapters as $chapter) {
 			if ($chapter->isTested()) {
 				return true;
