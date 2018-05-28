@@ -4,6 +4,9 @@
     @else
         <img class="tape" src="{{ asset('img/tape.svg') }}" alt="" height="52" width="183.3">
     @endif
+	@if ($course->isCompleted())
+		<img class="medal" src="{{ asset('img/medal.svg') }}" alt="" height="50" width="50">
+	@endif
 
     <div class="previewCase">
         <h4>{{ $course->name }}</h4>
