@@ -1,4 +1,4 @@
-<div class="row" id="statisticsBar">
+<div class="row" id="statisticsBarInscrits">
 	<div class="col-5 offset-sm-1 col-md-2 offset-md-0">
 		<div class="statisticsBubble">
 			<h2>{{ App\Enrollment::numberOfEnrollments() }}</h2>
@@ -19,7 +19,7 @@
 	</div>
 	<div class="col-5 offset-1 col-md-2">
 		<div class="statisticsBubble">
-			<h2 id="percentage">{{ App\Enrollment::getAverage() }}</h2> <h4>%</h4>
+			<h2 id="percentage">{{ App\Enrollment::getAverage(false) }}</h2> <h4>%</h4>
 			<p>de moyenne</p>
 		</div>
 	</div>
