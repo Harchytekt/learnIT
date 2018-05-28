@@ -30,4 +30,14 @@ class StatisticsCourseController extends Controller
     {
         return view('authenticated.mesChiffres.chapters', compact('course'));
     }
+
+    public function showWrittenCoursesList()
+    {
+        return view('authenticated.mesChiffres.ecrits');
+    }
+
+    public function showWrittenChaptersList(Course $course)
+    {
+        return view('authenticated.mesChiffres.writtenChapters', compact('course'));
+    }
 }

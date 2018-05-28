@@ -73,12 +73,35 @@ class Chapter extends Model
 		$enrollment = Enrollment::where('student_id', Auth::user()->id)->where('course_id', $this->course_id)->first();
 		$test = Test::where('enrollment_id', $enrollment->id)->where('chapter_id', $this->id)->first();
 
-		/*if ($test === null) {
-			return 0;
-		}*/
 		if ($test !== null) {
 			return $test->getResult($best) * 10;
 		}
+	}
+
+	public function getAllResults()
+	{
+		$result = 0;
+		$enrollments = Enrollment::where('course_id', $this->course_id)->get();
+		$studentsNb = $enrollments->count();
+		if ($studentsNb == 0)
+			return 0;
+
+		foreach ($enrollments as $enrollment) {
+			$test = Test::where('enrollment_id', $enrollment->id)->where('chapter_id', $this->id)->first();
+			if ($test === null) {
+				$studentsNb--;
+			} else {
+				$result += $test->getResult(true) * 10;
+			}
+		}
+		if ($result == 0)
+			return $result;
+
+		$result = $result / $studentsNb;
+
+		if (is_float($result))
+			return round($result, 2);
+		return $result;
 	}
 
 	public function getTestNumber()

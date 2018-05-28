@@ -11,7 +11,7 @@
     <h1>Chiffres pour vos inscriptions.</h1>
 
     <div class="container">
-        @include('authenticated.layouts.mesChiffres.statisticsBar')
+        @include('authenticated.layouts.mesChiffres.statisticsBarInscrits')
         <div class="row">
             <div id="jumbotronTitle" class="text-center">
                 <h2>Détails</h2>
@@ -28,7 +28,7 @@
                     </thead>
                     <tbody>
 						@foreach (App\Enrollment::getAllEnrollments() as $courseId)
-							@include('authenticated.layouts.mesChiffres.courses')
+							@include('authenticated.layouts.mesChiffres.coursesInscrit')
 		                @endforeach
                     </tbody>
                 </table>

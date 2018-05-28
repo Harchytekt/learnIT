@@ -11,11 +11,11 @@
     <h1>Chiffres pour vos inscriptions par chapitres.</h1>
 
     <div class="container">
-        @include('authenticated.layouts.mesChiffres.statisticsBarInscrits')
+        @include('authenticated.layouts.mesChiffres.statisticsBarWritten')
         <div class="row">
             <div id="jumbotronTitle" class="text-center">
                 <h2>Détails</h2>
-                <a href="/chiffresinscrits"><i class="fas fa-undo"></i> Retour vers le cours</a>
+                <a href="/chiffresecrits"><i class="fas fa-undo"></i> Retour vers le cours</a>
             </div>
 
             <div class="table-responsive jumbotron">
@@ -24,14 +24,12 @@
                         <tr>
                             <th scope="col">Chapitre</th>
                             <th scope="col">Statut</th>
-                            <th scope="col">Dernier résultat</th>
-                            <th scope="col">Meilleur résultat</th>
-                            <th scope="col">Nombre d'essais</th>
+                            <th scope="col">Résultat</th>
                         </tr>
                     </thead>
                     <tbody>
 						@foreach ($course->getAllChapters() as $chapter)
-							@include('authenticated.layouts.mesChiffres.chaptersInscrits')
+							@include('authenticated.layouts.mesChiffres.writtenChapters')
 						@endforeach
                     </tbody>
                 </table>

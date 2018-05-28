@@ -51,12 +51,9 @@ Route::get('/terminer/cours/{course}', 'CourseController@finish');
 /* Mes chiffres */
 
 Route::get('/chiffresinscrits', 'StatisticsCourseController@showCoursesList');
-
-Route::get('/chiffreschapters/{course}', 'StatisticsCourseController@showChaptersList');
-
-Route::get('/chiffresecrits', function() {
-    return view('authenticated.mesChiffres.ecrits');
-})->middleware('auth');
+Route::get('/chiffresinscrits/chapters/{course}', 'StatisticsCourseController@showChaptersList');
+Route::get('/chiffresecrits', 'StatisticsCourseController@showWrittenCoursesList');
+Route::get('/chiffresecrits/chapters/{course}', 'StatisticsCourseController@showWrittenChaptersList');
 
 /* Ecrire */
 

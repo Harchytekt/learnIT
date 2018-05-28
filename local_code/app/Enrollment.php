@@ -30,17 +30,17 @@ class Enrollment extends Model
             ->where('completed', 1)->count();
     }
 
-	public static function getAverage()
+	public static function getAverage($isWritten)
 	{
 		$coursesId = static::getAllEnrollments();
 		$coursesNb = (new Course)->countCourses($coursesId);
 		if ($coursesNb == 0)
 			return 0;
-		
+
 		$result = 0;
 
 		foreach ($coursesId as $course_id) {
-			$result += Course::where('id', $course_id)->first()->getAverage();
+			$result += Course::where('id', $course_id)->first()->getAverage($isWritten);
 		}
 		$result = $result / $coursesNb;
 
@@ -59,6 +59,11 @@ class Enrollment extends Model
             ->where('completed', 0)
             ->pluck('course_id')->toArray();
     }
+
+	public function getStudentNumber()
+	{
+		// code...
+	}
 
     public static function isAnEnrollment(Course $course) {
         return static::where('course_id', $course->id)->where('student_id', Auth::user()->id)->count() == 1;

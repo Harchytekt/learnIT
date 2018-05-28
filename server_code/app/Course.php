@@ -75,23 +75,53 @@ class Course extends Model
 		return Chapter::where('course_id', $this->id)->get();
 	}
 
+	public static function getNumberOfWrittenCourses()
+	{
+		return static::where('creator_id', Auth::user()->id)->count();
+	}
+
+	public static function getAllWrittenCourses()
+	{
+		return static::where('creator_id', Auth::user()->id)->pluck('id')->toArray();
+	}
+
+	public static function getStudentsOfAllMyCourses()
+	{
+		$courses = static::where('creator_id', Auth::user()->id)->get();
+		$nbOfStudents = 0;
+		foreach ($courses as $course) {
+			$nbOfStudents += $course->getStudentsNumber();
+		}
+
+		return $nbOfStudents;
+	}
+
+	public function getStudentsNumber()
+	{
+		return Enrollment::where('course_id', $this->id)->count();
+	}
+
 	public function getAllPublishedChapters()
 	{
 		return Chapter::where('course_id', $this->id)->where('published', 1)->get();
 	}
 
-	public function getAverage()
+	public function getAverage($isWritten)
 	{
 		$chapters = $this->getAllPublishedChapters();
 		$chaptersNb = (new Chapter)->countChapters($chapters);
 		$result = 0;
 
 		foreach ($chapters as $chapter) {
-			$tempResult = $chapter->getResult(true);
-			if ($tempResult != -1) {
-				$result += $chapter->getResult(true);
+			if ($isWritten) {
+				$tempResult = $chapter->getAllResults();
+			} else {
+				$tempResult = $chapter->getResult(true);
 			}
 
+			if ($tempResult != -1) {
+				$result += $tempResult;
+			}
 		}
 		if ($result == 0)
 			return $result;
