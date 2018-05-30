@@ -7,11 +7,27 @@ h6 {
     display            : inline;
 }
 
-h3 {
+#imported #closeImported {
+	color: #DC3545;
+}
+
+#imported #closeImported:hover,
+#imported #closeImported:focus {
+	color: #B32535;
+	cursor: pointer;
+}
+
+h3,
+#imported ul {
     color              : #2E2E2F;
 }
 
-h4 {
+#imported h2 {
+	color: white;
+}
+
+h4,
+#imported h6 {
     color              : #FFDC0A;
 }
 
@@ -28,12 +44,41 @@ h4#rmAccount {
     color              : #DC3545;
 }
 
+#imported h5,
 .vars {
     color              : #2B91CD;
 }
 
-#name {
+.darkGreen {
+	color: #1F885E;
+}
+
+button#import {
+	background: unset;
+	border: unset;
+	margin: 0;
+	padding: 0;
+	margin-left: 10px;
+	color: white;
+}
+
+button#import:focus,
+button#import:hover {
+	color: #212529;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+
+button#importU:disabled {
+	cursor: not-allowed;
+}
+
+#name,
+button#import {
     vertical-align     : bottom;
+	display: inline;
 }
 
 #modifyName {

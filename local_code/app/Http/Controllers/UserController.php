@@ -10,7 +10,7 @@ use Hash;
 
 class UserController extends Controller
 {
-    /**
+	/**
      * Create a new controller instance.
      *
      * @return void
@@ -39,9 +39,61 @@ class UserController extends Controller
         }
     }
 
+	/**
+	 * Show the 'import a user list' help page.
+	 */
+	public function help()
+	{
+		return view('authenticated.help');
+	}
+
+	/**
+	 * Show the account view.
+	 */
     public function index() {
         return view('authenticated.compte');
     }
+
+	/**
+	 * Save the user list into the database.
+	 *
+	 * @var $request
+	 *		The request contains the user list.
+	 */
+	public function storeUsersList(Request $request)
+	{
+		$nbOfCreatedUsers = 0;
+		$nbOfGivenUsers = 0;
+		$createdUser = [];
+		$existingUsernames = [];
+		$existingEmails = [];
+		$existingBoth = [];
+		$state;
+
+		foreach (json_decode($request->userList) as $user) {
+			if ($user->firstname !== '') {
+				$nbOfGivenUsers++;
+
+				$state = User::alreadyExist($user->firstname.$user->lastname, $user->email);
+				if ($state != 0) {
+					if ($state == 1) {
+						$existingUsernames[] = $user->firstname.$user->lastname;
+					} elseif ($state == 2) {
+						$existingEmails[] = $user->email;
+					} else {
+						$existingBoth[] = [$user->firstname.$user->lastname, $user->email];
+					}
+				} else {
+					$nbOfCreatedUsers++;
+					$createdUser[] = [$user->firstname.$user->lastname, $user->email];
+					User::createNew($user->firstname, $user->lastname, $user->email);
+				}
+			}
+		}
+		$arrayInfo = [$nbOfCreatedUsers, $nbOfGivenUsers, $createdUser, $existingUsernames, $existingEmails, $existingBoth];
+
+		return $arrayInfo;
+	}
 
 	/**
 	 * Update the email of the current user.

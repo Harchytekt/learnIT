@@ -32,6 +32,9 @@ Route::post('/majnames', 'UserController@updateNames');
 Route::post('/majemail', 'UserController@updateEmail');
 Route::post('/majmdp', 'UserController@updatePassword');
 Route::get('/supprimercompte', 'UserController@destroy');
+Route::post('/importUsers', 'UserController@storeUsersList');
+Route::get('/importUsers/aide', 'UserController@help');
+
 
 /* Mes cours */
 

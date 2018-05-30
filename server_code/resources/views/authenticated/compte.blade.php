@@ -49,6 +49,36 @@
             <img id="usersIcon" src="{{ asset('img/users/'.$img.'.svg') }}" alt="" height="128" width="128">
 
             <span class="vars" id="name">{{ Auth::user()->getName() }}, {{ $status }}</span>
+			@if (Auth::user()->isATutor())
+				<button id="import" type="button" title="Importer une liste d'utilisateurs" data-toggle="modal" data-target="#importModal"><i class="fas fa-cloud-upload-alt"></i></button>
+
+				<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importationModal" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="importationModal">Importation d'une liste d'utilisateurs</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<form id="importUsers">
+								<div class="modal-body">
+									<div class="form-group">
+										<input type="file" accept="text/csv, .csv">
+									</div>
+									<span name="csrf-token" content="{{ csrf_token() }}"></span>
+									Plus d'informations sur le format d'importation <a target="_blank" href="/importUsers/aide" class="blue">ici</a>.
+								</div>
+								<div class="modal-footer">
+									<button type="button" id="importU" class="btn btn-warning" disabled><i class="fas fa-cloud-upload-alt"></i> Importer</button>
+									<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Annuler</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			@endif
+
             <div id="centerBtnName">
                 <button type="button" class="btn btn-link" id="modifyName" data-toggle="modal" data-target="#nameModal">Modifier le nom</button>
             </div>
@@ -88,8 +118,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+		<div id="imported" style="display: none;"></div>
 
         <hr>
 
@@ -169,3 +200,7 @@
         @endif
     </div>
 @endsection
+
+@push('js')
+	<script src="{{ asset('js/importUsers.js') }}"></script>
+@endpush
