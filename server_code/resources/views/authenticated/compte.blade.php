@@ -111,8 +111,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">Enregistrer</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enregistrer</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Annuler</button>
                             </div>
                         </form>
                     </div>
@@ -203,4 +203,9 @@
 
 @push('js')
 	<script src="{{ asset('js/importUsers.js') }}"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	</script>
 @endpush
