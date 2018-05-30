@@ -24,8 +24,13 @@
 
     <div class="row">
         <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Unde labore totam harum omnis nobis atque voluptas et. Porro totam temporibus asperiores ut.</p>
+            <h2>Apprentissage</h2>
+            <p id="learn3Phases">Il se fait en trois étapes :</p>
+			<ol>
+				<li>Apprentissage théorique avec exemples. </li>
+				<li>Après chaque partie théorique, exercices pour fixer la matière. </li>
+				<li>QCM noté sur 10 requerrant une cote minimale de 7/10 pour le passage au chapitre suivant.</li>
+			</ol>
         </div>
         <div class="col-lg-4">
             @include('layouts.citations_bienvenue')
@@ -34,8 +39,8 @@
             <h2>learnIT mobile</h2>
             <p>
                 Le site permet un accès sur ordinateur, tablette ou smartphone.  <br>
-                Continue à apprendre même sans wifi grâce à notre app pour un mode hors-ligne. <br>
-                Apprends où tu veux, quand tu veux…
+                Continuez à apprendre même sans wifi grâce à notre app pour un mode hors-ligne. <br>
+                Apprennez où vous voulez, quand vous le voulez…
             </p>
             <p><a class="btn btn-primary disabled" href="#" role="button" disabled>Bientôt disponible</a></p>
         </div>
