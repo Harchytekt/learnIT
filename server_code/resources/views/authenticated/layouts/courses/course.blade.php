@@ -56,7 +56,7 @@
 				@if (!$course->isFinished() && $course->canBeFinished())
 					<!-- TFinish writing modal -->
 					<div class="modal fade" id="finishWriting" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
@@ -79,7 +79,7 @@
 				@if (!$course->isPublished())
 					<!-- Modal Confirmation -->
 					<div class="modal fade" id="confirmerPublication" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>

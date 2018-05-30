@@ -27,7 +27,7 @@
 
 			<!-- Type of Part Modal -->
 			<div class="modal fade" id="typeModal" tabindex="-1" role="dialog" aria-labelledby="typePartModal" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="typePartModal">Choix du type de partie</h5>
@@ -55,7 +55,7 @@
 			@if (!$chapter->isPublished())
 				<!-- Verification Modal -->
 				<div class="modal fade" id="confirmerPublication" tabindex="-1" role="dialog" aria-labelledby="confirmPublication" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="confirmPublication">Confirmation</h5>
