@@ -15,7 +15,7 @@
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         <label for="username" class="control-label"><i class="fas fa-user"></i> Pseudo</label>
 
-                        <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Pseudo" required autofocus>
+                        <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Pseudo" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Caractères alphanumériques et tirets uniquement." required autofocus>
 
                         @if ($errors->has('username'))
                             <span class="help-block">
@@ -39,7 +39,7 @@
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password" class="control-label"><i class="fas fa-key"></i> Mot de passe</label>
 
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Mot de passe" required>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Mot de passe" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Taille <em>entre</em> <b>6</b> <em>et</em> <b>20</b> caractères. <br>Au moins <b>1</b> <em>majuscule</em>, <b>1</b> <em>minuscule</em>, <b>1</b> <em>chiffre</em> et <b>1</b> <em>caractère spécial</em>." required>
 
                         @if ($errors->has('password'))
                             <span class="help-block">
@@ -51,7 +51,7 @@
                     <div class="form-group">
                         <label for="password-confirm" class="control-label"><i class="fas fa-key"></i> Confirmation du mot de passe</label>
 
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmation du mot de passe" required>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmation du mot de passe" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Taille <em>entre</em> <b>6</b> <em>et</em> <b>20</b> caractères. <br>Au moins <b>1</b> <em>majuscule</em>, <b>1</b> <em>minuscule</em>, <b>1</b> <em>chiffre</em> et <b>1</b> <em>caractère spécial</em>." required>
                     </div>
 
                     <div class="form-group end">

@@ -1,4 +1,4 @@
-nav, div.dropdown-menu.show {
+nav.navbar, div.dropdown-menu.show {
     position           : fixed;
     background-color   : #8C4119;
     border-bottom      : 2px solid #000;
@@ -7,12 +7,19 @@ nav, div.dropdown-menu.show {
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
-    color              : #FFF;
+    color              : white;
 }
 
 a,
 li {
     outline            : none;
+}
+
+a.btn.fa-spin-hover:hover svg,
+a.nav-link.fa-spin-hover:hover svg,
+a.dropdown-item.fa-spin-hover:hover svg {
+    -webkit-animation  : fa-spin 2s infinite linear;
+    animation          : fa-spin 2s infinite linear;
 }
 
 .navbar .navbar-toggler,
@@ -30,7 +37,17 @@ div.dropdown-menu.show .dropdown-item {
 .navbar-light .navbar-nav .nav-link:hover,
 div.dropdown-menu.show .dropdown-item:focus,
 div.dropdown-menu.show .dropdown-item:hover {
-    color              : #FFF;
+    color              : white;
+    background-color   : unset;
+}
+
+.navbar-light .navbar-nav .nav-link.account {
+    color              : #04B5DD;
+}
+
+.navbar-light .navbar-nav .nav-link.account:focus,
+.navbar-light .navbar-nav .nav-link.account:hover {
+    color              : #ABE6F3;
     background-color   : unset;
 }
 
@@ -43,11 +60,11 @@ div.dropdown-menu.show .dropdown-item.active {
 .navbar .btn-outline-danger,
 .navbar .btn-outline-danger:hover,
 .navbar .btn-outline-danger:focus {
-    color              : #FFF;
+    color              : white;
 }
 
 form .btn-outline-primary {
-    background-color   : #FFF;
+    background-color   : white;
 }
 
 .dropdown-menu {
@@ -60,15 +77,21 @@ form .btn-outline-primary {
 
 
 /* Special for navbar icons… */
-@media only screen and (max-width: 1155px) {
+@media only screen and (max-width: 1163px) {
     /* NAVBAR */
-
-    .nav-item a i.fa {
-        display            : none;
-    }
 
     .nav-item a {
         font-size          : 0.9rem
+    }
+}
+
+
+/* Special for navbar icons… */
+@media only screen and (max-width: 1110px) {
+    /* NAVBAR */
+
+    .nav-item a svg {
+        display            : none;
     }
 }
 
@@ -78,7 +101,7 @@ form .btn-outline-primary {
 
     /* NAVBAR */
 
-    .nav-item a i.fa {
+    .nav-item a svg {
         display            : inline-block;
     }
 

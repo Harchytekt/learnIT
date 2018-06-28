@@ -1,0 +1,160 @@
+.jumbotron {
+    background-color   : rgba(255, 255, 255, 0.61);
+}
+
+h3,
+h6 {
+    display            : inline;
+}
+
+#imported #closeImported {
+	color: #DC3545;
+}
+
+#imported #closeImported:hover,
+#imported #closeImported:focus {
+	color: #B32535;
+	cursor: pointer;
+}
+
+h3,
+#imported ul {
+    color              : #2E2E2F;
+}
+
+#imported h2 {
+	color: white;
+}
+
+h4,
+#imported h6 {
+    color              : #FFDC0A;
+}
+
+h4.modal-title {
+    color              : #B59C07;
+}
+
+h4#createdAt,
+h6 {
+    color              : #656565;
+}
+
+h4#rmAccount {
+    color              : #DC3545;
+}
+
+#imported h5,
+.vars {
+    color              : #2B91CD;
+}
+
+.darkGreen {
+	color: #1F885E;
+}
+
+button#import {
+	background: unset;
+	border: unset;
+	margin: 0;
+	padding: 0;
+	margin-left: 10px;
+	color: white;
+}
+
+button#import:focus,
+button#import:hover {
+	color: #212529;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+
+button#importU:disabled {
+	cursor: not-allowed;
+}
+
+#name,
+button#import {
+    vertical-align     : bottom;
+	display: inline;
+}
+
+#modifyName {
+    vertical-align     : middle;
+}
+
+#centerBtnName {
+    display            : inline-block;
+}
+
+.label {
+    color              : #2E2E2F;
+}
+
+.label.mdp {
+    width              : 250px;
+}
+
+.centerBtn {
+    text-align         : center;
+}
+
+#rm {
+    width              : 100%;
+}
+
+.rmMessage {
+    color              : #DC3545;
+}
+
+#inner {
+    display            : table;
+    margin             : 0 auto;
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    h3,
+    h6 {
+        display            : block;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .centerModify {
+        display            : table;
+        margin             : 0 auto;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    h4#createdAt {
+        font-size          : 19px;
+    }
+
+    #centerBtnName {
+        display: block;
+        text-align         : center;
+    }
+
+    img#usersIcon {
+        height             : 90px;
+        width              : 90px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .label {
+        margin-top         : 10px;
+    }
+
+    .label.mdp {
+        margin-bottom      : -5px;
+    }
+}

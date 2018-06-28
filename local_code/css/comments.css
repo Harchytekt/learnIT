@@ -1,0 +1,46 @@
+#commentsBlock {
+    margin-top         : 64px;
+    margin-bottom      : 100px;
+    border-radius      : 10px;
+    -webkit-transform  : rotate(-1deg);
+            transform  : rotate(-1deg);
+    -webkit-box-shadow : 3px -3px #213C32;
+            box-shadow : 3px -3px #213C32;
+}
+
+img.tape {
+    display            : block;
+    margin-left        : auto;
+    margin-right       : auto;
+    position           : relative;
+        left           : 5px;
+}
+
+img.tape#up {
+    top                : -30px;
+}
+
+img.tape#bottom {
+    top                : 25px;
+}
+
+.innerComment {
+    width              : 80%;
+}
+
+#commentList {
+    padding            : 10px 0;
+}
+
+.commentInfos {
+    font-size          : 75%;
+    color              : #C7C7C7;
+}
+
+.commentAuthor {
+    color              : #808080;
+}
+
+form {
+    padding-top        : 10px;
+}

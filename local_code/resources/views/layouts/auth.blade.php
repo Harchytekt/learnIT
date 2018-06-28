@@ -8,10 +8,11 @@
         @include('layouts.favicons')
 
         <!-- CSS -->
-        <link href="{{ asset('css/Bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+        <link href="{{ asset('css/Bootstrap/bootstrap.css') }}" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
         <link href="{{ asset('css/authNavbar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
+        @stack('styles') <!-- Add style from pages using the layout -->
 
         <title>@yield('title')</title>
 
@@ -28,15 +29,16 @@
             </main>
         </div>
 
+        <!-- jQuery -->
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+        <!-- Popper -->
+        <script src="{{ asset('js/Popper/popper.min.js') }}"></script>
+        <!-- Bootstrap -->
+        <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
+        <!-- Other -->
+        <script src="{{ asset('js/navbar.js') }}"></script>
+
+        @stack('js') <!-- Add style from pages using the layout -->
+
     </body>
-
-    <!-- jQuery -->
-    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <!-- Popper -->
-    <script src="{{ asset('js/Popper/popper.min.js') }}"></script>
-    <!-- Bootstrap -->
-    <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
-    <!-- Other -->
-    <script src="{{ asset('js/navbar.js') }}"></script>
-
 </html>
