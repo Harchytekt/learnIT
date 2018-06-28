@@ -1,7 +1,7 @@
 /* jshint -W033, esversion: 6 */
 
 var previous = {}, maxDisplayedQuestionNb = 5, questionNumber;
-var chosensAnswers = [], result = 0, resultArray = [];
+var chosensAnswers = [], result = 0, resultArray = [], questionsArray = [];
 
 // var data is initialized in the Part model
 $(document).ready(function() {
@@ -43,7 +43,8 @@ function readQuiz() {
  */
 function readQuestions(questions) {
 	let res = `<form id="quizForm">`;
-	let questionIdArray = [...Array(questionNumber).keys()], questionsArray = [];
+	let questionIdArray = [...Array(questionNumber).keys()];
+	questionsArray = [];
 	let maxNbQuestions = (questionNumber > maxDisplayedQuestionNb) ? maxDisplayedQuestionNb : questionNumber, currentQuestionIdLength;
 
 	for (let i = 0; i < maxNbQuestions; i++) {
@@ -101,7 +102,7 @@ function readChoices(questionNb, choices) {
  *		has to be shown or hidden.
  */
 function setPopover(chosen, hide) {
-	let choice = data.questions[chosen[0]].choices[chosen[1]];
+	let choice = data.questions[questionsArray.indexOf(parseInt(chosen[0]))].choices[chosen[1]];
 	let popover = $(`span[for="label${ chosen[0] }_${ chosen[1] }"]`);
 	if (hide) {
 		popover.css('display', 'none');
@@ -178,6 +179,7 @@ function getChosenResult() {
 	let currentQuestion, currentChoice;
 	for (let i = 0; i < questionNumber; i++) {
 		[currentQuestion, currentChoice] = $(`#quizForm * input:radio[name="qcm${ i }"]:checked`).attr("id").split('_');
+		currentQuestion = questionsArray.indexOf(parseInt(currentQuestion));
 		resultArray[i] = (data.questions[currentQuestion].choices[currentChoice].isTheAnswer)
 	}
 }

@@ -31,10 +31,12 @@
     <div class="container">
         <div class="row previewParent">
             @include('authenticated.layouts.courses.ajouterCours')
-			@foreach ($courses as $course)
-				@include('authenticated.layouts.courses.apercuCours')
-				@php($id += 1)
-			@endforeach
+            @if (!empty($courses))
+    			@foreach ($courses as $course)
+    				@include('authenticated.layouts.courses.apercuCours')
+    				@php($id += 1)
+    			@endforeach
+            @endif
         </div>
     </div>
 @endsection

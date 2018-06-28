@@ -33,7 +33,7 @@
 					@if ($course->isPublished())
 						<i class="fas fa-cloud" title="Publié"></i>
 					@else
-						<a href="/coursecrits/{{ $course->id }}">
+						<a href="/publier/cours/{{ $course->id }}">
 							<i class="fas fa-cloud-upload-alt" title="Publier"></i>
 						</a>
 					@endif

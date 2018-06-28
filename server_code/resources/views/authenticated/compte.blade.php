@@ -203,7 +203,7 @@
 
 @push('js')
 	<script src="{{ asset('js/importUsers.js') }}"></script>
-	<script type="text/javascript">
+	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()
 		})

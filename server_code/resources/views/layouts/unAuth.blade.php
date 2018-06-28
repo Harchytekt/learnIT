@@ -42,7 +42,7 @@
         <!-- Bootstrap -->
         <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
         <!-- Tooltip -->
-        <script type="text/javascript">
+        <script>
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
             })

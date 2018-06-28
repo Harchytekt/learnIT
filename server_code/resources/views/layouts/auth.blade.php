@@ -29,16 +29,16 @@
             </main>
         </div>
 
+        <!-- jQuery -->
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+        <!-- Popper -->
+        <script src="{{ asset('js/Popper/popper.min.js') }}"></script>
+        <!-- Bootstrap -->
+        <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
+        <!-- Other -->
+        <script src="{{ asset('js/navbar.js') }}"></script>
+
+        @stack('js') <!-- Add style from pages using the layout -->
+
     </body>
-
-    <!-- jQuery -->
-    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <!-- Popper -->
-    <script src="{{ asset('js/Popper/popper.min.js') }}"></script>
-    <!-- Bootstrap -->
-    <script src="{{ asset('js/Bootstrap/bootstrap.min.js') }}"></script>
-    <!-- Other -->
-    <script src="{{ asset('js/navbar.js') }}"></script>
-
-    @stack('js') <!-- Add style from pages using the layout -->
 </html>

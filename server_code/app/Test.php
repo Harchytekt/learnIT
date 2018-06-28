@@ -20,7 +20,7 @@ class Test extends Model
 	 * @var $result
 	 *		The result of the new test.
 	 */
-	public function createAndNote(int $enrollId, int $chapterId, int $result)
+	public static function createAndNote(int $enrollId, int $chapterId, int $result)
 	{
 		$test = new Test;
 

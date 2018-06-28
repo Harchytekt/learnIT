@@ -48,7 +48,7 @@
     <script src="{{ asset('js/Bootstrap/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/Bootstrap/dataTables.bootstrap4.min.js') }}"></script>
 
-    <script type="text/javascript">
+    <script>
         $(document).ready(function() {
             $('#coursesTable').DataTable();
         });
