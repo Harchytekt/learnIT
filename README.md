@@ -6,10 +6,6 @@ This is my graduation work at the Haute École en Hainaut.
 
 The site is developped with the Laravel framework and will offer an Android application for offline access.
 
-![Homepage](preview.png "Homepage")
-
----
-
 ## Todo list
 
 <details><summary>Display the list</summary>
@@ -42,3 +38,5 @@ The site is developped with the Laravel framework and will offer an Android appl
 - [ ] Add image support in courses
 - [ ] Add more security _(against multiple signins, DB overload...)_
 </details>
+
+![Homepage](preview.png "Homepage")
