@@ -1,5 +1,8 @@
 # learnIT
 
+![Version](https://img.shields.io/badge/version-1.0-blue.svg)
+![License](https://img.shields.io/badge/license-GPL--3.0-orange.svg)
+
 learnIT is a learning site about everything for everyone making course creation easy.    
 
 This is my graduation work at the Haute École en Hainaut.
