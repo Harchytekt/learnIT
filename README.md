@@ -1,7 +1,7 @@
 # learnIT
 
-![Version](https://img.shields.io/badge/version-1.0-blue.svg)
-![License](https://img.shields.io/badge/license-GPL--3.0-orange.svg)
+[![Version][version-badge]][version-url]
+![License](https://badgen.net/badge/license/GPL-3.0/blue)
 
 learnIT is a learning site about everything for everyone making course creation easy.    
 
@@ -43,3 +43,6 @@ The site is developped with the Laravel framework and will offer an Android appl
 </details>
 
 ![Homepage](preview.png "Homepage")
+
+[version-badge]: https://badgen.net/github/release/Harchytekt/learnIT/stable
+[version-url]: https://github.com/Harchytekt/learnIT/tree/v1.0
