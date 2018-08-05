@@ -1,7 +1,7 @@
 # learnIT
 
 [![Version][version-badge]][version-url]
-![License](https://badgen.net/badge/license/GPL-3.0/blue)
+[![License][license-badge]][license-url]
 
 learnIT is a learning site about everything for everyone making course creation easy.    
 
@@ -46,3 +46,5 @@ The site is developped with the Laravel framework and will offer an Android appl
 
 [version-badge]: https://badgen.net/github/release/Harchytekt/learnIT/stable
 [version-url]: https://github.com/Harchytekt/learnIT/tree/v1.0
+[license-badge]: https://badgen.net/badge/license/GPL-3.0/blue
+[license-url]: https://github.com/Harchytekt/learnIT/blob/master/LICENSE
