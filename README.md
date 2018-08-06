@@ -46,5 +46,5 @@ The site is developped with the Laravel framework and will offer an Android appl
 
 [version-badge]: https://badgen.net/github/release/Harchytekt/learnIT/stable
 [version-url]: https://github.com/Harchytekt/learnIT/tree/v1.0
-[license-badge]: https://badgen.net/badge/license/GPL-3.0/blue
+[license-badge]: https://badgen.net/badge/license/GPL-3.0/2AB77E
 [license-url]: https://github.com/Harchytekt/learnIT/blob/master/LICENSE
